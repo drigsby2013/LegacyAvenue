@@ -1,0 +1,38 @@
+/*
+Theme Name:   	Blockbase Child
+Theme URI:    	https://wordpress.org/themes/blockbase/
+Description:  	Blockbase Child
+Template:       blockbase
+Version:        1.0.0
+License:        GNU General Public License v2 or later
+License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 			light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+Text Domain:  	blockbase
+*/
+
+body {
+	background-color: #FFFAF5;
+}
+header {
+	border-bottom: 1px solid #D0947B;
+}
+/*Correct max width of page content*/
+.wp-site-blocks {
+	max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Buttons*/
+.wp-block-button .wp-block-button__link {
+	background-color: #E7C593; 
+	min-width: 194px;
+	color: #fff;
+	font-family: 'Helvetica';
+	font-style: normal;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+	border: none;
+	border-radius: 5px;
+}
