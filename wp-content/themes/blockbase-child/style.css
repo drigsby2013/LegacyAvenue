@@ -171,6 +171,14 @@ footer .footer-menu a {
 	line-height: 16px;
 	letter-spacing: 0.05em;
 }
+footer .footer-menu a {
+	text-decoration: none;
+}
+footer .footer-menu a:hover,
+footer .footer-menu a:active,
+footer .footer-menu a:focus {
+	text-decoration: underline;
+}
 footer .footer-menu .wp-block-group {
 	margin-left: 20px;
 }
