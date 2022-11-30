@@ -13,19 +13,34 @@ Text Domain:  	blockbase
 body {
 	background-color: #FFFAF5;
 }
-header {
-	border-bottom: 1px solid #D0947B;
-}
 /*Correct max width of page content*/
 .wp-site-blocks {
-	max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+	padding: 0 !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	font-family: 'EB Garamond';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 44px;
+	line-height: 40px;
 }
 /*Buttons*/
+input[type="submit"],
 .wp-block-button .wp-block-button__link {
 	background-color: #E7C593; 
 	min-width: 194px;
+	min-height: 37px;
 	color: #fff;
 	font-family: 'Helvetica';
 	font-style: normal;
@@ -35,4 +50,165 @@ header {
 	line-height: 16px;
 	border: none;
 	border-radius: 5px;
+	-webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+.wp-block-button .wp-block-button__link:active,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus,
+input[type="submit"]:hover { 
+	background-color: #D0947B;
+	cursor: pointer;
+}
+
+/*Form Styles*/
+label {
+	text-transform: uppercase;
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 16px;
+}
+input:not([type="submit"]),
+textarea {
+	background-color: #ffffff !important;
+	border: 1px solid #D0947B !important;
+	width: 100%;
+}
+
+/*-------------*/
+/*Header Styles*/
+/*-------------*/
+header .header-contents {
+	border-bottom: 1px solid #D0947B;
+	max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header .site-brand {
+	width: 100%;
+	justify-content: space-between;
+}
+header .site-brand img {
+	width: 150px;
+}
+header .site-brand ul {
+	display: flex;
+	padding: 0;
+	justify-content: space-around;
+}
+header .site-brand ul li {
+	list-style: none;
+	display: flex;
+	margin-right: 25px;
+	font-size: 14px;
+	line-height: 16px;
+}
+header .site-brand ul li:last-of-type {
+	margin-right: 0;
+}
+header .site-brand ul li a {
+	text-decoration: none;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 0.15em;
+}
+header .site-brand ul li a:hover, 
+header .site-brand ul li a:focus, 
+header .site-brand ul li a:active {
+	text-decoration: underline;
+}
+
+/*-------------*/
+/*Footer Styles*/
+/*-------------*/
+footer {
+	background-color: #E7C593;
+	padding: 50px 0px;
+}
+footer .footer-group {
+	width: 100%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
+}
+footer .logo-socials {
+	max-width: 175px;
+}
+footer .logo-socials .wp-block-social-links {
+	margin-top: 40px;
+}
+footer>p {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 14px;
+}
+footer h2 {
+	font-family: 'EB Garamond';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 23px;
+	letter-spacing: 0.15em;
+}
+footer .footer-menu p,
+footer .footer-menu a {
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 0.05em;
+}
+footer .footer-menu .wp-block-group {
+	margin-left: 20px;
+}
+footer .footer-menu .wp-block-group:first-of-type {
+	margin-left: 0;
+}
+footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
+	width: 22px;
+	height: 22px;
+}
+
+/*--------------*/
+/*Mobile Footer*/
+/*--------------*/
+@media only screen and (max-width: 768px) {
+	footer {
+		margin-top: 50px !important;
+		padding: 50px 40px;
+	}
+	footer .footer-group {
+		flex-wrap: wrap !important;
+		justify-content: center;
+	}
+	footer .logo-socials .wp-block-social-links {
+		justify-content: center;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	footer .logo-socials .wp-block-social-links li {
+		display: flex !important;
+	}
+	footer .footer-menu .wp-block-group {
+		margin-bottom: 40px;
+		margin-left: 0;
+		justify-content: space-between;
+		width: 45%;
+	}
+	footer>p {
+		text-align: center;
+	}
 }
