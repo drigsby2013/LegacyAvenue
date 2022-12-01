@@ -600,15 +600,16 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 
 /*Library Page*/
-.library-hero {
+.library-hero,
+.guide-hero {
 	max-width: 1200px !important;
 	position: relative;
 	padding-bottom: 12px;
     border-bottom: 1px solid #D0947B;
 	margin-bottom: 45px !important;
 }
-.library-hero .image {}
-.library-hero .text {
+.library-hero .text,
+.guide-hero .text {
 	width: 75%;
 	max-width: 840px;
 	text-align: center;
@@ -619,8 +620,97 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-
-
+.library {
+	max-width: 1200px !important;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+/*	ASSISTANCE - column gap spacing isn't cooperating. It keeps adding space on the outside of the columns, not just the interior gaps. */
+	column-gap: 60px;
+	justify-content: space-between;
+}
+.library.guide {
+	column-gap: unset;
+}
+.library .library-index {
+	width: 100px;
+}
+.library .library-index ul {
+	padding: 0;
+	text-align: right;
+	font-size: 16px;
+	line-height: 35px;
+	list-style: none;
+}
+.library .library-index ul a {
+	text-decoration: none;
+}
+.library .library-index ul a:hover, 
+.library .library-index ul a:active,
+.library .library-index ul a:focus {
+	text-decoration: none;
+}
+.library:not(.guide) .library-items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 64px;
+}
+.library.guide .library-items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+}
+.library ul.library-items  {
+	padding: 0;
+}
+.library .library-items .library-item {
+	max-width: 300px;
+}
+.library.guide .library-items .library-item {
+	max-width: 350px;
+}
+.library-item .image img {
+	width: 100%;
+}
+.library-item .title h2 {
+	font-size: 32px;
+	line-height: 42px;
+	border-bottom: 1px solid #D0947B;
+	padding-bottom: 10px;
+	margin-bottom: 16px;
+}
+.library-item .excerpt p { 
+	font-size: 12px;
+	line-height: 22px;
+}
+.library-item .date p { 
+	font-size: 12px;
+	line-height: 22px;
+	text-transform: uppercase;
+}
+.library-item .link a { 
+	font-family: 'EB Garamond';
+	font-size: 16px;
+	line-height: 22px;
+	text-decoration: none;
+}
+.library-item .link a:active,
+.library-item .link a:hover, 
+.library-item .link a:focus { 
+	text-decoration: underline;
+}
+.pagination {
+	max-width: 1200px !important;
+	margin: 100px auto 0px !important;
+	text-align: center;
+}
+.calendar {
+	max-width: 1200px !important;
+	margin-left: auto;
+	margin-right: auto;
+}
 /*--------------*/
 /*Mobile Styles*/
 /*--------------*/
