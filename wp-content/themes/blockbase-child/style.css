@@ -257,6 +257,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	max-width: none !important;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 100px !important;
 }
 .column {
 	width: 100%;
