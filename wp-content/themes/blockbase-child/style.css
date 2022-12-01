@@ -35,7 +35,18 @@ h6 a {
 	font-size: 44px;
 	line-height: 40px;
 }
+h1 {
+	margin-bottom: 41px;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 30px;
+}
 /*Buttons*/
+a.button,
 input[type="submit"],
 .wp-block-button .wp-block-button__link {
 	background-color: #E7C593; 
@@ -54,6 +65,7 @@ input[type="submit"],
     -ms-transition: background-color 100ms linear;
     transition: background-color 100ms linear;
 }
+a.button,
 .wp-block-button .wp-block-button__link:active,
 .wp-block-button .wp-block-button__link:focus,
 .wp-block-button .wp-block-button__link:hover,
@@ -86,8 +98,7 @@ textarea {
 header .header-contents {
 	border-bottom: 1px solid #D0947B;
 	max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+	margin: 0 auto 68px;
 }
 header .site-brand {
 	width: 100%;
@@ -171,14 +182,6 @@ footer .footer-menu a {
 	line-height: 16px;
 	letter-spacing: 0.05em;
 }
-footer .footer-menu a {
-	text-decoration: none;
-}
-footer .footer-menu a:hover,
-footer .footer-menu a:active,
-footer .footer-menu a:focus {
-	text-decoration: underline;
-}
 footer .footer-menu .wp-block-group {
 	margin-left: 20px;
 }
@@ -190,9 +193,270 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	height: 22px;
 }
 
+
+/*************/
+/*Specific Pages*/
+/*************/
+
+/*Home Page*/
+.story-hero,
+.home-hero {
+	max-width: 100vw !important;
+	position: relative;
+}
+.home-hero .home-hero-image-large {
+	
+}
+.home-hero .home-hero-image-large,
+.story-hero .story-hero-image-large {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.home-hero .home-hero-text,
+.story-hero .story-hero-text {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 130px;
+	border-bottom: 3px solid #D0947B;
+}
+.home-hero .home-hero-text h1, 
+.home-hero .home-hero-text h2, 
+.home-hero .home-hero-text h3,
+.story-hero .story-hero-text h1, 
+.story-hero .story-hero-text h2, 
+.story-hero .story-hero-text h3 {
+	max-width: 500px;
+	margin-top: 45px;
+} 
+.home-hero .home-hero-text p,
+.story-hero .story-hero-text p {
+	 max-width: 400px;
+}
+.story-hero .columns {
+	display: flex;
+}
+.story-hero .columns .hero-column {
+    width: 50%;
+    display: inline-block;
+    max-width: 380px;
+    margin-right: 50px;
+}
+.home-hero-text::after,
+.story-hero-text::after {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    content: '';
+    background-color: #D0947B;
+    bottom: -10px;
+    max-width: 1200px;
+}
+/*Meet Section*/
+.meet {
+	max-width: 1200px !important;
+	position: relative;
+	padding-top: 110px;
+	margin-bottom: 100px !important;
+}
+.meet-text {
+	position: absolute;
+	right: 10em;
+	top: 30%;
+	max-width: 330px;
+}
+.meet::before {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: linear-gradient(180deg, rgba(208, 148, 123, 0) 3.35%, rgba(208, 148, 123, 0.6) 75.47%);
+    left: 0;
+    bottom: 7px;
+    max-height: 150px;
+}
+/*2 Column Section*/
+.home-columns {
+	margin-bottom: 100px !important;
+}
+.meet-team .wide-columns {
+	margin-bottom: 45px !important;
+}
+.home-columns,
+.wide-columns {
+	max-width: none !important;
+	display: flex;
+	justify-content: space-between;
+}
+.narrow-columns {
+	max-width: 1200px !important;
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+.column {
+	width: 100%;
+}
+.column img {
+	width: 100%;
+}
+.column .image {
+	position: relative;
+}
+@media only screen and (min-width: 768px) {
+	.column {
+		width: calc(50% - 14px);
+		position: relative;
+	}
+	.wide-columns .column:first-of-type .text {
+		position: absolute;
+		width: 50%;
+		max-width: 510px;
+		right: 0;
+		top: 0;
+	}
+	.wide-columns .column:last-of-type .text {
+		position: absolute;
+		width: 50%;
+		max-width: 510px;
+		left: 0;
+		top: 0;
+	}
+}
+.home-columns .column .image::before {
+	position: absolute;
+    width: 100%;
+    height: 68%;
+    content: '';
+    background: linear-gradient(180deg, rgba(208, 148, 123, 0) 2.72%, rgba(208, 148, 123, 0.7) 61.14%);
+    left: 0;
+    bottom: 7px;
+    max-height: 375px;
+}
+.home-quote {
+	border-top: 3px solid #D0947B;
+	max-width: 1200px !important;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 70px;
+	position: relative;
+	margin-bottom: 75px !important;
+}
+.home-quote::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	max-width: 1200px;
+	background: #D0947B;
+	top: 10px;
+}
+.home-quote .quote,
+.home-quote .author {
+	width: 100%;
+}
+.home-quote .author p {
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 40px;
+}
+.home-quote .quote p {
+	font-family: 'Helvetica';
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 400;
+	line-height: 40px;
+
+}
+@media only screen and (min-width: 768px) {
+	.home-quote .quote {
+		width: 75%;
+	}
+	.home-quote .author {
+		width: 25%;
+		padding-left: 30px;
+	}
+}
+ 
+.local-guide {
+	max-width: 1200px !important;
+	position: relative;
+	margin-bottom: 75px !important;
+}
+.local-guide .guide-image {
+	position: relative;
+}
+.local-guide .guide-image::before {
+	position: absolute;
+    width: 100%;
+    height: 73%;
+    content: '';
+    background: linear-gradient(180deg, rgba(208, 148, 123, 0) 2.72%, rgba(208, 148, 123, 0.8) 61.14%);
+    left: 0;
+    bottom: 7px;
+    max-height: 375px;
+	
+}
+.local-guide .guide-image img {
+	width: 100%;
+}
+.local-guide .guide-text {
+	position: absolute;
+	top: 130px;
+	left: 70px;
+	max-width: 330px;
+}
+.local-guide .guide-text p {
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+/*Our Story Page*/
+.meet-team {
+	max-width: none !important;
+	margin-top: 70px !important;
+}
+.meet-team h2 {
+	max-width: 1200px;
+	margin: 30px auto 50px;
+}
+.lightbox {
+	margin-bottom: 100px !important;
+}
+.story-cta {
+	max-width: 1200px !important;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.story-cta p {
+	font-size: 22px;
+	line-height: 22px;
+	margin-bottom: 45px;
+}
+
+
+
 /*--------------*/
-/*Mobile Footer*/
+/*Mobile Styles*/
 /*--------------*/
+
+/*General Helpers*/
+@media only screen and (max-width: 768px) {
+	.large-only {
+		display: none;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.mobile-only {
+		display: none;
+	}
+}
+/*Footer*/
 @media only screen and (max-width: 768px) {
 	footer {
 		margin-top: 50px !important;
