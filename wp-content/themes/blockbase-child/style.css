@@ -442,6 +442,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 /*Your Journey Page*/
 .timeline {
 	max-width: 900px !important;
+	margin-bottom: 75px !important;
 }
 .timeline ol {
 	list-style: none;
