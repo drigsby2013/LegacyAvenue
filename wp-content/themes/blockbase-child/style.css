@@ -229,6 +229,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
     bottom: -10px;
     max-width: 1200px;
 }
+/*Meet Section*/
 .meet {
 	max-width: 1200px !important;
 	position: relative;
@@ -250,6 +251,51 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
     left: 0;
     bottom: 7px;
     max-height: 150px;
+}
+/*2 Column Section*/
+.home-columns {
+	max-width: none !important;
+	display: flex;
+	justify-content: space-between;
+}
+.column {
+	width: 100%;
+}
+.column img {
+	width: 100%;
+}
+.column .image {
+	position: relative;
+}
+@media only screen and (min-width: 768px) {
+	.column {
+		width: calc(50% - 14px);
+		position: relative;
+	}
+	.column:first-of-type .text {
+		position: absolute;
+		width: 50%;
+		max-width: 510px;
+		right: 0;
+		top: 0;
+	}
+	.column:last-of-type .text {
+		position: absolute;
+		width: 50%;
+		max-width: 510px;
+		left: 0;
+		top: 0;
+	}
+}
+.column .image::before {
+	position: absolute;
+    width: 100%;
+    height: 68%;
+    content: '';
+    background: linear-gradient(180deg, rgba(208, 148, 123, 0) 2.72%, rgba(208, 148, 123, 0.7) 61.14%);
+    left: 0;
+    bottom: 7px;
+    max-height: 375px;
 }
  
 /*--------------*/
