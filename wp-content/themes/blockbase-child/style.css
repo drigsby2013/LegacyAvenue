@@ -546,6 +546,32 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	top: -120px;
 	right: 0;
 }
+.product-gallery {
+	max-width: 1200px !important;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
+	row-gap: 69px;
+	column-gap: 28px;
+	flex-wrap: wrap;
+}
+.product-gallery .product {
+	max-width: 380px;
+	text-align: center;
+	padding: 60px 60px 30px;
+	border: 1px solid #000000;
+	position: relative;
+}
+.product-gallery .product p {
+	text-align: left;
+}
+.product-gallery .product a {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
 
 
 /*--------------*/
