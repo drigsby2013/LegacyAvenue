@@ -278,10 +278,23 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 /*2 Column Section*/
 .home-columns {
+	margin-bottom: 100px !important;
+}
+.meet-team .wide-columns {
+	margin-bottom: 45px !important;
+}
+.home-columns,
+.wide-columns {
 	max-width: none !important;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 100px !important;
+}
+.narrow-columns {
+	max-width: 1200px !important;
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
 }
 .column {
 	width: 100%;
@@ -297,14 +310,14 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		width: calc(50% - 14px);
 		position: relative;
 	}
-	.column:first-of-type .text {
+	.wide-columns .column:first-of-type .text {
 		position: absolute;
 		width: 50%;
 		max-width: 510px;
 		right: 0;
 		top: 0;
 	}
-	.column:last-of-type .text {
+	.wide-columns .column:last-of-type .text {
 		position: absolute;
 		width: 50%;
 		max-width: 510px;
@@ -312,7 +325,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		top: 0;
 	}
 }
-.column .image::before {
+.home-columns .column .image::before {
 	position: absolute;
     width: 100%;
     height: 68%;
@@ -403,7 +416,28 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 
 /*Our Story Page*/
-
+.meet-team {
+	max-width: none !important;
+	margin-top: 70px !important;
+}
+.meet-team h2 {
+	max-width: 1200px;
+	margin: 30px auto 50px;
+}
+.lightbox {
+	margin-bottom: 100px !important;
+}
+.story-cta {
+	max-width: 1200px !important;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.story-cta p {
+	font-size: 22px;
+	line-height: 22px;
+	margin-bottom: 45px;
+}
 
 
 
