@@ -337,12 +337,30 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .home-quote,
 .journey-quote {
+	padding-top: 70px;
+}
+.home-quote,
+.library-quote,
+.journey-quote {
 	max-width: 1200px !important;
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	padding-top: 70px;
 	position: relative;
 	margin-bottom: 75px !important;
+}
+.library-quote {
+	padding-bottom: 45px !important;
+	border-bottom: 3px solid #D0947B;
+}
+.library-quote::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	max-width: 1200px;
+	background: #D0947B;
+	bottom: -10px;
 }
 .home-quote {
 	border-top: 3px solid #D0947B;
@@ -358,17 +376,21 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .home-quote .quote,
 .home-quote .author,
+.library-quote .quote,
+.library-quote .author,
 .journey-quote .quote,
 .journey-quote .author {
 	width: 100%;
 }
-.home-quote .author p {
+.home-quote .author p,
+.library-quote .author p {
 	font-size: 24px;
 }
 .journey-quote .author p {
 	font-size: 20px;
 }
 .home-quote .author p,
+.library-quote .author p,
 .journey-quote .author p {
 	font-family: 'Helvetica';
 	font-style: normal;
@@ -376,6 +398,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	line-height: 40px;
 }
 .home-quote .quote p,
+.library-quote .quote p,
 .journey-quote .quote p {
 	font-family: 'Helvetica';
 	font-size: 24px;
@@ -386,10 +409,12 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 @media only screen and (min-width: 768px) {
 	.home-quote .quote,
+	.library-quote .quote,
 	.journey-quote .quote {
 		width: 75%;
 	}
 	.home-quote .author,
+	.library-quote .author,
 	.journey-quote .author {
 		width: 25%;
 		text-align: center;
@@ -572,6 +597,27 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	bottom: 0;
 	left: 50%;
 	transform: translate(-50%, 50%);
+}
+
+/*Library Page*/
+.library-hero {
+	max-width: 1200px !important;
+	position: relative;
+	padding-bottom: 12px;
+    border-bottom: 1px solid #D0947B;
+	margin-bottom: 45px !important;
+}
+.library-hero .image {}
+.library-hero .text {
+	width: 75%;
+	max-width: 840px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 
