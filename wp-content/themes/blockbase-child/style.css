@@ -550,6 +550,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	max-width: 1200px !important;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 100px !important;
 	display: flex;
 	justify-content: space-between;
 	row-gap: 69px;
