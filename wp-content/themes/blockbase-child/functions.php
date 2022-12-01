@@ -1,4 +1,5 @@
 <?php
+
 function my_theme_enqueue_styles() {
     $parent_style = 'blockbase-style'; // This is 'parent-style' for the Blockbase theme.
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
@@ -9,3 +10,5 @@ function my_theme_enqueue_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+
