@@ -192,6 +192,14 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	width: 22px;
 	height: 22px;
 }
+
+
+/*************/
+/*Specific Pages*/
+/*************/
+
+/*Home Page*/
+.story-hero,
 .home-hero {
 	max-width: 100vw !important;
 	position: relative;
@@ -199,12 +207,14 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .home-hero .home-hero-image-large {
 	
 }
-.home-hero .home-hero-image-large {
+.home-hero .home-hero-image-large,
+.story-hero .story-hero-image-large {
 	position: absolute;
 	right: 0;
 	top: 0;
 }
-.home-hero .home-hero-text {
+.home-hero .home-hero-text,
+.story-hero .story-hero-text {
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -213,14 +223,28 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .home-hero .home-hero-text h1, 
 .home-hero .home-hero-text h2, 
-.home-hero .home-hero-text h3 {
+.home-hero .home-hero-text h3,
+.story-hero .story-hero-text h1, 
+.story-hero .story-hero-text h2, 
+.story-hero .story-hero-text h3 {
 	max-width: 500px;
 	margin-top: 45px;
 } 
-.home-hero .home-hero-text p {
+.home-hero .home-hero-text p,
+.story-hero .story-hero-text p {
 	 max-width: 400px;
 }
-.home-hero-text::after {
+.story-hero .columns {
+	display: flex;
+}
+.story-hero .columns .hero-column {
+    width: 50%;
+    display: inline-block;
+    max-width: 380px;
+    margin-right: 50px;
+}
+.home-hero-text::after,
+.story-hero-text::after {
     position: absolute;
     height: 1px;
     width: 100%;
@@ -377,6 +401,12 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-top: 0;
 	margin-bottom: 30px;
 }
+
+/*Our Story Page*/
+
+
+
+
 /*--------------*/
 /*Mobile Styles*/
 /*--------------*/
