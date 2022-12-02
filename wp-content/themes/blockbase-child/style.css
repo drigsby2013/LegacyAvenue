@@ -276,6 +276,9 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	top: 30%;
 	max-width: 330px;
 }
+.meet-text p:last-of-type {
+	margin-bottom: 30px;
+}
 .meet::before {
 	position: absolute;
     width: 100%;
@@ -461,6 +464,8 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .local-guide .guide-text p {
 	margin-top: 0;
+}
+.local-guide .guide-text p:last-of-type {
 	margin-bottom: 30px;
 }
 
@@ -509,6 +514,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-top: 0;
 }
 .timeline li h3 {
+	font-size: 18px;
 	font-weight: 700;
 	margin-top: 0;
 }
@@ -516,11 +522,11 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .timeline li p {
 	font-family: 'Helvetica';
 	font-style: normal;
-	font-size: 18px;
 	line-height: 22px;
 }
 .timeline li p {
 	max-width: 330px;
+	font-size: 14px;
 }
 .timeline li {
 	width: 100%;
@@ -635,14 +641,14 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-right: auto;
 	display: flex;
 /*	ASSISTANCE - column gap spacing isn't cooperating. It keeps adding space on the outside of the columns, not just the interior gaps. */
-	column-gap: 60px;
+/*	column-gap: 60px;*/
 	justify-content: space-between;
 }
 .library.guide {
 	column-gap: unset;
 }
 .library .library-index {
-	width: 100px;
+	min-width: 160px;
 }
 .library .library-index ul {
 	padding: 0;
@@ -672,6 +678,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	width: 100%;
 }
 .library ul.library-items  {
+	list-style: none;
 	padding: 0;
 }
 .library .library-items .library-item {
