@@ -17,6 +17,9 @@ body {
 .wp-site-blocks {
 	padding: 0 !important;
 }
+main {
+	margin-top: 0 !important;
+}
 h1,
 h2,
 h3,
@@ -146,9 +149,14 @@ footer>p,
 .wp-block-group:has(h2.wp-block-post-title) {
 	display: none;
 }
+@media screen and (min-width: 768px) {
+	header .header-contents {
+		margin: 0 auto 68px;
+	}
+}
 header .header-contents {
 	border-bottom: 1px solid #D0947B;
-	margin: 0 auto 68px;
+	margin: 0 auto 32px;
 }
 header .site-brand {
 	width: 100%;
@@ -250,6 +258,9 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .home-hero .home-hero-image-large {
 	
+}
+.home-hero .mobile-only img {
+	width: 100%;
 }
 .home-hero .home-hero-image-large,
 .story-hero .story-hero-image-large {
