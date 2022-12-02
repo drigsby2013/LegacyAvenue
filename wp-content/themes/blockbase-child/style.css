@@ -641,15 +641,14 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-left: auto;
 	margin-right: auto;
 	display: flex;
-/*	ASSISTANCE - column gap spacing isn't cooperating. It keeps adding space on the outside of the columns, not just the interior gaps. */
-/*	column-gap: 60px;*/
+	column-gap: 60px;
 	justify-content: space-between;
 }
 .library.guide {
 	column-gap: unset;
 }
 .library .library-index {
-	min-width: 160px;
+	min-width: 100px;
 }
 .library .library-index ul {
 	padding: 0;
