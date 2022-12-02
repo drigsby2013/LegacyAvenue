@@ -1,14 +1,127 @@
 /*
-Theme Name:   	Blockbase Child
-Theme URI:    	https://wordpress.org/themes/blockbase/
-Description:  	Blockbase Child
-Template:       blockbase
-Version:        1.0.0
-License:        GNU General Public License v2 or later
-License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
-Tags: 			light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
-Text Domain:  	blockbase
+Theme Name: Legacy Avenue
+Theme URI: https://wordpress.org/themes/twentyfifteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Custom Legacy Avenue theme based on the WP 2015 theme
+Version: 1.0.0
+Tested up to: 6.1
+Template: twentyfifteen
+Requires PHP: 5.2.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, block-patterns
+Text Domain: twentyfifteen-child
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	background: #f1f1f1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+fieldset {
+	min-width: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	quotes: none;
+}
+
+a:focus {
+	outline: 2px solid #c1c1c1;
+	outline: 2px solid rgba(51, 51, 51, 0.3);
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+a img {
+	border: 0;
+}
+
+
+
+/**
+ * START CUSTOM STYLES
+ */
+
 
 body {
 	background-color: #FFFAF5;
@@ -17,10 +130,6 @@ body {
 .wp-site-blocks {
 	padding: 0 !important;
 }
-main {
-	margin-top: 0 !important;
-}
-
 h1,
 h2,
 h3,
@@ -36,22 +145,10 @@ h6 a {
 	font-family: 'EB Garamond';
 	font-style: normal;
 	font-weight: 500;
+	font-size: 44px;
 	line-height: 40px;
 }
-h2,
-h3,
-h4,
-h5,
-h6,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	font-size: 44px;
-}
 h1 {
-	font-size: 32px;
 	margin-bottom: 41px;
 }
 h2,
@@ -61,21 +158,11 @@ h5,
 h6 {
 	margin-bottom: 30px;
 }
-p {
-	font-size: 14px;
-	font-family: 'Helvetica';
-	font-weight: 300;
-}
-@media screen and (min-width: 768px) {
-	h1 {
-		font-size: 44px;
-	}
-}
 /*Buttons*/
 a.button,
 input[type="submit"],
 .wp-block-button .wp-block-button__link {
-	background-color: #E7C593; 
+	background-color: #E7C593;
 	min-width: 194px;
 	min-height: 37px;
 	color: #fff;
@@ -97,7 +184,7 @@ a.button,
 .wp-block-button .wp-block-button__link:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus,
-input[type="submit"]:hover { 
+input[type="submit"]:hover {
 	background-color: #D0947B;
 	cursor: pointer;
 }
@@ -118,72 +205,13 @@ textarea {
 	width: 100%;
 }
 
-/*-----------*/
-/*Page content restrictions*/
-/*-----------*/
-/* Full width | Class = full-width-section */
-
-.home-columns,
-.wide-columns,
-.meet-team,
-.product-wrapper,
-.full-width-section {
-	max-width: none !important;
-}
-
-
-/* 1200px max width | Class = normal-width-section */
-header .header-contents,
-footer>div,
-footer>p,
-.story-cta,
-.journey-cta,
-.product-header,
-.product-gallery,
-.home-quote,
-.library-hero,
-.guide-hero,
-.library,
-.library-quote,
-.journey-quote,
-.pagination,
-.calendar,
-.meet-team h2,
-.home-hero .home-hero-text, 
-.story-hero .story-hero-text,
-.normal-width-section {
-	max-width: 1200px !important;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 /*-------------*/
 /*Header Styles*/
 /*-------------*/
-
-/*Hide page title on default page template*/
-.wp-block-group:has(h2.wp-block-post-title),
-/*Hide empty block at bottom of page on default page template*/
-.wp-block-group:has(.wp-block-spacer) {
-	display: none;
-}
-/*Hide empty p tags that Wordpress puts in*/
-p:empty{
-  display: none;
-}
-
-@media screen and (min-width: 768px) {
-	header .header-contents {
-		margin: 0 auto 68px;
-	}
-	header .site-brand ul {
-		flex-wrap: nowrap;
-	}
-}
 header .header-contents {
 	border-bottom: 1px solid #D0947B;
-	margin: 0 auto 32px;
+	max-width: 1200px;
+	margin: 0 auto 68px;
 }
 header .site-brand {
 	width: 100%;
@@ -196,10 +224,10 @@ header .site-brand ul {
 	display: flex;
 	padding: 0;
 	justify-content: space-around;
-	flex-wrap: wrap;
 }
 header .site-brand ul li {
 	list-style: none;
+	display: flex;
 	margin-right: 25px;
 	font-size: 14px;
 	line-height: 16px;
@@ -214,8 +242,8 @@ header .site-brand ul li a {
 	font-weight: 300;
 	letter-spacing: 0.15em;
 }
-header .site-brand ul li a:hover, 
-header .site-brand ul li a:focus, 
+header .site-brand ul li a:hover,
+header .site-brand ul li a:focus,
 header .site-brand ul li a:active {
 	text-decoration: underline;
 }
@@ -226,10 +254,12 @@ header .site-brand ul li a:active {
 footer {
 	background-color: #E7C593;
 	padding: 50px 0px;
-	margin-top: 0 !important;
 }
 footer .footer-group {
 	width: 100%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 	display: flex;
 	justify-content: space-between;
 }
@@ -240,6 +270,9 @@ footer .logo-socials .wp-block-social-links {
 	margin-top: 40px;
 }
 footer>p {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 50px;
 	font-weight: 400;
 	font-size: 10px;
@@ -285,10 +318,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	position: relative;
 }
 .home-hero .home-hero-image-large {
-	
-}
-.home-hero .mobile-only img {
-	width: 100%;
+
 }
 .home-hero .home-hero-image-large,
 .story-hero .story-hero-image-large {
@@ -298,22 +328,33 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .home-hero .home-hero-text,
 .story-hero .story-hero-text {
-	padding-bottom: 66px;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 130px;
 	border-bottom: 3px solid #D0947B;
-	position: relative;
-	z-index: 1;
-	margin-bottom: 75px;
 }
-.home-hero .home-hero-text h1, 
-.home-hero .home-hero-text h2, 
+.home-hero .home-hero-text h1,
+.home-hero .home-hero-text h2,
 .home-hero .home-hero-text h3,
-.story-hero .story-hero-text h1, 
-.story-hero .story-hero-text h2, 
+.story-hero .story-hero-text h1,
+.story-hero .story-hero-text h2,
 .story-hero .story-hero-text h3 {
-	padding-top: 20px;
-} 
-.home-hero .home-hero-text .wp-block-button { 
+	max-width: 500px;
 	margin-top: 45px;
+}
+.home-hero .home-hero-text p,
+.story-hero .story-hero-text p {
+	 max-width: 400px;
+}
+.story-hero .columns {
+	display: flex;
+}
+.story-hero .columns .hero-column {
+    width: 50%;
+    display: inline-block;
+    max-width: 380px;
+    margin-right: 50px;
 }
 .home-hero-text::after,
 .story-hero-text::after {
@@ -323,215 +364,64 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
     content: '';
     background-color: #D0947B;
     bottom: -10px;
-}
-@media screen and (min-width: 768px) {
-	.home-hero .home-hero-text,
-	.story-hero .story-hero-text {
-		padding-bottom: 130px;
-		margin-bottom: 0;
-	}
-	.home-hero .home-hero-text .wp-block-button {
-		margin-top: 18px;
-	}
-	.home-hero .home-hero-text h1, 
-	.home-hero .home-hero-text h2, 
-	.home-hero .home-hero-text h3,
-	.story-hero .story-hero-text h1, 
-	.story-hero .story-hero-text h2, 
-	.story-hero .story-hero-text h3 {
-		padding-top: 45px;
-		max-width: 500px;
-	}
-	.story-hero .story-hero-text p {
-		 max-width: 380px;
-	}
-	.home-hero .home-hero-text p {
-		max-width: 330px;
-	}
-	.story-hero .columns {
-		display: flex;
-	}
-	.story-hero .columns .hero-column {
-		width: 50%;
-		display: inline-block;
-		max-width: 380px;
-		margin-right: 50px;
-	}
+    max-width: 1200px;
 }
 /*Meet Section*/
 .meet {
-	min-height: 600px;
-	background-repeat: no-repeat;
-    background-size: cover;
-	background-position: 28% 0%;
-	padding-top: 240px;
+	max-width: 1200px !important;
 	position: relative;
-	margin-bottom: 50px !important;
+	padding-top: 110px;
+	margin-bottom: 100px !important;
 }
 .meet-text {
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	z-index: 1;
-	position: relative;
-}
-.meet-text p:last-of-type {
-	margin-bottom: 30px;
+	position: absolute;
+	right: 10em;
+	top: 30%;
+	max-width: 330px;
 }
 .meet::before {
-	background: linear-gradient(180deg, rgba(208, 148, 123, 0) 3.35%, rgba(208, 148, 123, 0.6) 75.47%);
 	position: absolute;
     width: 100%;
     height: 100%;
     content: '';
-    left: 0px;
-    bottom: 0px;
-	max-height: 400px;
-	z-index: 0;
-}
-@media screen and (max-width: 768px) { 
-	.meet {
-		padding-bottom: 58px;
-	}
-	.meet-text h2 {
-		margin-bottom: 40px;
-	}
-	.meet-text p {
-		margin-bottom: 30px;
-	}
-}
-@media screen and (min-width: 768px) {
-	.meet {
-		min-height: unset;
-		background-image: none !important;
-		max-width: 1200px !important;
-		margin: 0 auto 100px !important;
-		width: 80%;
-		position: relative;
-		padding-top: 110px;
-	}
-	.meet::before {
-		max-height: 150px;
-		bottom: 7px;
-	}
-	.meet-text {
-		position: absolute;
-		right: 10em;
-		top: 30%;
-		max-width: 330px;
-	}
+    background: linear-gradient(180deg, rgba(208, 148, 123, 0) 3.35%, rgba(208, 148, 123, 0.6) 75.47%);
+    left: 0;
+    bottom: 7px;
+    max-height: 150px;
 }
 /*2 Column Section*/
 .home-columns {
-	margin-bottom: 90px !important;
-}
-.home-columns .column {
-	padding-top: 160px;
-	padding-bottom: 45px;
+	margin-bottom: 100px !important;
 }
 .meet-team .wide-columns {
-	margin-bottom: 75px !important;
+	margin-bottom: 45px !important;
 }
-.column:first-of-type {
+.home-columns,
+.wide-columns {
+	max-width: none !important;
+	display: flex;
+	justify-content: space-between;
+}
+.narrow-columns {
+	max-width: 1200px !important;
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
 }
 .column {
 	width: 100%;
-	margin-bottom: 50px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-	
 }
 .column img {
 	width: 100%;
 }
-.column .text,
 .column .image {
 	position: relative;
 }
-.column .text {
-	width: 75%;
-	margin-left: auto;
-	margin-right: auto;
-}
-.column .text .wp-block-button {
-	margin-top: 6px;
-}
-.home-columns .column::before,
-.home-columns .column .image::before {
-	position: absolute;
-    width: 100%;
-    height: 68%;
-    content: '';
-    background: linear-gradient(180deg, rgba(208, 148, 123, 0) 2.72%, rgba(208, 148, 123, 0.7) 61.14%);
-    left: 0;
-    bottom: 0px;
-    max-height: 375px;
-}
-.narrow-columns {
-	max-width: none !important;
-}
-.narrow-columns .column {
-/*	padding-top: 0;*/
-}
-.narrow-columns span.member-title {
-	display: block;
-	font-family: 'Helvetica';
-	font-style: normal;
-	font-weight: 300;
-	font-size: 16px;
-	line-height: 22px;
-}
-.narrow-columns .column .text {
-	width: 80%;
-	padding-top: 55px;
-}
-.narrow-columns .column .text h3 {
-	margin-top: 0;
-	margin-bottom: 17px;
-}
-.narrow-columns .column img {
-	width: 100%;
-}
 @media only screen and (min-width: 768px) {
-	.home-columns {
-		margin-bottom: 100px !important;
-	}
-	.home-columns .column {
-		padding-bottom: 0;
-		padding-top: 0;
-		margin-bottom: 0;
-	}
-	.home-columns,
-	.wide-columns {
-		display: flex;
-		justify-content: space-between;
-	}
-	.narrow-columns {
-		max-width: 1200px !important;
-		width: 80%;
-		margin-left: auto;
-		margin-right: auto;
-		display: flex;
-		justify-content: space-between;
-	}
-	.narrow-columns .column .text {
-		width: 100%;
-		padding-top: 0;
-	}
-	.narrow-columns .column .text h3 {
-		margin-bottom: 30px;
-	}
-	.narrow-columns span.member-title {
-		display: inline;
-	}
 	.column {
-		width: calc(50% - 15px);
-		background-image: none !important;
-		padding: 0;
-	}
-	.wide-columns .column {
-		margin-bottom: 0 !important;
+		width: calc(50% - 14px);
+		position: relative;
 	}
 	.wide-columns .column:first-of-type .text {
 		position: absolute;
@@ -547,45 +437,16 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		left: 0;
 		top: 0;
 	}
-	.home-columns .column::before {
-		display: none;
-	}
-	.home-columns .column .image::before { 
-		bottom: 7px;
-	}
 }
-
-.home-quote,
-.journey-quote {
-	padding-top: 70px;
-}
-.home-quote,
-.library-quote,
-.journey-quote {
-	position: relative;
-	margin-bottom: 100px !important;
-}
-@media screen and (min-width: 768px) {
-	.home-quote,
-	.library-quote,
-	.journey-quote {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		margin-bottom: 75px !important;
-	}
-}
-.library-quote {
-	padding-bottom: 45px !important;
-	border-bottom: 3px solid #D0947B;
-}
-.library-quote::before {
-	content: '';
+.home-columns .column .image::before {
 	position: absolute;
-	width: 100%;
-	height: 1px;
-	background: #D0947B;
-	bottom: -10px;
+    width: 100%;
+    height: 68%;
+    content: '';
+    background: linear-gradient(180deg, rgba(208, 148, 123, 0) 2.72%, rgba(208, 148, 123, 0.7) 61.14%);
+    left: 0;
+    bottom: 7px;
+    max-height: 375px;
 }
 .home-quote,
 .journey-quote {
@@ -622,6 +483,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	position: absolute;
 	width: 100%;
 	height: 1px;
+	max-width: 1200px;
 	background: #D0947B;
 	top: 10px;
 }
@@ -671,16 +533,15 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		text-align: center;
 	}
 }
- 
+
 .local-guide {
+	max-width: 1200px !important;
 	position: relative;
 	margin-bottom: 75px !important;
-	max-width: none !important;
-	padding: 167px 10% 54px;
-	background-size: cover;
-	background-repeat: no-repeat;
 }
-.local-guide::before,
+.local-guide .guide-image {
+	position: relative;
+}
 .local-guide .guide-image::before {
 	position: absolute;
     width: 100%;
@@ -690,49 +551,29 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
     left: 0;
     bottom: 7px;
     max-height: 375px;
-}
-.local-guide::before {
-	bottom: 0px;
+
 }
 .local-guide .guide-image img {
 	width: 100%;
 }
 .local-guide .guide-text {
-	position: relative;
+	position: absolute;
+	top: 130px;
+	left: 70px;
+	max-width: 330px;
 }
-.local-guide .guide-text h2,
 .local-guide .guide-text p {
-/*	color: #fff;*/
 	margin-top: 0;
-}
-.local-guide .guide-text p:last-of-type {
 	margin-bottom: 30px;
-}
-@media screen and (min-width: 768px) {
-	.local-guide {
-		max-width: 1200px !important;
-		width: 80%;
-		margin-left: auto;
-		margin-right: auto;
-		background-image: none !important;
-		padding: 0;
-	}
-	.local-guide::before {
-		display: none;
-	}
-	.local-guide .guide-text {
-		position: absolute;
-		top: 130px;
-		left: 70px;
-		max-width: 330px;
-	}
 }
 
 /*Our Story Page*/
 .meet-team {
+	max-width: none !important;
 	margin-top: 70px !important;
 }
 .meet-team h2 {
+	max-width: 1200px;
 	margin: 30px auto 50px;
 }
 .lightbox {
@@ -740,8 +581,10 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .story-cta,
 .journey-cta {
+	max-width: 1200px !important;
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
-	margin-bottom: 100px !important;
 }
 .story-cta p,
 .journey-cta p {
@@ -769,19 +612,18 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-top: 0;
 }
 .timeline li h3 {
-	font-size: 18px;
 	font-weight: 700;
 	margin-top: 0;
 }
-.timeline li h3, 
+.timeline li h3,
 .timeline li p {
 	font-family: 'Helvetica';
 	font-style: normal;
+	font-size: 18px;
 	line-height: 22px;
 }
 .timeline li p {
 	max-width: 330px;
-	font-size: 14px;
 }
 .timeline li {
 	width: 100%;
@@ -808,10 +650,14 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	padding-right: 20px;
 }
 .product-header-wrapper {
+	max-width: none !important;
 	position: relative;
 	margin-bottom: 50px !important;
 }
 .product-header {
+	max-width: 1200px !important;
+	margin-left: auto;
+	margin-right: auto;
 	border-top: 3px solid #D0947B;
 	position: relative;
 	margin-top: 155px !important;
@@ -824,6 +670,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
     content: '';
     background-color: #D0947B;
     top: 10px;
+    max-width: 1200px;
 }
 .product-header .text {
 	width: 75%;
@@ -911,7 +758,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .library .library-index ul a {
 	text-decoration: none;
 }
-.library .library-index ul a:hover, 
+.library .library-index ul a:hover,
 .library .library-index ul a:active,
 .library .library-index ul a:focus {
 	text-decoration: none;
@@ -929,7 +776,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	width: 100%;
 }
 .library ul.library-items  {
-	list-style: none;
 	padding: 0;
 }
 .library .library-items .library-item {
@@ -948,24 +794,24 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	padding-bottom: 10px;
 	margin-bottom: 16px;
 }
-.library-item .excerpt p { 
+.library-item .excerpt p {
 	font-size: 12px;
 	line-height: 22px;
 }
-.library-item .date p { 
+.library-item .date p {
 	font-size: 12px;
 	line-height: 22px;
 	text-transform: uppercase;
 }
-.library-item .link a { 
+.library-item .link a {
 	font-family: 'EB Garamond';
 	font-size: 16px;
 	line-height: 22px;
 	text-decoration: none;
 }
 .library-item .link a:active,
-.library-item .link a:hover, 
-.library-item .link a:focus { 
+.library-item .link a:hover,
+.library-item .link a:focus {
 	text-decoration: underline;
 }
 .pagination {
@@ -996,6 +842,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 /*Footer*/
 @media only screen and (max-width: 768px) {
 	footer {
+		margin-top: 50px !important;
 		padding: 50px 40px;
 	}
 	footer .footer-group {
