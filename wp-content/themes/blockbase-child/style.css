@@ -153,6 +153,9 @@ footer>p,
 	header .header-contents {
 		margin: 0 auto 68px;
 	}
+	header .site-brand ul {
+		flex-wrap: nowrap;
+	}
 }
 header .header-contents {
 	border-bottom: 1px solid #D0947B;
@@ -169,10 +172,10 @@ header .site-brand ul {
 	display: flex;
 	padding: 0;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 header .site-brand ul li {
 	list-style: none;
-	display: flex;
 	margin-right: 25px;
 	font-size: 14px;
 	line-height: 16px;
