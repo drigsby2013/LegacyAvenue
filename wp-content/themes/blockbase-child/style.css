@@ -20,6 +20,7 @@ body {
 main {
 	margin-top: 0 !important;
 }
+
 h1,
 h2,
 h3,
@@ -65,7 +66,7 @@ p {
 	font-family: 'Helvetica';
 	font-weight: 300;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
 	h1 {
 		font-size: 44px;
 	}
@@ -149,7 +150,6 @@ footer>p,
 .pagination,
 .calendar,
 .meet-team h2,
-.local-guide,
 .home-hero .home-hero-text, 
 .story-hero .story-hero-text,
 .normal-width-section {
@@ -164,7 +164,9 @@ footer>p,
 /*-------------*/
 
 /*Hide page title on default page template*/
-.wp-block-group:has(h2.wp-block-post-title) {
+.wp-block-group:has(h2.wp-block-post-title),
+/*Hide empty block at bottom of page on default page template*/
+.wp-block-group:has(.wp-block-spacer) {
 	display: none;
 }
 @media screen and (min-width: 768px) {
@@ -220,6 +222,7 @@ header .site-brand ul li a:active {
 footer {
 	background-color: #E7C593;
 	padding: 50px 0px;
+	margin-top: 0 !important;
 }
 footer .footer-group {
 	width: 100%;
@@ -317,7 +320,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
     background-color: #D0947B;
     bottom: -10px;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
 	.home-hero .home-hero-text,
 	.story-hero .story-hero-text {
 		padding-bottom: 130px;
@@ -383,6 +386,9 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	z-index: 0;
 }
 @media screen and (max-width: 768px) { 
+	.meet {
+		padding-bottom: 58px;
+	}
 	.meet-text h2 {
 		margin-bottom: 40px;
 	}
@@ -472,6 +478,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	.column {
 		width: calc(50% - 14px);
 		background-image: none !important;
+		padding: 0;
 	}
 	.wide-columns .column:first-of-type .text {
 		position: absolute;
@@ -512,7 +519,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		position: relative;
 		margin-bottom: 75px !important;
 	}
 }
@@ -589,10 +595,12 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .local-guide {
 	position: relative;
 	margin-bottom: 75px !important;
+	max-width: none !important;
+	padding: 167px 10% 54px;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
-.local-guide .guide-image {
-	position: relative;
-}
+.local-guide::before,
 .local-guide .guide-image::before {
 	position: absolute;
     width: 100%;
@@ -602,22 +610,42 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
     left: 0;
     bottom: 7px;
     max-height: 375px;
-	
+}
+.local-guide::before {
+	bottom: 0px;
 }
 .local-guide .guide-image img {
 	width: 100%;
 }
 .local-guide .guide-text {
-	position: absolute;
-	top: 130px;
-	left: 70px;
-	max-width: 330px;
+	position: relative;
 }
+.local-guide .guide-text h2,
 .local-guide .guide-text p {
+/*	color: #fff;*/
 	margin-top: 0;
 }
 .local-guide .guide-text p:last-of-type {
 	margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+	.local-guide {
+		max-width: 1200px !important;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		background-image: none !important;
+		padding: 0;
+	}
+	.local-guide::before {
+		display: none;
+	}
+	.local-guide .guide-text {
+		position: absolute;
+		top: 130px;
+		left: 70px;
+		max-width: 330px;
+	}
 }
 
 /*Our Story Page*/
@@ -872,7 +900,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 /*Footer*/
 @media only screen and (max-width: 768px) {
 	footer {
-		margin-top: 50px !important;
 		padding: 50px 40px;
 	}
 	footer .footer-group {
