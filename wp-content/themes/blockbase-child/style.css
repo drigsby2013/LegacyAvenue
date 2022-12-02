@@ -45,6 +45,9 @@ h5,
 h6 {
 	margin-bottom: 30px;
 }
+p {
+	font-size: 14px;
+}
 /*Buttons*/
 a.button,
 input[type="submit"],
@@ -95,6 +98,11 @@ textarea {
 /*-------------*/
 /*Header Styles*/
 /*-------------*/
+
+/*Hide page title on default page template*/
+.wp-block-group:has(h2.wp-block-post-title) {
+	display: none;
+}
 header .header-contents {
 	border-bottom: 1px solid #D0947B;
 	max-width: 1200px;
@@ -220,6 +228,8 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-right: auto;
 	padding-bottom: 130px;
 	border-bottom: 3px solid #D0947B;
+	position: relative;
+	z-index: 1;
 }
 .home-hero .home-hero-text h1, 
 .home-hero .home-hero-text h2, 
@@ -228,7 +238,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .story-hero .story-hero-text h2, 
 .story-hero .story-hero-text h3 {
 	max-width: 500px;
-	margin-top: 45px;
+	padding-top: 45px;
 } 
 .home-hero .home-hero-text p,
 .story-hero .story-hero-text p {
