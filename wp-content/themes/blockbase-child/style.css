@@ -148,7 +148,6 @@ footer>p,
 .journey-quote,
 .pagination,
 .calendar,
-.meet,
 .meet-team h2,
 .local-guide,
 .home-hero .home-hero-text, 
@@ -296,6 +295,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	border-bottom: 3px solid #D0947B;
 	position: relative;
 	z-index: 1;
+	margin-bottom: 75px;
 }
 .home-hero .home-hero-text h1, 
 .home-hero .home-hero-text h2, 
@@ -321,6 +321,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	.home-hero .home-hero-text,
 	.story-hero .story-hero-text {
 		padding-bottom: 130px;
+		margin-bottom: 0;
 	}
 	.home-hero .home-hero-text .wp-block-button {
 		margin-top: 18px;
@@ -352,28 +353,64 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 /*Meet Section*/
 .meet {
+	min-height: 600px;
+	background-repeat: no-repeat;
+    background-size: cover;
+	background-position: 28% 0%;
+	padding-top: 240px;
 	position: relative;
-	padding-top: 110px;
-	margin-bottom: 100px !important;
 }
 .meet-text {
-	position: absolute;
-	right: 10em;
-	top: 30%;
-	max-width: 330px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+	position: relative;
 }
 .meet-text p:last-of-type {
 	margin-bottom: 30px;
 }
 .meet::before {
+	background: linear-gradient(180deg, rgba(208, 148, 123, 0) 3.35%, rgba(208, 148, 123, 0.6) 75.47%);
 	position: absolute;
     width: 100%;
     height: 100%;
     content: '';
-    background: linear-gradient(180deg, rgba(208, 148, 123, 0) 3.35%, rgba(208, 148, 123, 0.6) 75.47%);
-    left: 0;
-    bottom: 7px;
-    max-height: 150px;
+    left: 0px;
+    bottom: 0px;
+	max-height: 400px;
+	z-index: 0;
+}
+@media screen and (max-width: 768px) { 
+	.meet-text h2 {
+		margin-bottom: 40px;
+	}
+	.meet-text p {
+		margin-bottom: 30px;
+	}
+}
+@media screen and (min-width: 768px) {
+	.meet {
+		min-height: unset;
+		background-image: none !important;
+		max-width: 1200px !important;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		position: relative;
+		padding-top: 110px;
+		margin-bottom: 100px !important;
+	}
+	.meet::before {
+		max-height: 150px;
+		bottom: 7px;
+	}
+	.meet-text {
+		position: absolute;
+		right: 10em;
+		top: 30%;
+		max-width: 330px;
+	}
 }
 /*2 Column Section*/
 .home-columns {
