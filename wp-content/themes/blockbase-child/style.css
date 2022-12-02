@@ -496,7 +496,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 
 /*Our Story Page*/
 .meet-team {
-/*	max-width: none !important;*/
 	margin-top: 70px !important;
 }
 .meet-team h2 {
@@ -574,7 +573,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	padding-right: 20px;
 }
 .product-header-wrapper {
-	max-width: none !important;
 	position: relative;
 	margin-bottom: 50px !important;
 }
