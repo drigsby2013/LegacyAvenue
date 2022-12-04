@@ -758,7 +758,25 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .timeline ol {
 	list-style: none;
 	padding: 0;
+	position: relative;
 }
+/*ASSISTANCE*/
+/*Swoosh is causing page width to be too large*/
+/*
+.timeline ol::after {
+    content: '';
+    height: 1385px;
+    width: 610px;
+    background-image: url(/wp-content/uploads/2022/12/LA-Motif.png);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+	transform: translateX(-50%);
+}
+*/
 .timeline li h2 {
 	font-family: 'EB Garamond';
 	font-style: normal;
@@ -771,7 +789,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .timeline li h3 {
 	font-size: 18px;
 	font-weight: 700;
-	margin-top: 0;
 }
 .timeline li h3, 
 .timeline li p {
@@ -785,27 +802,51 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .timeline li {
 	width: 100%;
+	margin-bottom: 50px;
+}
+.timeline li:last-child {
+	margin-bottom: 90px;
 }
 .timeline li .item-content {
-	width: 45%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-/*Odd numbers*/
-.timeline li:nth-child(odd) .item-content {
-	border-left: 1px solid #000;
-	padding-left: 20px;
+	width: 80%;
 	margin-left: auto;
+	margin-right: auto;
 }
-/*Even numbers*/
-.timeline li:nth-child(even) p {
-	margin-right: 0;
-	margin-left: auto;
-}
-.timeline li:nth-child(even) .item-content {
-	border-right: 1px solid #000;
-	text-align: right;
-	padding-right: 20px;
+
+@media screen and (min-width: 768px) {
+	.timeline li {
+		margin-bottom: 0;
+	}
+	.timeline li h3 {
+		margin-top: 0;
+	}
+	.timeline li .item-content {
+		width: 45%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	/*Odd numbers*/
+	.timeline li:nth-child(odd) .item-content {
+		margin-right: 0;
+	}
+	.timeline li:nth-child(odd) .item-content {
+		border-left: 1px solid #000;
+		padding-left: 20px;
+		margin-left: auto;
+	}
+	/*Even numbers*/
+	.timeline li:nth-child(even) .item-content {
+		margin-left: 0;
+	}
+	.timeline li:nth-child(even) p {
+		margin-right: 0;
+		margin-left: auto;
+	}
+	.timeline li:nth-child(even) .item-content {
+		border-right: 1px solid #000;
+		text-align: right;
+		padding-right: 20px;
+	}
 }
 .product-header-wrapper {
 	position: relative;
