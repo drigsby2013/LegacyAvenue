@@ -126,7 +126,9 @@ textarea {
 .home-columns,
 .wide-columns,
 .meet-team,
-.product-wrapper,
+.product-header-wrapper,
+.library-hero,
+.guide-hero,
 .full-width-section {
 	max-width: none !important;
 }
@@ -141,8 +143,10 @@ footer>p,
 .product-header,
 .product-gallery,
 .home-quote,
-.library-hero,
-.guide-hero,
+.library-hero .image,
+.library-hero .text,
+.guide-hero .image,
+.guide-hero .text,
 .library,
 .library-quote,
 .journey-quote,
@@ -555,8 +559,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	}
 }
 
-.home-quote,
-.journey-quote {
+.home-quote {
 	padding-top: 70px;
 }
 .home-quote,
@@ -565,19 +568,13 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	position: relative;
 	margin-bottom: 100px !important;
 }
-@media screen and (min-width: 768px) {
-	.home-quote,
-	.library-quote,
-	.journey-quote {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		margin-bottom: 75px !important;
-	}
-}
+
 .library-quote {
+	margin-top: 50px !important;
 	padding-bottom: 45px !important;
+    border-top: 1px solid #D0947B;
 	border-bottom: 3px solid #D0947B;
+	padding-top: 20px;
 }
 .library-quote::before {
 	content: '';
@@ -658,8 +655,22 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	line-height: 40px;
 
 }
-@media only screen and (min-width: 768px) {
-	.home-quote .quote,
+@media screen and (min-width: 768px) {
+	.journey-quote {
+		padding-top: 70px;
+	}
+	.library-quote {
+		margin-top: 0px !important;
+	}
+	.home-quote,
+	.library-quote,
+	.journey-quote {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 75px !important;
+	}
+		.home-quote .quote,
 	.library-quote .quote,
 	.journey-quote .quote {
 		width: 75%;
@@ -748,6 +759,29 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	font-size: 22px;
 	line-height: 22px;
 	margin-bottom: 45px;
+}
+.journey-cta-lines {
+	padding-bottom: 120px;
+	border-bottom: 3px solid #D0947B;
+	position: relative;
+}
+.journey-cta-lines::after {
+	position: absolute;
+	content: '';
+	height: 1px;
+	width: 100%;
+	background-color: #D0947B;
+	bottom: -13px;
+	left: 0;
+}
+@media screen and (min-width: 768px) {
+	.journey-cta {
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+	.journey-cta-lines::after {
+		display: none;
+	}
 }
 
 /*Your Journey Page*/
@@ -852,37 +886,16 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	position: relative;
 	margin-bottom: 50px !important;
 }
-.product-header {
-	border-top: 3px solid #D0947B;
-	position: relative;
-	margin-top: 155px !important;
-	padding-top: 115px;
+.product-header-wrapper .image {
+	margin-bottom: 75px;
 }
 .product-header::after {
-	position: absolute;
-    height: 1px;
-    width: 100%;
-    content: '';
-    background-color: #D0947B;
-    top: 10px;
-}
-.product-header .text {
-	width: 75%;
-	max-width: 800px;
 }
 .product-header .text p {
 	max-width: 520px;
 }
-.product-header-wrapper .image {
-	position: absolute;
-	top: -120px;
-	right: 0;
-}
 .product-gallery {
-	max-width: 1200px !important;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 100px !important;
+	margin-bottom: 150px !important;
 	display: flex;
 	justify-content: space-between;
 	row-gap: 69px;
@@ -892,9 +905,9 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .product-gallery .product {
 	max-width: 380px;
 	text-align: center;
-	padding: 60px 60px 30px;
 	border: 1px solid #000000;
 	position: relative;
+	padding: 60px 30px 30px;
 }
 .product-gallery .product p {
 	text-align: left;
@@ -905,36 +918,65 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	left: 50%;
 	transform: translate(-50%, 50%);
 }
+@media screen and (min-width: 768px) {
+	.product-header-wrapper .image {
+		position: absolute;
+		top: -120px;
+		right: 0;
+	}
+	.product-header {
+		border-top: 3px solid #D0947B;
+		position: relative;
+		margin-top: 155px !important;
+		padding-top: 115px;
+	}
+	.product-header::after {	
+		position: absolute;
+		height: 1px;
+		width: 100%;
+		content: '';
+		background-color: #D0947B;
+		top: 10px;
+	}
+	.product-header .text {
+		width: 75%;
+		max-width: 800px;
+	}
+	.product-gallery .product {
+		padding: 60px 60px 30px;
+	}
+	.product-gallery {
+		margin-bottom: 100px !important;
+	}
+}
 
 /*Library Page*/
 .library-hero,
 .guide-hero {
 	max-width: 1200px !important;
 	position: relative;
-	padding-bottom: 12px;
-    border-bottom: 1px solid #D0947B;
-	margin-bottom: 45px !important;
+	margin-bottom: 12px !important;
 }
-.library-hero .text,
-.guide-hero .text {
-	width: 75%;
-	max-width: 840px;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+
+@media screen and (min-width: 768px) { 
+	.library-hero .text,
+	.guide-hero .text {
+		width: 75%;
+		max-width: 840px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
-.library {
-	max-width: 1200px !important;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-/*	ASSISTANCE - column gap spacing isn't cooperating. It keeps adding space on the outside of the columns, not just the interior gaps. */
-	column-gap: 60px;
-	justify-content: space-between;
+@media screen and (max-width: 768px) {
+	.library-hero .image,
+	.guide-hero .image {
+		width: 100%;
+	}
 }
 .library.guide {
 	column-gap: unset;
@@ -944,10 +986,11 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .library .library-index ul {
 	padding: 0;
-	text-align: right;
+	text-align: center;
 	font-size: 16px;
 	line-height: 35px;
 	list-style: none;
+	margin-bottom: 75px !important;
 }
 .library .library-index ul a {
 	text-decoration: none;
@@ -1009,10 +1052,24 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .library-item .link a:focus { 
 	text-decoration: underline;
 }
+@media only screen and (min-width: 768px) {
+	.library {
+		display: flex;
+		column-gap: 60px;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+	}
+	.library .library-index ul {
+		text-align: right;
+		margin-bottom: 25px;
+	}
+}
 .pagination {
 	max-width: 1200px !important;
 	margin: 100px auto 0px !important;
 	text-align: center;
+	margin-top: 55px !important;
+	margin-bottom: 100px !important;
 }
 .calendar {
 	max-width: 1200px !important;
