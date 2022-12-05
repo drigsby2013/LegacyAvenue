@@ -107,3 +107,11 @@ function getSocialIcon($url) {
 
     return $platform;
 }
+
+
+
+function getCategoryUrl($cat) {
+
+    echo $cat->slug;
+
+}
