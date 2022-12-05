@@ -19,6 +19,7 @@ function crb_attach_theme_options() {
 	$basic_options_container = Container::make( 'theme_options', __( 'Company Info' ) )
 		->set_icon('dashicons-clipboard')
 	    ->add_fields([
+	        Field::make( 'text', 'crb_company_legalname', __( 'Company Name' ) ),
 	        Field::make( 'text', 'crb_operating_hours', __( 'Hours of Operation' ) ),
 	        Field::make( 'select', 'crb_timezone', __( 'Timezone' ) )
 		        ->add_options([
