@@ -29,47 +29,44 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
 
-
-
-
-		<header id="masthead" class="site-header">
-			<div class="site-branding">
-				<?php twentyfifteen_the_custom_logo(); ?>
-
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php endif; ?>
-
-
-				<?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; ?></p>
-					<?php endif; ?>
-				<button class="secondary-toggle"><?php _e( 'Menu and widgets', 'twentyfifteen' ); ?></button>
-
-
-			</div><!-- .site-branding -->
-
+	<header class="flex">
+		<div class="is-layout-constrained wp-block-group gapless-group header-contents">
+			<div class="flex space-between site-header" style="padding-top:var(--wp--custom--gap--vertical);padding-bottom:var(--wp--custom--gap--vertical)">
+				<div class="flex space-between align-center wp-block-group site-brand">
+					<div class="wp-block-site-logo">
+						<?php twentyfifteen_the_custom_logo(); ?>
+					</div>
 
 					<?php if ( has_nav_menu( 'primary' ) ) : ?>
-			<nav id="site-navigation" class="main-navigation">
-				<?php
-					// Primary navigation menu.
-					wp_nav_menu(
-						array(
-							'menu_class'     => 'nav-menu',
-							'theme_location' => 'primary',
-						)
-					);
-				?>
-			</nav><!-- .main-navigation -->
-		<?php endif; ?>
-		</header><!-- .site-header -->
+					<?php
+						// Primary navigation menu.
+						wp_nav_menu([
+							'menu_class'      	=> 'nav-menu',
+							'theme_location'  	=> 'primary',
+							'container'       	=> 'nav',
+							'container_id'    	=> 'site-navigation',
+							'container_class' 	=> 'main-navigation',
+						]);
+					?>
+					<?php endif; ?>
 
-		<?php // get_sidebar(); ?>
-	</div><!-- .sidebar -->
 
-	<div id="content" class="site-content">
+					<div class="flex align-center wp-block-buttons">
+						<div class="wp-block-button">
+							<a class="wp-block-button__link wp-element-button" href="/contact-us">Talk with us</a>
+						</div>
+					</div>
+
+					<!-- <button class="secondary-toggle"><?php _e( 'Menu and widgets', 'twentyfifteen' ); ?></button> -->
+				</div>
+			</div>
+		</div>
+	</header>
+
+</div>
+
+
+
+
+
+<div id="content" class="site-content">

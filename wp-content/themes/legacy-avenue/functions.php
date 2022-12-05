@@ -26,89 +26,20 @@
  */
 
 
-/**
- * RUN THROUGH SOME OPTIMIZATIONS
- * - https://www.youtube.com/watch?v=T0U6wxU8cvA
- * - https://simplerevolutions.design/making-wordpress-faster-with-and-without-plugins/
- */
+require __DIR__ . '/inc/cleanup.php';
+require __DIR__ . '/inc/menus.php';
+require __DIR__ . '/inc/widgets.php';
+require __DIR__ . '/inc/helpers.php';
+
+
 
 // Remove Gutenberg CSS.
 add_action('wp_enqueue_scripts', function() {
-    wp_dequeue_style('wp-block-library'); // External CSS
-    wp_dequeue_style('wp-block-library-theme'); // Inline CSS
-    wp_dequeue_style('global-styles'); // Inline CSS
+    wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+    // wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css');
+    // wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css');
 }, 20);
 
-// Remove blank SVGs
-remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
-//Disable emojis in WordPress
-add_action('init', 'smartwp_disable_emojis');
+// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-function smartwp_disable_emojis() {
-    remove_action('wp_head', 'print_emoji_detection_script', 7);
-    remove_action('admin_print_scripts', 'print_emoji_detection_script');
-    remove_action('wp_print_styles', 'print_emoji_styles');
-    remove_filter('the_content_feed', 'wp_staticize_emoji');
-    remove_action('admin_print_styles', 'print_emoji_styles');
-    remove_filter('comment_text_rss', 'wp_staticize_emoji');
-    remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-    add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
-}
-
-function disable_emojis_tinymce($plugins) {
-    if (is_array($plugins)) {
-        return array_diff($plugins, array('wpemoji'));
-    } else {
-        return array();
-    }
-}
-
-// Remove jQuery migrate
-function remove_jquery_migrate($scripts) {
-    if (!is_admin() && isset($scripts->registered['jquery'])) {
-        $script = $scripts->registered['jquery'];
-
-        if ($script->deps) {
-            $script->deps = array_diff($script->deps, array('jquery-migrate'));
-        }
-    }
-}
-add_action('wp_default_scripts', 'remove_jquery_migrate');
-
-
-
-/**
- * For security reasons, we disable the REST API support for non-logged in users
- */
-/* Disable REST API link in HTTP headers */
-remove_action('template_redirect', 'rest_output_link_header', PHP_INT_MAX);
-
-/* Disable REST API links in HTML */
-remove_action('wp_head', 'rest_output_link_wp_head', PHP_INT_MAX);
-remove_action('xmlrpc_rsd_apis', 'rest_output_rsd');
-
-/* Disable REST API */
-if (version_compare(get_bloginfo('version'), '4.7', '>=')) {
-    add_filter('rest_authentication_errors', 'disable_wp_rest_api');
-} else {
-    disable_wp_rest_api_legacy();
-}
-
-function disable_wp_rest_api($access) {
-    if (!is_user_logged_in()) {
-        $message = apply_filters('disable_wp_rest_api_error', __('REST API restricted to logged in users.', 'disable-wp-rest-api'));
-        return new WP_Error('rest_login_required', $message, array('status' => rest_authorization_required_code()));
-    }
-    return $access;
-}
-
-function disable_wp_rest_api_legacy() {
-    // REST API 1.x
-    add_filter('json_enabled', '__return_false');
-    add_filter('json_jsonp_enabled', '__return_false');
-
-    // REST API 2.x
-    add_filter('rest_enabled', '__return_false');
-    add_filter('rest_jsonp_enabled', '__return_false');
-}

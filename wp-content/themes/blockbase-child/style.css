@@ -942,13 +942,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	left: 50%;
 	transform: translate(-50%, 50%);
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*Library Page*/
-.library-hero,
-.guide-hero {
-=======
-=======
 @media screen and (min-width: 768px) {
 	.product-header-wrapper .image {
 		position: absolute;
@@ -980,13 +973,11 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		margin-bottom: 100px !important;
 	}
 }
->>>>>>> Mobile styles for Journey, Library, and Guide pages
 
 /*Library Page*/
 .library-hero,
 .guide-hero {
 	max-width: 1200px !important;
->>>>>>> force classic theme for editing simplicity
 	position: relative;
 	margin-bottom: 12px !important;
 }
@@ -1005,37 +996,27 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		transform: translate(-50%, -50%);
 	}
 }
-<<<<<<< HEAD
 .library {
-<<<<<<< HEAD
 	display: flex;
-=======
 	max-width: 1200px !important;
 	margin-left: auto;
 	margin-right: auto;
 	display: flex;
-/*	ASSISTANCE - column gap spacing isn't cooperating. It keeps adding space on the outside of the columns, not just the interior gaps. */
->>>>>>> force classic theme for editing simplicity
 	column-gap: 60px;
 	justify-content: space-between;
-=======
+}
 @media screen and (max-width: 768px) {
 	.library-hero .image,
 	.guide-hero .image {
 		width: 100%;
-	}
-	
->>>>>>> Mobile styles for Journey, Library, and Guide pages
+	}	
 }
 .library.guide {
 	column-gap: unset;
 }
 .library .library-index {
-<<<<<<< HEAD
 	min-width: 100px;
-=======
 	width: 100px;
->>>>>>> force classic theme for editing simplicity
 }
 .library .library-index ul {
 	padding: 0;
@@ -1066,10 +1047,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	width: 100%;
 }
 .library ul.library-items  {
-<<<<<<< HEAD
 	list-style: none;
-=======
->>>>>>> force classic theme for editing simplicity
 	padding: 0;
 }
 .library .library-items .library-item {
@@ -1122,10 +1100,11 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	}
 }
 .pagination {
-<<<<<<< HEAD
 	text-align: center;
 	margin-top: 55px !important;
-	margin-bottom: 100px !important;
+/*	margin-bottom: 100px !important;*/
+	max-width: 1200px !important;
+	margin: 100px auto 0px !important;
 }
 /*Local Guide Page*/
 .guide-hero {
@@ -1134,18 +1113,11 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .guide-recommends {
 	margin-bottom: 45px !important;
 }
-.calendar { }
-=======
-	max-width: 1200px !important;
-	margin: 100px auto 0px !important;
-	text-align: center;
-}
 .calendar {
 	max-width: 1200px !important;
 	margin-left: auto;
 	margin-right: auto;
 }
->>>>>>> force classic theme for editing simplicity
 /*--------------*/
 /*Mobile Styles*/
 /*--------------*/

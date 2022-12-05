@@ -10,33 +10,66 @@
  */
 ?>
 
-	</div><!-- .site-content -->
+	</div>
+	<!-- .site-content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<?php
-				/**
-				 * Fires before the Twenty Fifteen footer text for footer customization.
-				 *
-				 * @since Twenty Fifteen 1.0
-				 */
-				do_action( 'twentyfifteen_credits' );
-			?>
-			<?php
-			if ( function_exists( 'the_privacy_policy_link' ) ) {
-				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-			}
-			?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>" class="imprint">
-				<?php
-				/* translators: %s: WordPress */
-				printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' );
-				?>
-			</a>
-		</div><!-- .site-info -->
-	</footer><!-- .site-footer -->
+	<footer class="site-footer-container wp-block-template-part">
+		<div class="flex justify-left nowrap wp-block-group">
+			<div class="is-nowrap is-layout-flex wp-block-group alignwide footer-group">
+				<div class="is-layout-constrained wp-block-group logo-socials">
 
-</div><!-- .site -->
+					<figure class="wp-block-image size-full is-resized">
+						<img decoding="async" loading="lazy" src="index_files/Screen-Shot-2022-11-29-at-1.16.25-AM.png" alt="" class="wp-image-28" width="150" height="50">
+					</figure>
+
+					<?php if ( has_nav_menu( 'social' ) ) : ?>
+					<ul class="flex space-between wp-block-social-links has-icon-color is-style-logos-only">
+						<?php $socialLinks = wp_get_menu_array('social'); ?>
+						<?php foreach ($socialLinks as $link) : ?>
+							<?php
+								$icon = getSocialIcon($link['url']);
+								if (!$icon) { continue; }
+							?>
+							<li>
+								<a href="<?php echo $link['url']; ?>">
+									<span class="fab <?php echo $icon; ?>"></span>
+									<span class="screen-reader-text"><?php echo $link['title']; ?></span>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+					<?php endif; ?>
+				</div>
+
+
+
+
+				<?php if ( has_nav_menu( 'footer' ) ) : ?>
+				<?php $footerMenu = wp_get_menu_array('footer'); ?>
+
+				<div class="flex space-between wp-block-group footer-menu">
+
+					<?php foreach($footerMenu as $group) : ?>
+					<div class="is-layout-constrained wp-block-group">
+						<h2><?php echo $group['title']; ?></h2>
+						<ul>
+							<?php foreach ($group['children'] as $link) : ?>
+							<li><a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a></li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+					<?php endforeach; ?>
+				</div>
+
+				<?php endif; ?>
+
+			</div>
+		</div>
+
+		<p><?php legacyavenue_footer_copyright(); ?></p>
+	</footer>
+
+</div>
 
 <?php wp_footer(); ?>
 
