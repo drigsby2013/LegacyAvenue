@@ -153,6 +153,7 @@ footer>p,
 .pagination,
 .calendar,
 .meet-team h2,
+h2.guide-recommends,
 .home-hero .home-hero-text, 
 .story-hero .story-hero-text,
 .normal-width-section {
@@ -429,14 +430,13 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .home-columns {
 	margin-bottom: 90px !important;
 }
-.home-columns .column {
-	padding-top: 160px;
-	padding-bottom: 45px;
+.home-columns .column .text {
+	padding-top: 150px;
+	padding-bottom: 47px;
+	max-width: 510px;
 }
 .meet-team .wide-columns {
 	margin-bottom: 75px !important;
-}
-.column:first-of-type {
 }
 .column {
 	width: 100%;
@@ -444,7 +444,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	
 }
 .column img {
 	width: 100%;
@@ -461,8 +460,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .column .text .wp-block-button {
 	margin-top: 6px;
 }
-.home-columns .column::before,
-.home-columns .column .image::before {
+.home-columns .column::before {
 	position: absolute;
     width: 100%;
     height: 68%;
@@ -474,9 +472,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .narrow-columns {
 	max-width: none !important;
-}
-.narrow-columns .column {
-/*	padding-top: 0;*/
 }
 .narrow-columns span.member-title {
 	display: block;
@@ -505,6 +500,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		padding-bottom: 0;
 		padding-top: 0;
 		margin-bottom: 0;
+		position: relative;
 	}
 	.home-columns,
 	.wide-columns {
@@ -531,7 +527,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	}
 	.column {
 		width: calc(50% - 15px);
-		background-image: none !important;
 		padding: 0;
 	}
 	.wide-columns .column {
@@ -551,12 +546,40 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		left: 0;
 		top: 0;
 	}
-	.home-columns .column::before {
-		display: none;
+	.home-columns .column .text {
+		padding-top: 208px;
 	}
-	.home-columns .column .image::before { 
-		bottom: 7px;
+	.home-columns .column:first-of-type .text {
+		margin-left: auto;
+		margin-right: 60px;
 	}
+	.home-columns .column:last-of-type .text {
+		margin-right: auto;
+		margin-left: 60px;
+	}
+}
+.team-gallery {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media only screen and (min-width: 768px) {
+	.team-gallery {
+		width: 100%;
+	}
+}
+.rl-basicgrid-gallery {
+	column-gap: 9px;
+	row-gap: 12px;
+}
+.rl-basicgrid-gallery .rl-gallery-item {
+	margin: 0 !important;
+}
+.rl-basicgrid-gallery .rl-gallery-item .rl-gallery-link {
+	aspect-ratio: 1 / 1;
+}
+.rl-basicgrid-gallery .rl-gallery-item .rl-gallery-link img {
+	object-fit: cover;
 }
 
 .home-quote {
@@ -691,8 +714,8 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.local-guide::before,
-.local-guide .guide-image::before {
+.local-guide::before {
+/*.local-guide .guide-image::before {*/
 	position: absolute;
     width: 100%;
     height: 73%;
@@ -725,16 +748,14 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		width: 80%;
 		margin-left: auto;
 		margin-right: auto;
-		background-image: none !important;
 		padding: 0;
 	}
-	.local-guide::before {
-		display: none;
-	}
 	.local-guide .guide-text {
-		position: absolute;
-		top: 130px;
-		left: 70px;
+		padding-top: 160px;
+		padding-left: 70px;
+		padding-bottom: 67px;
+	}
+	.local-guide .guide-text p {
 		max-width: 330px;
 	}
 }
@@ -974,7 +995,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	.library-hero .text,
 	.guide-hero .text {
 		width: 75%;
-		max-width: 840px;
+		max-width: 840px !important;
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
@@ -1053,6 +1074,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .library .library-items .library-item {
 	max-width: 300px;
+	margin-bottom: 50px;
 }
 .library.guide .library-items .library-item {
 	max-width: 350px;
@@ -1104,6 +1126,13 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	text-align: center;
 	margin-top: 55px !important;
 	margin-bottom: 100px !important;
+}
+/*Local Guide Page*/
+.guide-hero {
+	margin-bottom: 84px !important;
+}
+.guide-recommends {
+	margin-bottom: 45px !important;
 }
 .calendar { }
 =======
