@@ -36,14 +36,14 @@ function crb_attach_theme_options() {
 	    ]);
 
 
-	// Add second options page under 'Basic Options'
-	Container::make( 'theme_options', __( 'Social Links' ) )
-	    ->set_page_parent( $basic_options_container ) // reference to a top level container
-	    ->add_fields( array(
-	        Field::make( 'text', 'crb_facebook_link', __( 'Facebook Link' ) ),
-	        Field::make( 'text', 'crb_instagram_link', __( 'Instagram Link' ) ),
-	        // Field::make( 'text', 'crb_twitter_link', __( 'Twitter Link' ) ),
-	    ) );
+	// // Add second options page under 'Basic Options'
+	// Container::make( 'theme_options', __( 'Social Links' ) )
+	//     ->set_page_parent( $basic_options_container ) // reference to a top level container
+	//     ->add_fields( array(
+	//         Field::make( 'text', 'crb_facebook_link', __( 'Facebook Link' ) ),
+	//         Field::make( 'text', 'crb_instagram_link', __( 'Instagram Link' ) ),
+	//         // Field::make( 'text', 'crb_twitter_link', __( 'Twitter Link' ) ),
+	//     ) );
 
 	// // Add third options page under "Appearance"
 	// Container::make( 'theme_options', __( 'Customize Background' ) )
