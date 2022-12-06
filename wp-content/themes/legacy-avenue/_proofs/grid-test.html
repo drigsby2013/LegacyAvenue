@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+
+		.grid {
+			--gap: 0;
+			display: grid;
+			gap: var(--gap);
+		}
+
+		.grid.cols-1 { grid-template-columns: 1fr; }
+		.grid.cols-2 { grid-template-columns: 1fr 1fr; }
+		.grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+		.grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+		.grid.gap-1 { --gap: 1em }
+		.grid.gap-2 { --gap: 2em }
+		.grid.gap-3 { --gap: 3em }
+		.grid.gap-4 { --gap: 4em }
+
+
+		@media screen and (min-width: 480px) {
+			.grid.sm-cols-1 { grid-template-columns: 1fr; }
+			.grid.sm-cols-2 { grid-template-columns: 1fr 1fr; }
+			.grid.sm-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+			.grid.sm-cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+			.grid.sm-gap-1 { --gap: 1em }
+			.grid.sm-gap-2 { --gap: 2em }
+			.grid.sm-gap-3 { --gap: 3em }
+			.grid.sm-gap-4 { --gap: 4em }
+		}
+
+		@media screen and (min-width: 760px) {
+			.grid.md-cols-1 { grid-template-columns: 1fr; }
+			.grid.md-cols-2 { grid-template-columns: 1fr 1fr; }
+			.grid.md-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+			.grid.md-cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+			.grid.md-gap-1 { --gap: 1em }
+			.grid.md-gap-2 { --gap: 2em }
+			.grid.md-gap-3 { --gap: 3em }
+			.grid.md-gap-4 { --gap: 4em }
+		}
+
+		@media screen and (min-width: 1000px) {
+			.grid.lg-cols-1 { grid-template-columns: 1fr; }
+			.grid.lg-cols-2 { grid-template-columns: 1fr 1fr; }
+			.grid.lg-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+			.grid.lg-cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+			.grid.lg-gap-1 { --gap: 1em }
+			.grid.lg-gap-2 { --gap: 2em }
+			.grid.lg-gap-3 { --gap: 3em }
+			.grid.lg-gap-4 { --gap: 4em }
+		}
+
+		@media screen and (min-width: 1200px) {
+			.grid.xl-cols-1 { grid-template-columns: 1fr; }
+			.grid.xl-cols-2 { grid-template-columns: 1fr 1fr; }
+			.grid.xl-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+			.grid.xl-cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+			.grid.xl-gap-1 { --gap: 1em }
+			.grid.xl-gap-2 { --gap: 2em }
+			.grid.xl-gap-3 { --gap: 3em }
+			.grid.xl-gap-4 { --gap: 4em }
+		}
+
+
+		.library-item {
+			background-color: #f90;
+		}
+	</style>
+</head>
+<body>
+
+
+	<main class="grid gap-2 lg-gap-3 four-cols md-cols-2 lg-cols-3">
+
+		<div class="library-item">Text</div>
+		<div class="library-item">Text</div>
+		<div class="library-item">Text</div>
+		<div class="library-item">Text</div>
+		<div class="library-item">Text</div>
+		<div class="library-item">Text</div>
+		<div class="library-item">Text</div>
+
+	</main>
+
+</body>
+</html>

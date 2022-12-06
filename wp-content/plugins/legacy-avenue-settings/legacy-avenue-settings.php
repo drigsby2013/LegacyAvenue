@@ -15,7 +15,10 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
 
-	// Default options page
+   	// =============================================
+   	//  COMPANY SETTINGS PAGE
+   	// =============================================
+
 	$basic_options_container = Container::make( 'theme_options', __( 'Company Info' ) )
 		->set_icon('dashicons-clipboard')
 	    ->add_fields([
@@ -61,13 +64,27 @@ function crb_attach_theme_options() {
 	//     ]);
 
 
+
+   	// =============================================
+   	//  LOCAL GUIDE META BLOCKS
+   	// =============================================
+
+	Container::make( 'post_meta', __( 'Recommendations' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-localguide.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_recommendations_header', __( 'Recommendations Heading' ) ),
+	        // Field::make( 'textarea', 'crb_calendar_description', __( 'Calendar Description' ) ),
+	        // Field::make( 'text', 'crb_calendar_embed', __( 'Calendar Embed' ) ),
+		]);
+
+	Container::make( 'post_meta', __( 'Calendar Settings' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-localguide.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_calendar_header', __( 'Calendar Heading' ) ),
+	        Field::make( 'textarea', 'crb_calendar_description', __( 'Calendar Description' ) ),
+	        Field::make( 'text', 'crb_calendar_embed', __( 'Calendar Embed' ) ),
+		]);
+
 }
-
-
-
-// function lapPrefix($label) {
-// 	$label = trim(strtolower($label));
-// 	$label = preg_replace('/[^\w\d]/', '_', $label);
-// 	return 'legacyavenue_' . $label;
-// }
-
