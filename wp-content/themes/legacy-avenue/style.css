@@ -2826,6 +2826,7 @@ body.author article .entry-content {
 }
 .narrow-columns span.member-title {
 	display: block;
+	text-transform: uppercase;
 	font-family: 'Helvetica';
 	font-style: normal;
 	font-weight: 300;
@@ -2874,7 +2875,9 @@ body.author article .entry-content {
 		margin-bottom: 30px;
 	}
 	.narrow-columns span.member-title {
-		display: inline;
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 	.column {
 		width: calc(50% - 15px);
@@ -3116,6 +3119,21 @@ body.author article .entry-content {
 }
 .meet-team h2 {
 	margin: 30px auto 50px;
+}
+.meet-team h3::after {
+	position: absolute;
+	height: 1px;
+	width: 55%;
+	top: 80px;
+	right: 0;
+	content: '';
+	background: #D0947B;
+}
+@media screen and (min-width: 768px) {
+	.meet-team h3::after {
+		width: 62%;
+		top: 24px;
+	}
 }
 .lightbox {
 	margin-bottom: 100px !important;
