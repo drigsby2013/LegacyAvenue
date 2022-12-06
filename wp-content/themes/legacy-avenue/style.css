@@ -2685,6 +2685,30 @@ body.author article .entry-content {
 	margin-bottom: 50px !important;
 	margin-top: 75px !important;
 }
+.home-columns h2,
+.meet-team h2,
+.meet h2 {
+	position: relative;
+}
+.home-columns h2::after,
+.meet-team h2::after,
+.meet h2::after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 200px;
+    background: #000000;
+    top: 22px;
+    right: 0;
+}
+.meet-team h2::after {
+	left: 110px;
+}
+@media screen and (min-width: 768px) {
+	.home-columns h2::after {
+		width: 350px;
+	}
+}
 .meet-text {
 	width: 80%;
 	margin-left: auto;
