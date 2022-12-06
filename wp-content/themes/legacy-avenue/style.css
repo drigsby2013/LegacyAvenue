@@ -859,6 +859,7 @@ textarea {
 /*Page content restrictions*/
 /* Full width | Class = full-width-section */
 
+body.single-post main,
 .full-width-section,
 .guide-hero,
 .guide-hero .image,
@@ -874,7 +875,9 @@ textarea {
 
 
 /* 1200px max width | Class = normal-width-section */
-body.single-post main,
+body.single-post main .entry-header,
+body.single-post main .entry-content,
+body.single-post main .entry-footer,
 header .header-contents,
 footer>div,
 footer>p,
@@ -1046,23 +1049,35 @@ body.single-post .post-thumbnail img {
 	width: 100%;
 	height: auto;
 }
-body.single-post .post-thumbnail { 
-	padding-bottom: 12px;
-	position: relative;
-	margin-bottom: 45px;
-	border-bottom: 3px solid #D0947B;
-} 
-body.single-post .post-thumbnail::after { 
-	position: absolute;
-	width: 100%;
-	height: 1px;
-	left: 0;
-	bottom: -12px;
-	background: #D0947B;
-	content: '';
+body.single-post .entry-header h1 { 
+	margin-top: 50px;
 }
+
 body.single-post main {
 	margin-bottom: 50px;
+}
+@media screen and (min-width: 768px) {
+	body.single-post .post-thumbnail { 
+		max-width: 1200px !important;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	body.single-post .entry-header h1 { 
+		margin-top: 12px;
+		position: relative;
+		padding-top: 45px;
+		border-top: 3px solid #D0947B;
+	}
+	body.single-post .entry-header h1::before { 
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		left: 0;
+		top: 9px;
+		background: #D0947B;
+		content: '';
+	}
 }
 
 
