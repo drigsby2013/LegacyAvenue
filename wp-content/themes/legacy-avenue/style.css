@@ -1047,6 +1047,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .home-hero .mobile-only img {
 	width: 100%;
+	height: auto;
 }
 .journey-hero .columns .hero-column:not(.large-only) {
 	width: 80%;
@@ -1208,6 +1209,21 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		position: relative;
 		padding-top: 110px;
 		padding-bottom: 70px;
+	}
+	.meet::after {
+		content: '';
+		position: absolute;
+		width: 560px;
+		height: 1396px;
+		background-image: url(/wp-content/uploads/2022/12/LA-Motif.png);
+		top: -380px;
+		left: 5%;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		transform: rotate(180deg);
+		opacity: 50%;
+		z-index: 2;
 	}
 	.meet::before {
 		max-height: 150px;
@@ -1655,23 +1671,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-left: auto;
 	margin-right: auto;
 }
-/*ASSISTANCE*/
-/*Swoosh is causing page width to be too large*/
-/*
-.timeline ol::after {
-	content: '';
-	height: 1385px;
-	width: 610px;
-	background-image: url(/wp-content/uploads/2022/12/LA-Motif.png);
-	position: absolute;
-	bottom: 20px;
-	left: 50%;
-	background-size: cover;
-	background-position: center bottom;
-	background-repeat: no-repeat;
-	transform: translateX(-50%);
-}
-*/
 .timeline ol {
 	list-style: none;
 	padding: 0;
@@ -1713,6 +1712,20 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 
 @media screen and (min-width: 768px) {
+	.timeline ol::after {
+		content: '';
+		position: absolute;
+		width: 608px;
+		height: 1426px;
+		background-image: url(/wp-content/uploads/2022/12/LA-Motif.png);
+		top: -230px;
+		left: 15%;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 50%;
+		z-index: 2;
+	}
 	.timeline li {
 		margin-bottom: 0;
 	}
