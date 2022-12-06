@@ -153,8 +153,9 @@ footer>p,
 .pagination,
 .calendar,
 .meet-team h2,
+
 h2.guide-recommends,
-.home-hero .home-hero-text, 
+.home-hero .home-hero-text,
 .story-hero .story-hero-text,
 .normal-width-section {
 	max-width: 1200px !important;
@@ -317,7 +318,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .story-hero .story-hero-text h3 {
 	padding-top: 20px;
 } 
-.home-hero .home-hero-text .wp-block-button { 
+.home-hero .home-hero-text .wp-block-button {
 	margin-top: 45px;
 }
 .home-hero-text::after,
@@ -338,11 +339,11 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	.home-hero .home-hero-text .wp-block-button {
 		margin-top: 18px;
 	}
-	.home-hero .home-hero-text h1, 
-	.home-hero .home-hero-text h2, 
+	.home-hero .home-hero-text h1,
+	.home-hero .home-hero-text h2,
 	.home-hero .home-hero-text h3,
-	.story-hero .story-hero-text h1, 
-	.story-hero .story-hero-text h2, 
+	.story-hero .story-hero-text h1,
+	.story-hero .story-hero-text h2,
 	.story-hero .story-hero-text h3 {
 		padding-top: 45px;
 		max-width: 500px;
@@ -394,7 +395,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	max-height: 400px;
 	z-index: 0;
 }
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
 	.meet {
 		padding-bottom: 58px;
 	}
@@ -444,6 +445,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+
 }
 .column img {
 	width: 100%;
@@ -549,6 +551,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	.home-columns .column .text {
 		padding-top: 208px;
 	}
+
 	.home-columns .column:first-of-type .text {
 		margin-left: auto;
 		margin-right: 60px;
@@ -607,19 +610,9 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	background: #D0947B;
 	bottom: -10px;
 }
-.home-quote,
-.journey-quote {
-	padding-top: 70px;
-}
-.home-quote,
-.library-quote,
-.journey-quote {
-	max-width: 1200px !important;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	position: relative;
-	margin-bottom: 75px !important;
+
+.home-quote {
+	border-top: 3px solid #D0947B;
 }
 .library-quote {
 	padding-bottom: 45px !important;
@@ -772,6 +765,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .story-cta,
 .journey-cta {
+
 	text-align: center;
 	margin-bottom: 100px !important;
 }
@@ -842,6 +836,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-top: 0;
 }
 .timeline li h3 {
+
 	font-size: 18px;
 	font-weight: 700;
 }
@@ -849,10 +844,12 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .timeline li p {
 	font-family: 'Helvetica';
 	font-style: normal;
+
 	line-height: 22px;
 }
 .timeline li p {
 	max-width: 330px;
+
 	font-size: 14px;
 }
 .timeline li {
@@ -904,9 +901,11 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	}
 }
 .product-header-wrapper {
+
 	position: relative;
 	margin-bottom: 50px !important;
 }
+
 .product-header-wrapper .image {
 	margin-bottom: 75px;
 }
@@ -916,6 +915,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	max-width: 520px;
 }
 .product-gallery {
+
 	margin-bottom: 150px !important;
 	display: flex;
 	justify-content: space-between;
@@ -951,7 +951,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		margin-top: 155px !important;
 		padding-top: 115px;
 	}
-	.product-header::after {	
+	.product-header::after {
 		position: absolute;
 		height: 1px;
 		width: 100%;
@@ -974,12 +974,12 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 /*Library Page*/
 .library-hero,
 .guide-hero {
-	max-width: 1200px !important;
+
 	position: relative;
 	margin-bottom: 12px !important;
 }
 
-@media screen and (min-width: 768px) { 
+@media screen and (min-width: 768px) {
 	.library-hero .text,
 	.guide-hero .text {
 		width: 75%;
@@ -993,17 +993,20 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 		transform: translate(-50%, -50%);
 	}
 }
+
 @media screen and (max-width: 768px) {
 	.library-hero .image,
 	.guide-hero .image {
 		width: 100%;
 	}
+
 }
 .library.guide {
 	column-gap: unset;
 }
 .library .library-index {
-	width: 100px;
+
+	min-width: 100px;
 }
 .library .library-index ul {
 	padding: 0;
@@ -1034,6 +1037,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	width: 100%;
 }
 .library ul.library-items  {
+
 	list-style: none;
 	padding: 0;
 }
@@ -1087,8 +1091,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	}
 }
 .pagination {
-	max-width: 1200px !important;
-	margin: 100px auto 0px !important;
+
 	text-align: center;
 	margin-top: 55px !important;
 	margin-bottom: 100px !important;

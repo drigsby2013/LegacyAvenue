@@ -1,5 +1,3 @@
-
-
 var app = new Vue({
 	el: '#recommended-container',
 

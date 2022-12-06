@@ -727,6 +727,10 @@ body {
 .wp-site-blocks {
 	padding: 0 !important;
 }
+main {
+	margin-top: 0 !important;
+}
+
 h1,
 h2,
 h3,
@@ -755,9 +759,9 @@ h4 a,
 h5 a,
 h6 a {
 	font-size: 44px;
-	line-height: 40px;
 }
 h1 {
+	font-size: 32px;
 	margin-bottom: 41px;
 }
 h2,
@@ -855,6 +859,7 @@ textarea {
 }
 
 
+
 /*-----------*/
 /*Page content restrictions*/
 /* Full width | Class = full-width-section */
@@ -935,8 +940,7 @@ p:empty{
 
 header .header-contents {
 	border-bottom: 1px solid #D0947B;
-	max-width: 1200px;
-	margin: 0 auto 68px;
+	margin: 0 auto 32px;
 }
 header .site-brand {
 	width: 100%;
@@ -961,7 +965,6 @@ header .site-brand ul {
 }
 header .site-brand ul li {
 	list-style: none;
-	display: flex;
 	margin-right: 25px;
 	font-size: 14px;
 	line-height: 16px;
@@ -988,12 +991,10 @@ header .site-brand ul li a:active {
 footer {
 	background-color: #E7C593;
 	padding: 50px 0px;
+	margin-top: 0 !important;
 }
 footer .footer-group {
 	width: 100%;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
 	display: flex;
 	justify-content: space-between;
 }
@@ -1004,9 +1005,6 @@ footer .logo-socials .wp-block-social-links {
 	margin-top: 40px;
 }
 footer>p {
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 50px;
 	font-weight: 400;
 	font-size: 10px;
@@ -1198,21 +1196,10 @@ footer.entry-footer span.cat-links a {
 .story-hero .story-hero-text h1,
 .story-hero .story-hero-text h2,
 .story-hero .story-hero-text h3 {
-	max-width: 500px;
+	padding-top: 20px;
+}
+.home-hero .home-hero-text .wp-block-button {
 	margin-top: 45px;
-}
-.home-hero .home-hero-text p,
-.story-hero .story-hero-text p {
-	 max-width: 400px;
-}
-.story-hero .columns {
-	display: flex;
-}
-.story-hero .columns .hero-column {
-    width: 50%;
-    display: inline-block;
-    max-width: 380px;
-    margin-right: 50px;
 }
 .home-hero-text::after,
 .story-hero-text::after {
@@ -1282,12 +1269,17 @@ footer.entry-footer span.cat-links a {
 	margin-top: 75px !important;
 }
 .meet-text {
-	position: absolute;
-	right: 10em;
-	top: 30%;
-	max-width: 330px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+	position: relative;
+}
+.meet-text p:last-of-type {
+	margin-bottom: 30px;
 }
 .meet::before {
+	background: linear-gradient(180deg, rgba(208, 148, 123, 0) 3.35%, rgba(208, 148, 123, 0.6) 75.47%);
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -1345,7 +1337,11 @@ footer.entry-footer span.cat-links a {
 }
 /*2 Column Section*/
 .home-columns {
-	margin-bottom: 100px !important;
+	margin-bottom: 90px !important;
+}
+.home-columns .column {
+	padding-top: 160px;
+	padding-bottom: 45px;
 }
 .home-columns .column .text {
 	padding-top: 150px;
@@ -1353,28 +1349,23 @@ footer.entry-footer span.cat-links a {
 	max-width: 510px;
 }
 .meet-team .wide-columns {
-	margin-bottom: 45px !important;
+	margin-bottom: 75px !important;
 }
-.home-columns,
-.wide-columns {
-	max-width: none !important;
-	display: flex;
-	justify-content: space-between;
-}
-.narrow-columns {
-	max-width: 1200px !important;
-	display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-between;
+.column:first-of-type {
 }
 .column {
 	width: 100%;
+	margin-bottom: 50px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
 }
 .column img {
 	width: 100%;
 	height: auto;
 }
+.column .text,
 .column .image {
 	position: relative;
 }
@@ -1539,10 +1530,6 @@ footer.entry-footer span.cat-links a {
 .home-quote,
 .library-quote,
 .journey-quote {
-	max-width: 1200px !important;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	position: relative;
 	margin-bottom: 100px !important;
 }
@@ -1590,7 +1577,6 @@ footer.entry-footer span.cat-links a {
 	position: absolute;
 	width: 100%;
 	height: 1px;
-	max-width: 1200px;
 	background: #D0947B;
 	top: 10px;
 }
@@ -1687,9 +1673,12 @@ footer.entry-footer span.cat-links a {
 .meet .text {
 	position: relative;
 }
+.local-guide .guide-text h2,
 .local-guide .guide-text p {
 	/* color: #fff;*/
 	margin-top: 0;
+}
+.local-guide .guide-text p:last-of-type {
 	margin-bottom: 30px;
 }
 @media screen and (min-width: 768px) {
@@ -1721,11 +1710,9 @@ footer.entry-footer span.cat-links a {
 #page-our-story {}
 
 .meet-team {
-	max-width: none !important;
 	margin-top: 70px !important;
 }
 .meet-team h2 {
-	max-width: 1200px;
 	margin: 30px auto 50px;
 }
 .lightbox {
@@ -1734,6 +1721,7 @@ footer.entry-footer span.cat-links a {
 .story-cta,
 .journey-cta {
 	text-align: center;
+	margin-bottom: 100px !important;
 }
 .story-cta p,
 .journey-cta p {
@@ -2008,7 +1996,6 @@ footer.entry-footer span.cat-links a {
 
 .library {
 	display: flex;
-/*	ASSISTANCE - column gap spacing isn't cooperating. It keeps adding space on the outside of the columns, not just the interior gaps. */
 	column-gap: 60px;
 	justify-content: space-between;
 }
@@ -2143,7 +2130,6 @@ footer.entry-footer span.cat-links a {
 /*Footer*/
 @media screen and (max-width: 768px) {
 	footer {
-		margin-top: 50px !important;
 		padding: 50px 40px;
 	}
 	footer .footer-group {
@@ -2168,6 +2154,3 @@ footer.entry-footer span.cat-links a {
 		text-align: center;
 	}
 }
-
-
-
