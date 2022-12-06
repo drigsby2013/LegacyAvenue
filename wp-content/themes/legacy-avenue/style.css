@@ -2184,12 +2184,6 @@ input[type="submit"]:hover {
 }
 
 /*Form Styles*/
-.wp-block-contact-form-7-contact-form-selector {
-	max-width: 527px;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
 label {
 	text-transform: uppercase;
 	font-family: 'Helvetica';
@@ -2256,6 +2250,7 @@ footer>p,
 .library-hero .text,
 .guide-hero .text,
 h2.guide-recommends,
+.contact-content,
 .normal-width-section {
 	max-width: 1200px !important;
 	width: 80%;
@@ -2571,6 +2566,7 @@ body.author article .entry-content {
 #page-home {}
 .story-hero,
 .journey-hero,
+.contact-hero,
 .home-hero {
 	max-width: 100vw !important;
 	position: relative;
@@ -2584,6 +2580,12 @@ body.author article .entry-content {
 	margin-left: auto;
 	margin-right: auto;
 }
+.contact-hero .columns .hero-column:not(.large-only) {
+	width: 80%;
+	max-width: 527px;
+	margin-left: auto;
+	margin-right: auto;
+}
 .home-hero .home-hero-image-large,
 .story-hero .story-hero-image-large {
 	position: absolute;
@@ -2591,11 +2593,13 @@ body.author article .entry-content {
 	top: 0;
 }
 .journey-hero .journey-hero-image-mobile img,
+.contact-hero .contact-hero-image-mobile img,
 .story-hero .story-hero-image-mobile img {
 	width: 100%;
 	height: auto;
 }
-.journey-hero-image-mobile {
+.journey-hero-image-mobile,
+.contact-hero-image-mobile {
 	margin-bottom: 39px;
 }
 .home-hero .home-hero-text,
@@ -2609,6 +2613,7 @@ body.author article .entry-content {
 }
 .home-hero .home-hero-text,
 .journey-hero .journey-hero-text,
+.contact-hero .contact-hero-text,
 .story-hero .story-hero-text {
 	position: relative;
 	z-index: 1;
@@ -2658,6 +2663,7 @@ body.author article .entry-content {
 		max-width: 330px;
 	}
 	.journey-hero .columns,
+	.contact-hero .columns,
 	.story-hero .columns {
 		display: flex;
 	}
@@ -2665,7 +2671,8 @@ body.author article .entry-content {
 		column-gap: 32px;
 		justify-content: space-between;
 	}
-	.journey-hero .columns .hero-column {
+	.journey-hero .columns .hero-column,
+	.contact-hero .columns .hero-column {
 		width: 50%;
 	}
 	.journey-hero .columns .hero-column h1,
@@ -2678,6 +2685,48 @@ body.author article .entry-content {
 		display: inline-block;
 		max-width: 380px;
 		margin-right: 50px;
+	}
+	.contact-hero .columns .hero-column:not(.large-only) {
+		margin-right: 10%;
+	}
+}
+.contact-hero h1 {
+	margin-top: 39px;
+}
+
+/* Contact Page */
+.contact-content {
+	width: 80%;
+	margin: 72px auto 50px;
+}
+.contact-content p {
+	margin-bottom: 0;
+}
+.contact-content h2 {
+	margin-bottom: 12px;
+	font-family: 'EB Garamond';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 23px;
+	letter-spacing: 0.15em;
+}
+.contact-content div {
+	margin-bottom: 40px;
+	width: 100%;
+}
+@media screen and (min-width: 768px) {
+	.contact-content {
+		display: flex;
+		width: 45%;
+		margin-left: 10%;
+		margin-top: 0;
+	}
+	.contact-hero h1 {
+		margin-top: 127px;
+	}
+	.contact-content div {
+		width: 33%;
 	}
 }
 
