@@ -856,6 +856,7 @@ textarea {
 
 .full-width-section,
 .guide-hero,
+.guide-hero .image,
 .home-columns,
 .library-hero,
 .meet-team,
@@ -877,7 +878,7 @@ footer>p,
 .product-gallery,
 .home-quote,
 .library-hero,
-.guide-hero,
+/*.guide-hero,*/
 .library,
 .library-quote,
 .journey-quote,
@@ -889,7 +890,6 @@ footer>p,
 
 .library-hero .image,
 .library-hero .text,
-.guide-hero .image,
 .guide-hero .text,
 h2.guide-recommends,
 .normal-width-section {
@@ -1520,9 +1520,6 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .meet::before {
 	bottom: 0px;
 }
-.local-guide .guide-image img {
-	width: 100%;
-}
 .local-guide .guide-text,
 .meet .text {
 	position: relative;
@@ -1827,19 +1824,23 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 
 .library-hero,
 .guide-hero {
-/*	padding-bottom: 12px;*/
-/*	border-bottom: 1px solid #D0947B;*/
 	position: relative;
 	margin-bottom: 12px !important;
 }
-.library-hero,
-.guide-hero {
-
+.guide-hero .image {
+	margin-bottom: 39px;
 }
-
-
-
+.guide-hero .image img {
+	width: 100%;
+	height: auto;
+}
 @media screen and (min-width: 768px) {
+	.guide-hero .image {
+		max-width: 1200px !important;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 0px;
+	}
 	.library-hero .text,
 	.guide-hero .text {
 		width: 75%;
