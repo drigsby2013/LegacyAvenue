@@ -872,7 +872,7 @@ footer>p,
 .product-header,
 .product-gallery,
 .home-quote,
-.library-hero,
+/*.library-hero,*/
 /*.guide-hero,*/
 .library,
 .library-quote,
@@ -883,7 +883,7 @@ footer>p,
 .home-hero .home-hero-text,
 .story-hero .story-hero-text,
 
-.library-hero .image,
+/*.library-hero .image,*/
 .library-hero .text,
 .guide-hero .text,
 h2.guide-recommends,
@@ -1836,14 +1836,17 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	position: relative;
 	margin-bottom: 12px !important;
 }
+.library-hero .image,
 .guide-hero .image {
 	margin-bottom: 39px;
 }
+.library-hero .image img,
 .guide-hero .image img {
 	width: 100%;
 	height: auto;
 }
 @media screen and (min-width: 768px) {
+	.library-hero .image,
 	.guide-hero .image {
 		max-width: 1200px !important;
 		margin-left: auto;
