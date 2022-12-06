@@ -1,4 +1,3 @@
-
 /**
  * Queries an api.
  *
