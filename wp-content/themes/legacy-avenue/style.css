@@ -883,6 +883,7 @@ body.single-post main,
 body.single-post main .entry-header,
 body.single-post main .entry-content,
 body.single-post main .entry-footer,
+.post-navigation,
 header .header-contents,
 footer>div,
 footer>p,
@@ -1076,6 +1077,67 @@ body.single-post main {
 		background: #D0947B;
 		content: '';
 	}
+}
+footer.entry-footer {
+	background-color: unset;
+	padding: 0;
+}
+footer.entry-footer>span {
+	display: block;
+	width: 100%;
+	margin-bottom: 22px;
+	padding-top: 30px;
+	position: relative;
+}
+footer.entry-footer .posted-on .updated {
+	display: none;
+}
+footer.entry-footer span::before {
+	position: absolute;
+	width: 100%;
+	height: 22px;
+	left: 0;
+	top: 9px;
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 22px;
+}
+footer.entry-footer span.posted-on::before {
+	content: 'POSTED:';
+	
+}
+footer.entry-footer span.byline::before {
+	content: 'AUTHOR:'
+}
+footer.entry-footer span.cat-links::before {
+	content: 'CATEGORIES:'
+}
+footer.entry-footer span.cat-links a {
+/*	padding: 5px;*/
+}
+.post-navigation .nav-links::after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 1px;
+	background: #D0947B;
+	top: 9px;
+}
+.post-navigation .nav-links {
+	display: flex;
+	justify-content: space-between;
+	border-top: 3px solid #D0947B;
+	position: relative;
+	padding-top: 50px;
+	margin-top: 45px;
+}
+.post-navigation .post-title {
+	display: none;
+}
+#comments {
+	display: none;
 }
 
 
