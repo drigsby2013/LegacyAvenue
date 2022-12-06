@@ -845,8 +845,11 @@ label {
 	font-size: 14px;
 	line-height: 16px;
 }
-input:not([type="submit"]) {
-	height: 40px;
+input:not([type="submit"]),
+textarea {
+	font-family: 'Helvetica';
+	min-height: 40px;
+	padding: 12px;
 }
 input:not([type="submit"]),
 textarea {
@@ -854,6 +857,30 @@ textarea {
 	border: 1px solid #D0947B !important;
 	width: 100%;
 }
+/*LATER*/
+/*This code might be used later to accomplish a moving label.*/
+/*If this is taken, inputs in the site will need placeholders*/
+/*To do that, put this in the form: [text* your-name placeholder="FULL NAME"] */
+/*
+input[type="text"] { 
+	position: relative;
+}
+span[data-name="your-name"]::before {
+    position: absolute;
+    content: 'FULL NAME';
+    height: 22px;
+    width: 100px;
+    top: -3px;
+    left: 9px;
+    z-index: 2;
+    line-height: 22px;
+    font-size: 14px;
+}
+label:focus-within span::before,
+label:has(input:not(:placeholder-shown)) span::before {
+	display: none;
+}
+*/
 
 /*-----------*/
 
