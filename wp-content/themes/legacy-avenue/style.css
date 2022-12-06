@@ -1760,35 +1760,19 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	position: relative;
 	margin-bottom: 50px !important;
 }
-.product-header {
-	border-top: 3px solid #D0947B;
-	position: relative;
-	margin-top: 155px !important;
-	padding-top: 115px;
-}
-.product-header::after {
-	position: absolute;
-	height: 1px;
-	width: 100%;
-	content: '';
-	background-color: #D0947B;
-	top: 10px;
-}
 .product-header .text {
-	width: 75%;
+	width: 100%;
 	max-width: 800px;
 }
 .product-header .text p {
 	max-width: 520px;
 }
 .product-header-wrapper .image {
-	margin-bottom: 75px;
+	margin-bottom: 72px;
 }
 .product-header-wrapper .image img {
 	width: 100%;
 	height: auto;
-}
-.product-header::after {
 }
 .product-header .text p {
 	max-width: 520px;
@@ -1796,7 +1780,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .product-gallery {
 	margin-bottom: 150px !important;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	row-gap: 69px;
 	column-gap: 28px;
 	flex-wrap: wrap;
@@ -1846,6 +1830,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	}
 	.product-gallery {
 		margin-bottom: 100px !important;
+		justify-content: space-between;
 	}
 }
 
