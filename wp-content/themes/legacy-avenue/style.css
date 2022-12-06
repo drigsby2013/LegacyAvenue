@@ -2184,7 +2184,12 @@ input[type="submit"]:hover {
 }
 
 /*Form Styles*/
-
+.wp-block-contact-form-7-contact-form-selector {
+	max-width: 527px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
 label {
 	text-transform: uppercase;
 	font-family: 'Helvetica';
@@ -2192,6 +2197,9 @@ label {
 	font-weight: 300;
 	font-size: 14px;
 	line-height: 16px;
+}
+input:not([type="submit"]) {
+	height: 40px;
 }
 input:not([type="submit"]),
 textarea {
