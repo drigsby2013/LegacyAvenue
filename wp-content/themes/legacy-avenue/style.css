@@ -1057,6 +1057,10 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	right: 0;
 	top: 0;
 }
+.story-hero .story-hero-image-mobile img {
+	width: 100%;
+	height: auto;
+}
 .home-hero .home-hero-text,
 .story-hero .story-hero-text {
 	max-width: 1200px;
@@ -1219,6 +1223,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .column img {
 	width: 100%;
+	height: auto;
 }
 .column .image {
 	position: relative;
@@ -1281,7 +1286,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .narrow-columns .column img {
 	width: 100%;
 }
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
 	.home-columns {
 		margin-bottom: 100px !important;
 	}
@@ -1355,7 +1360,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	margin-left: auto;
 	margin-right: auto;
 }
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
 	.team-gallery {
 		width: 100%;
 	}
@@ -1942,7 +1947,7 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .library-item .link a:focus {
 	text-decoration: underline;
 }
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
 	.library {
 		display: flex;
 		column-gap: 60px;
@@ -1981,18 +1986,18 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 /*--------------*/
 
 /*General Helpers*/
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 	.large-only {
 		display: none;
 	}
 }
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
 	.mobile-only {
 		display: none;
 	}
 }
 /*Footer*/
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 	footer {
 		margin-top: 50px !important;
 		padding: 50px 40px;
