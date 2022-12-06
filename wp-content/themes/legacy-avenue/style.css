@@ -880,6 +880,7 @@ footer>p,
 .meet-team h2,
 .home-hero .home-hero-text,
 .story-hero .story-hero-text,
+/*.journey-hero .journey-hero-text,*/
 .library-hero .text,
 .guide-hero .text,
 h2.guide-recommends,
@@ -1039,12 +1040,18 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 #page-home {}
 
 .story-hero,
+.journey-hero,
 .home-hero {
 	max-width: 100vw !important;
 	position: relative;
 }
-.home-hero .home-hero-image-large {
-
+.home-hero .mobile-only img {
+	width: 100%;
+}
+.journey-hero .columns .hero-column:not(.large-only) {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .home-hero .home-hero-image-large,
 .story-hero .story-hero-image-large {
@@ -1052,17 +1059,28 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	right: 0;
 	top: 0;
 }
+.journey-hero .journey-hero-image-mobile img,
 .story-hero .story-hero-image-mobile img {
 	width: 100%;
 	height: auto;
 }
+.journey-hero-image-mobile {
+	margin-bottom: 39px;
+}
 .home-hero .home-hero-text,
 .story-hero .story-hero-text {
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 130px;
 	border-bottom: 3px solid #D0947B;
+	margin-bottom: 75px;
+	padding-bottom: 66px;
+}
+.journey-hero .journey-hero-text {
+	padding-bottom: 44px;
+}
+.home-hero .home-hero-text,
+.journey-hero .journey-hero-text,
+.story-hero .story-hero-text {
+	position: relative;
+	z-index: 1;
 }
 .home-hero .home-hero-text h1,
 .home-hero .home-hero-text h2,
@@ -1119,8 +1137,21 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	.home-hero .home-hero-text p {
 		max-width: 330px;
 	}
+	.journey-hero .columns,
 	.story-hero .columns {
 		display: flex;
+	}
+	.journey-hero .columns {
+		column-gap: 32px;
+		justify-content: space-between;
+	}
+	.journey-hero .columns .hero-column {
+		width: 50%;
+	}
+	.journey-hero .columns .hero-column h1,
+	.journey-hero .columns .hero-column p {
+		max-width: 580px;
+		margin-top: 45px;
 	}
 	.story-hero .columns .hero-column {
 		width: 50%;
@@ -1621,6 +1652,8 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 .timeline {
 	max-width: 900px !important;
 	margin-bottom: 75px !important;
+	margin-left: auto;
+	margin-right: auto;
 }
 /*ASSISTANCE*/
 /*Swoosh is causing page width to be too large*/
@@ -1758,6 +1791,10 @@ footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 }
 .product-header-wrapper .image {
 	margin-bottom: 75px;
+}
+.product-header-wrapper .image img {
+	width: 100%;
+	height: auto;
 }
 .product-header::after {
 }
