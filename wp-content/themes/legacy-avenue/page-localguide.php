@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Recommendations template
+ * Template Name: Local Guide template
  * The template for displaying pages
  *
  * This is the template that displays all pages by default.
@@ -13,6 +13,12 @@
  */
 
 get_header(); ?>
+
+
+<style>
+
+</style>
+
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
@@ -34,7 +40,10 @@ get_header(); ?>
 		<?php endwhile; ?>
 
 
-		<?php require __DIR__ . '/templates/vue-recommended-posts.php'; ?>
+		<?php require __DIR__ . '/templates/vue-localguide.php'; ?>
+
+
+
 
 
 		<hr>
@@ -45,29 +54,3 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
-<style>
-
-.hero-graphic {
-	position: relative;
-	padding: 0;
-}
-
-.hero-graphic img {
-	width: 100%;
-	height: auto;
-}
-
-
-
-
-.hero-graphic .entry-content {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  max-width: 1000px;
-  text-align: center;
-  margin: auto;
-}
-
-
-</style>

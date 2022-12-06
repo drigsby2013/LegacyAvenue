@@ -1,5 +1,4 @@
 
-
 var app = new Vue({
 	el: '#library-container',
 

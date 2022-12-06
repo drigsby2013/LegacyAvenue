@@ -27,14 +27,16 @@
 
 
 require __DIR__ . '/inc/cleanup.php';
-require __DIR__ . '/inc/menus.php';
-require __DIR__ . '/inc/widgets.php';
 require __DIR__ . '/inc/helpers.php';
+require __DIR__ . '/inc/menus.php';
+require __DIR__ . '/inc/posts.php';
+require __DIR__ . '/inc/widgets.php';
 
 
 
 // Remove Gutenberg CSS.
 add_action('wp_enqueue_scripts', function() {
+    // TODO: update this with the brands.css only
     wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
     // wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css');
     // wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css');

@@ -48,6 +48,9 @@
 							'container_class' 	=> 'main-navigation',
 						]);
 					?>
+					<!-- TODO: make menu mobile -->
+					<!-- NOTE: accessibilty concerns -->
+					<!-- <button>Menu</button> -->
 					<?php endif; ?>
 
 

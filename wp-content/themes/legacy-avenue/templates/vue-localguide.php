@@ -3,15 +3,17 @@
 wp_enqueue_script('legacyavenue_template_dayjs', 'https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.6/dayjs.min.js', [], null, true);
 wp_enqueue_script('legacyavenue_template_vue', 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js', [], null, true);
 wp_enqueue_script('legacyavenue_template_helpers', get_theme_file_uri() . '/js/vue-helpers.js', [], null, true);
-wp_enqueue_script('legacyavenue_template_recommended', get_theme_file_uri() . '/js/vue-recommended-posts.js', [], null, true);
+wp_enqueue_script('legacyavenue_template_localguide', get_theme_file_uri() . '/js/vue-localguide.js', [], null, true);
 // <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js" integrity="sha512-BAMfk70VjqBkBIyo9UTRLl3TBJ3M0c6uyy2VMUrq370bWs7kchLNN9j1WiJQus9JAJVqcriIUX859JOm12LWtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+$title = carbon_get_post_meta( get_the_ID(), 'crb_recommendations_header' );
 
 ?>
 
 <section id="recommended-container" class="container">
 
-	<h2>Jesus<br>
-	RECOMMENDS</h2>
+	<h2><?php echo $title; ?></h2>
 
 	<div class="">
 		<div v-if="isLoading">
@@ -65,3 +67,4 @@ wp_enqueue_script('legacyavenue_template_recommended', get_theme_file_uri() . '/
 
 	const defaultHero = '<?php echo get_theme_file_uri() . '/assets/default-hero.png'; ?>'
 </script>
+
