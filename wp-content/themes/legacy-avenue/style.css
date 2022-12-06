@@ -2287,9 +2287,33 @@ body.author article .entry-content {
 
 /*--------------*/
 
-
-/*Mobile Styles*/
-
+/*Mobile Menu Styles*/
+#wprmenu_bar {
+	padding: 28px 10% 55px;
+	position: absolute;
+	top: 0px;
+}
+#mg-wprm-wrap ul li {
+	text-align: center;
+}
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after {
+	height: 2px;
+	background: #D0947B !important;
+	width: 34px;
+}
+@media screen and (max-width: 768px) {
+	header {
+		display: none !important;
+	}
+	#content {
+		padding-top: 83px;
+	}
+}
+html {
+	padding-top: 0 !important;
+}
 
 /*--------------*/
 
