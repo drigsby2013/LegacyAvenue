@@ -3416,6 +3416,7 @@ body.author article .entry-content {
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 0px;
+		width: 80%;
 	}
 	.library-hero .text,
 	.guide-hero .text {
