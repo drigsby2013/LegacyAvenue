@@ -1,8 +1,7 @@
 <?php
 
-
 /**
- *
+ * { function_description }
  */
 function legacyavenue_footer_copyright() {
     $year = date('Y');
@@ -20,7 +19,12 @@ function legacyavenue_footer_copyright() {
 
 
 /**
+ * { function_description }
  *
+ * @param      string  $label  The label
+ * @param      string  $href   The href
+ *
+ * @return     string  ( description_of_the_return_value )
  */
 function legacyavenue_make_url($label, $href) {
     return '<a href="' . $href . '">' . $label . '</a>';
@@ -28,12 +32,16 @@ function legacyavenue_make_url($label, $href) {
 
 
 /**
+ * { function_description }
  *
+ * @param      <type>        $menu_name  The menu name
+ *
+ * @return     array|string  ( description_of_the_return_value )
  */
 function wp_get_menu_array($menu_name) {
 
     $locations = get_nav_menu_locations();
-    $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    $menu      = wp_get_nav_menu_object( $locations[ $menu_name ] );
     $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
 
     if (!$menuitems) { return "false"; }
@@ -65,6 +73,11 @@ function wp_get_menu_array($menu_name) {
 }
 
 
+/**
+ * Gets the social icon. *
+ * @param      <type>       $url    The url
+ * @return     bool|string  The social icon.
+ */
 function getSocialIcon($url) {
     $url = parse_url($url);
     $host = preg_replace('/www\./', '', $url['host']);
@@ -109,7 +122,11 @@ function getSocialIcon($url) {
 }
 
 
-
+/**
+ * Gets the category url.
+ *
+ * @param      <type>  $cat    The cat
+ */
 function getCategoryUrl($cat) {
 
     echo $cat->slug;
