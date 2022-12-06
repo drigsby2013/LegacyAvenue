@@ -2344,16 +2344,26 @@ footer {
 	padding: 50px 0px;
 	margin-top: 0 !important;
 }
-footer .footer-group {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-}
 footer .logo-socials {
 	max-width: 175px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
-footer .logo-socials .wp-block-social-links {
-	margin-top: 40px;
+
+footer .footer-menu .wp-block-group {
+	width: 50%;
+}
+footer .footer-menu {
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+footer ul.wp-block-social-links {
+	margin-top: 40px !important;
+	justify-content: center;
+}
+footer ul.wp-block-social-links li {
+	padding-right: 22px;
 }
 footer>p {
 	margin-top: 50px;
@@ -2369,6 +2379,11 @@ footer h2 {
 	line-height: 23px;
 	letter-spacing: 0.15em;
 }
+footer ul.wp-block-social-links,
+footer .footer-menu ul {
+	list-style: none;
+	padding-left: 0;
+}
 footer .footer-menu p,
 footer .footer-menu a {
 	font-family: 'Helvetica';
@@ -2378,8 +2393,13 @@ footer .footer-menu a {
 	line-height: 16px;
 	letter-spacing: 0.05em;
 }
-footer .footer-menu .wp-block-group {
-	margin-left: 20px;
+footer .footer-menu a {
+	text-decoration: none;
+}
+footer .footer-menu a:hover,
+footer .footer-menu a:active,
+footer .footer-menu a:focus {
+	text-decoration: underline;
 }
 footer .footer-menu .wp-block-group:first-of-type {
 	margin-left: 0;
@@ -2387,6 +2407,26 @@ footer .footer-menu .wp-block-group:first-of-type {
 footer .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	width: 22px;
 	height: 22px;
+}
+@media screen and (min-width: 768px) {
+	footer .logo-socials {
+		margin-left: 0;
+	}
+	footer ul.wp-block-social-links {
+		justify-content: flex-start;
+	}
+	footer .footer-menu .wp-block-group {
+		margin-left: 4vw;
+		width: unset;
+	}
+	footer .footer-menu {
+		flex-wrap: nowrap;
+	}
+	footer .footer-group {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 /*************/
@@ -3485,34 +3525,5 @@ body.author article .entry-content {
 @media screen and (min-width: 769px) {
 	.mobile-only {
 		display: none;
-	}
-}
-
-/*Footer*/
-
-@media screen and (max-width: 768px) {
-	footer {
-		padding: 50px 40px;
-	}
-	footer .footer-group {
-		flex-wrap: wrap !important;
-		justify-content: center;
-	}
-	footer .logo-socials .wp-block-social-links {
-		justify-content: center;
-		margin-top: 40px;
-		margin-bottom: 40px;
-	}
-	footer .logo-socials .wp-block-social-links li {
-		display: flex !important;
-	}
-	footer .footer-menu .wp-block-group {
-		margin-bottom: 40px;
-		margin-left: 0;
-		justify-content: space-between;
-		width: 45%;
-	}
-	footer>p {
-		text-align: center;
 	}
 }
