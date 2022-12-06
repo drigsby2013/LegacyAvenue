@@ -1345,7 +1345,7 @@ body.author article .entry-content {
 		background-repeat: no-repeat;
 		transform: rotate(180deg);
 		opacity: 50%;
-		z-index: 2;
+		z-index: 0;
 	}
 	.meet::before {
 		max-height: 150px;
@@ -1842,7 +1842,7 @@ body.author article .entry-content {
 		background-position: center;
 		background-repeat: no-repeat;
 		opacity: 50%;
-		z-index: 2;
+		z-index: -1;
 	}
 	.timeline li {
 		margin-bottom: 0;
