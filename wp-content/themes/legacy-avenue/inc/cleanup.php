@@ -58,6 +58,17 @@ add_action('wp_default_scripts', 'remove_jquery_migrate');
 
 
 
+
+
+function legacyavenue_setup() {
+
+
+    set_post_thumbnail_size( 1500, 600, false );
+}
+add_action( 'after_setup_theme', 'legacyavenue_setup', 20);
+
+
+
 // /**
 //  * For security reasons, we disable the REST API support for non-logged in users
 //  */
