@@ -71,6 +71,36 @@ p {
 		font-size: 44px;
 	}
 }
+
+
+.meet-team h3::after {		
+	position: absolute;		  
+	height: 1px;	   
+	width: 65%;		 
+	content: '';		  
+	background: #D0947B;  
+	top: 26px;	   
+	right: 0;
+}
+.meet-team h3 {
+	position: relative;
+}
+.narrow-columns span.member-title {
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-transform: uppercase;
+}
+.story-hero-image-mobile img,
+.column img {
+	height: auto;
+	width: 100%;
+}
+p {
+	line-height: 22px;
+	margin-bottom: 22px;
+}
+ 
 /*Buttons*/
 a.button,
 input[type="submit"],
