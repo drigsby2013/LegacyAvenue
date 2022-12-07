@@ -72,5 +72,3 @@ Created by [@dimsemenov](http://twitter.com/dimsemenov) & [contributors](https:/
 ## Bugs & contributing
 
 Please report bugs via GitHub and ask general questions through [Stack Overflow](http://stackoverflow.com/questions/tagged/magnific-popup). Feel free to submit commit [pull-request](https://github.com/dimsemenov/Magnific-Popup/pulls), even the tiniest contributions to the script or to the documentation are very welcome.
-
-

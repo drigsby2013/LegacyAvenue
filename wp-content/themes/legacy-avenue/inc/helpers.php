@@ -31,6 +31,18 @@ function legacyavenue_make_url($label, $href) {
 }
 
 
+function legacyavenue_contact_button($label) {
+
+    // TODO: do a page lookup for the contact page
+    $url = '/contact-us';
+
+    echo implode('', [
+        '<a class="button" href="', $url, '">', $label, '</a>',
+    ]);
+}
+
+
+
 /**
  * { function_description }
  *

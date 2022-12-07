@@ -26,10 +26,10 @@ wp_enqueue_script('legacyavenue_template_library', get_theme_file_uri() . '/js/v
 			Loading articles...
 		</div>
 
-		<ul v-if="posts.length > 0" class="library-items flex row">
+		<ul v-if="posts.length > 0" class="library-items grid cols-1 md-cols-2 lg-cols-3 gap-2 lg-gap-4">
 			<li v-for="post in posts"
 				:key="post.id"
-				class="library-item xs-12 md-6 lg-4"
+				class="library-item"
 			>
 				<div v-if="!!post.featured_media" class="image">
 					<img decoding="async"
