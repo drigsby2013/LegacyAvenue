@@ -2291,7 +2291,7 @@ body.author article .entry-content {
 	width: 34px;
 }
 @media screen and (max-width: 768px) {
-	header {
+	header:not(.entry-header) {
 		display: none !important;
 	}
 	#content {
