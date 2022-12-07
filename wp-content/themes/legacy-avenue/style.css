@@ -2037,19 +2037,25 @@ body.author article .entry-content {
 }
 .product-gallery {
 	margin-bottom: 150px !important;
-	display: flex;
-	justify-content: center;
-	row-gap: 69px;
-	column-gap: 28px;
-	flex-wrap: wrap;
+	/* display: flex; */
+	/* justify-content: center; */
+	/* row-gap: 69px; */
+	/* column-gap: 28px; */
+	/* flex-wrap: wrap; */
 }
 .product-gallery .product {
-	max-width: 380px;
 	text-align: center;
 	border: 1px solid #000000;
 	position: relative;
 	padding: 60px 30px 30px;
 }
+
+@media screen and (min-width: 768px) {
+	.product-gallery .product {
+		max-width: 380px;
+	}
+}
+
 .product-gallery .product p {
 	text-align: left;
 }
