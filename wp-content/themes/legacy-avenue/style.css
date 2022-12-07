@@ -2253,7 +2253,9 @@ body.author article .entry-content {
 /* ===================================
  *	Local Guide Page
  * =================================== */
-#page-local-guide {}
+#happenings .iframe-container {
+	background: #DEDEDE;
+}
 
 .guide-hero {
 	margin-bottom: 84px !important;
