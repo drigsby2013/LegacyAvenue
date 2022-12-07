@@ -2303,7 +2303,7 @@ body.author article .entry-content {
 		display: none !important;
 	}
 	#content {
-		padding-top: 130px;
+		padding-top: 150px;
 	}
 	#content::before {
 		position: absolute;
