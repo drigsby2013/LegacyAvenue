@@ -16,7 +16,7 @@
 	<footer class="site-footer-container wp-block-template-part">
 		<div class="flex justify-left nowrap wp-block-group">
 			<div class="is-nowrap is-layout-flex wp-block-group alignwide footer-group">
-				<div class="is-layout-constrained wp-block-group logo-socials">
+				<nav class="is-layout-constrained wp-block-group logo-socials">
 
 					<figure class="wp-block-image size-full is-resized">
 						<img decoding="async" loading="lazy" src="index_files/Screen-Shot-2022-11-29-at-1.16.25-AM.png" alt="" class="wp-image-28" width="150" height="50">
@@ -39,7 +39,7 @@
 						<?php endforeach; ?>
 					</ul>
 					<?php endif; ?>
-				</div>
+				</nav>
 
 
 
@@ -47,7 +47,7 @@
 				<?php if ( has_nav_menu( 'footer' ) ) : ?>
 				<?php $footerMenu = wp_get_menu_array('footer'); ?>
 
-				<div class="flex space-between wp-block-group footer-menu">
+				<nav class="flex space-between wp-block-group footer-menu">
 
 					<?php foreach($footerMenu as $group) : ?>
 					<div class="is-layout-constrained wp-block-group">
