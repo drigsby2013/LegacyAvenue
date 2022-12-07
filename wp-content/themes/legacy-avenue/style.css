@@ -2292,13 +2292,16 @@ body.author article .entry-content {
     padding: 55px 10%;
     position: absolute;
     top: 0px;
-    display: flex;
+/*    display: flex;*/
     justify-content: space-between;
     align-items: center;
 }
 #wprmenu_bar .bar_logo {
 	height: 50px;
 	padding: 8px 8px 0px 0px;
+}
+.cbp-spmenu-top.cbp-spmenu-open {
+	top: 142px !important;
 }
 #mg-wprm-wrap ul li {
 	text-align: center;
