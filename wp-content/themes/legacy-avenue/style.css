@@ -1014,6 +1014,10 @@ footer ul.wp-block-social-links {
 footer ul.wp-block-social-links li {
 	padding-right: 22px;
 }
+footer ul.wp-block-social-links li a {
+	font-size: 20px;
+	padding: 5px;
+}
 footer>p {
 	margin-top: 50px;
 	font-weight: 400;
