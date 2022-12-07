@@ -2147,7 +2147,8 @@ body.author article .entry-content {
 .library {
 	display: flex;
 	column-gap: 60px;
-	justify-content: space-between;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .library.guide {
 	column-gap: unset;
@@ -2162,7 +2163,6 @@ body.author article .entry-content {
 	margin-bottom: 75px !important;
 	padding: 0;
 	text-align: center;
-	text-align: right;
 }
 .library .library-index ul a {
 	text-decoration: none;
@@ -2172,40 +2172,16 @@ body.author article .entry-content {
 .library .library-index ul a:focus {
 	text-decoration: none;
 }
-
-/*
-.library:not(.guide) .library-items {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	row-gap: 64px;
-}
-.library.guide .library-items {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	width: 100%;
-}
-*/
 .library .library-items  {
 	list-style: none;
 	padding: 0;
 	width: 100%;
-}
-.library .library-items .library-item {
-/*	margin-bottom: 50px;*/
-/*	max-width: 300px;*/
-}
-
-.library.guide .library-items .library-item {
-/*	max-width: 350px;*/
 }
 .library-item .image img {
 	height: auto;
 	max-height: 150px;
 	width: 100%;
 }
-
 .library-item .title h2 {
 	font-size: 32px;
 	line-height: 42px;
@@ -2245,10 +2221,10 @@ body.author article .entry-content {
 }
 @media screen and (min-width: 768px) {
 	.library {
-		display: flex;
 		column-gap: 60px;
 		justify-content: space-between;
 		flex-direction: row-reverse;
+		flex-wrap: nowrap;
 	}
 	.library .library-index ul {
 		text-align: right;
