@@ -17,9 +17,11 @@ async function queryApi(route, params) {
 		method: 'get',
 	})
 
+	const headers = res.headers
+
 	const data = await res.json()
 
-	return data
+	return [ data, headers ]
 }
 
 
@@ -53,7 +55,7 @@ function formatDate(date, format='YYYY-MM-DD') {
  * @return     {Promise}  The post image.
  */
 async function getPostImage(imageId) {
-	let img = await queryApi(`media/${imageId}`)
+	let [ img, headers ] = await queryApi(`media/${imageId}`)
 	return img
 }
 

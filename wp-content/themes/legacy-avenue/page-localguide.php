@@ -83,7 +83,7 @@ $calendarEmbed             = carbon_get_post_meta( get_the_ID(), 'crb_calendar_e
         <hr>
 
 
-        <section id="happenings" class="container calendar flex xl gap-2">
+        <section id="happenings" class="calendar xl p-0 flex gap-2">
 
             <div class="yokel-heading">
                 <h2><?php echo $calendarHeader; ?></h2>

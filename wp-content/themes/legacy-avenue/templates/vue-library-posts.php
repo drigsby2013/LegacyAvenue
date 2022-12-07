@@ -11,9 +11,14 @@ wp_enqueue_script('legacyavenue_template_library', get_theme_file_uri() . '/js/v
 <section id="library-container" class="library">
 	<div class="library-index">
 		<ul>
+			<li>
+				<a href=""
+					@click.prevent="resetCategory"
+				>All Categories</a>
+			</li>
 			<li v-for="category in categories" :key="category.id">
-				<a href="#"
-					:data-categoryid="category.id"
+				<a href=""
+					:data-category-id="category.term_id"
 					@click.prevent="loadCategory"
 				>{{ category.name }}</a>
 			</li>
@@ -21,12 +26,15 @@ wp_enqueue_script('legacyavenue_template_library', get_theme_file_uri() . '/js/v
 	</div>
 
 
-	<div class="container">
-		<div v-if="isLoading">
+	<div class="">
+		<div v-if="isLoading"
+			class="loader"
+		>
+			<span class="fas fa-spinner fa-spin"></span>
 			Loading articles...
 		</div>
 
-		<ul v-if="posts.length > 0" class="library-items grid cols-1 md-cols-2 lg-cols-3 gap-2 lg-gap-4">
+		<ul v-if="!isLoading && posts.length > 0" class="library-items grid cols-1 md-cols-2 lg-cols-3 gap-2 lg-gap-4">
 			<li v-for="post in posts"
 				:key="post.id"
 				class="library-item"
@@ -59,7 +67,7 @@ wp_enqueue_script('legacyavenue_template_library', get_theme_file_uri() . '/js/v
 				</div>
 			</li>
 		</ul>
-		<p v-else
+		<p v-if="!isLoading && posts.length === 0"
 			class="empty-posts"
 		>
 			There are no posts to display. Please check back later.
@@ -74,6 +82,17 @@ wp_enqueue_script('legacyavenue_template_library', get_theme_file_uri() . '/js/v
 		</div>
 	</div>
 </section>
+
+
+<style>
+	.loader {
+		text-align: center;
+		padding: 2em;
+		font-size: 1.5em;
+		font-style: italic;
+	}
+
+</style>
 
 
 <script>

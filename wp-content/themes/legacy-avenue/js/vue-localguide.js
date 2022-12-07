@@ -15,7 +15,7 @@ var app = new Vue({
 
 			args = Object.assign({  }, args)
 
-			let posts = await queryApi('posts', args)
+			let [ posts, headers ] = await queryApi('posts', args)
 
 			this.posts = await Promise.all(posts.map(normalizePost))
 
