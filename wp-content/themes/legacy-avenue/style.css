@@ -751,7 +751,6 @@ h6 {
 p {
 	font-size: 14px;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica'; */
 	font-weight: 300;
 	line-height: 22px;
 	margin-bottom: 22px;
@@ -765,7 +764,6 @@ ul {
 li {
 	margin-bottom: 5px;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica'; */
 	font-style: normal;
 	font-weight: 300;
 	font-size: 14px;
@@ -793,7 +791,6 @@ input[type="submit"],
 	color: #fff;
 	display: inline-block;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica', sans-serif; */
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 700;
@@ -827,7 +824,6 @@ input[type="submit"]:hover {
 label {
 	text-transform: uppercase;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica'; */
 	font-style: normal;
 	font-weight: 300;
 	font-size: 14px;
@@ -1018,6 +1014,10 @@ footer ul.wp-block-social-links {
 footer ul.wp-block-social-links li {
 	padding-right: 22px;
 }
+footer ul.wp-block-social-links li a {
+	font-size: 20px;
+	padding: 5px;
+}
 footer>p {
 	margin-top: 50px;
 	font-weight: 400;
@@ -1147,7 +1147,6 @@ footer.entry-footer span::before {
 	left: 0;
 	top: 9px;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica'; */
 	font-style: normal;
 	font-weight: 300;
 	font-size: 12px;
@@ -1395,11 +1394,13 @@ body.author article .entry-content {
 }
 .home-columns h2,
 .meet-team h2,
+.guide-text h2,
 .meet h2 {
 	position: relative;
 }
 .home-columns h2::after,
 .meet-team h2::after,
+.guide-text h2::after,
 .meet h2::after {
     position: absolute;
     content: '';
@@ -1408,6 +1409,9 @@ body.author article .entry-content {
     background: #000000;
     top: 22px;
     right: 0;
+}
+.guide-text h2::after {
+	left: 130px;
 }
 .meet-team h2::after {
 	left: 110px;
@@ -1672,7 +1676,6 @@ body.author article .entry-content {
 	border-top: 3px solid #D0947B;
 }
 .home-quote,
-.library-quote,
 .journey-quote {
 	position: relative;
 	margin-bottom: 100px !important;
@@ -1688,11 +1691,13 @@ body.author article .entry-content {
 	}
 }
 .library-quote {
+	position: relative;
 	margin-top: 50px !important;
+	margin-bottom: 55px !important;
 	padding-bottom: 45px !important;
+	padding-top: 20px;
 	border-top: 1px solid #D0947B;
 	border-bottom: 3px solid #D0947B;
-	padding-top: 20px;
 }
 .library-quote::before {
 	content: '';
@@ -2050,6 +2055,14 @@ body.author article .entry-content {
 	position: relative;
 	padding: 60px 30px 30px;
 }
+.product-gallery .product .image {
+	margin-bottom: 27px;
+}
+.product-gallery .product .image img {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
 .product-gallery .product p {
 	text-align: left;
 }
@@ -2143,7 +2156,9 @@ body.author article .entry-content {
 .library {
 	display: flex;
 	column-gap: 60px;
-	justify-content: space-between;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-bottom: 50px !important;
 }
 .library.guide {
 	column-gap: unset;
@@ -2158,50 +2173,27 @@ body.author article .entry-content {
 	margin-bottom: 75px !important;
 	padding: 0;
 	text-align: center;
-	text-align: right;
 }
 .library .library-index ul a {
 	text-decoration: none;
+	font-size: 16px;
+	line-height: 35px;
 }
 .library .library-index ul a:hover,
 .library .library-index ul a:active,
 .library .library-index ul a:focus {
 	text-decoration: none;
 }
-
-/*
-.library:not(.guide) .library-items {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	row-gap: 64px;
-}
-.library.guide .library-items {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	width: 100%;
-}
-*/
 .library .library-items  {
 	list-style: none;
 	padding: 0;
 	width: 100%;
-}
-.library .library-items .library-item {
-/*	margin-bottom: 50px;*/
-/*	max-width: 300px;*/
-}
-
-.library.guide .library-items .library-item {
-/*	max-width: 350px;*/
 }
 .library-item .image img {
 	height: auto;
 	max-height: 150px;
 	width: 100%;
 }
-
 .library-item .title h2 {
 	font-size: 32px;
 	line-height: 42px;
@@ -2241,10 +2233,10 @@ body.author article .entry-content {
 }
 @media screen and (min-width: 768px) {
 	.library {
-		display: flex;
 		column-gap: 60px;
 		justify-content: space-between;
 		flex-direction: row-reverse;
+		flex-wrap: nowrap;
 	}
 	.library .library-index ul {
 		text-align: right;
