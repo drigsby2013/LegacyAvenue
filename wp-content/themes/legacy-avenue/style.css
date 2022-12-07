@@ -1676,7 +1676,6 @@ body.author article .entry-content {
 	border-top: 3px solid #D0947B;
 }
 .home-quote,
-.library-quote,
 .journey-quote {
 	position: relative;
 	margin-bottom: 100px !important;
@@ -1692,11 +1691,13 @@ body.author article .entry-content {
 	}
 }
 .library-quote {
+	position: relative;
 	margin-top: 50px !important;
+	margin-bottom: 55px !important;
 	padding-bottom: 45px !important;
+	padding-top: 20px;
 	border-top: 1px solid #D0947B;
 	border-bottom: 3px solid #D0947B;
-	padding-top: 20px;
 }
 .library-quote::before {
 	content: '';
@@ -2166,6 +2167,8 @@ body.author article .entry-content {
 }
 .library .library-index ul a {
 	text-decoration: none;
+	font-size: 16px;
+	line-height: 35px;
 }
 .library .library-index ul a:hover,
 .library .library-index ul a:active,
