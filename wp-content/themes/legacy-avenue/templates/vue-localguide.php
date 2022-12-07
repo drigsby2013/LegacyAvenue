@@ -3,25 +3,19 @@
 wp_enqueue_script('legacyavenue_template_dayjs', 'https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.6/dayjs.min.js', [], null, true);
 wp_enqueue_script('legacyavenue_template_vue', 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js', [], null, true);
 wp_enqueue_script('legacyavenue_template_helpers', get_theme_file_uri() . '/js/vue-helpers.js', [], null, true);
-wp_enqueue_script('legacyavenue_template_library', get_theme_file_uri() . '/js/vue-library-posts.js', [], null, true);
+wp_enqueue_script('legacyavenue_template_localguide', get_theme_file_uri() . '/js/vue-localguide.js', [], null, true);
 // <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js" integrity="sha512-BAMfk70VjqBkBIyo9UTRLl3TBJ3M0c6uyy2VMUrq370bWs7kchLNN9j1WiJQus9JAJVqcriIUX859JOm12LWtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+$title = carbon_get_post_meta( get_the_ID(), 'crb_recommendations_header' );
 
 ?>
 
-<section id="library-container" class="library">
-	<div class="library-index">
-		<ul>
-			<li v-for="category in categories" :key="category.id">
-				<a href="#"
-					:data-categoryid="category.id"
-					@click.prevent="loadCategory"
-				>{{ category.name }}</a>
-			</li>
-		</ul>
-	</div>
+<section id="recommended-container" class="container">
 
+	<h2><?php echo $title; ?></h2>
 
-	<div class="container">
+	<div class="">
 		<div v-if="isLoading">
 			Loading articles...
 		</div>
@@ -64,20 +58,13 @@ wp_enqueue_script('legacyavenue_template_library', get_theme_file_uri() . '/js/v
 		>
 			There are no posts to display. Please check back later.
 		</p>
-
-		<div class="pagination" v-if="showLoadMore">
-			<div class="wp-block-button">
-				<button class="wp-block-button__link wp-element-button"
-					@click="loadMore"
-				>See More</button>
-			</div>
-		</div>
 	</div>
 </section>
 
 
 <script>
-	const libraryCateogories = <?php echo json_encode(get_categories()); ?>
+	const postsTags = <?php echo json_encode(get_tags()); ?>
 
 	const defaultHero = '<?php echo get_theme_file_uri() . '/assets/default-hero.png'; ?>'
 </script>
+

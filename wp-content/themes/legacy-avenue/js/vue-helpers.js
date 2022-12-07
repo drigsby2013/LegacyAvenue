@@ -83,4 +83,5 @@ async function normalizePost(post) {
 	}
 
 	return post
+
 }
