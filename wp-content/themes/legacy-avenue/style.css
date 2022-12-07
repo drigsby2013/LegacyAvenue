@@ -751,7 +751,6 @@ h6 {
 p {
 	font-size: 14px;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica'; */
 	font-weight: 300;
 	line-height: 22px;
 	margin-bottom: 22px;
@@ -765,7 +764,6 @@ ul {
 li {
 	margin-bottom: 5px;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica'; */
 	font-style: normal;
 	font-weight: 300;
 	font-size: 14px;
@@ -793,7 +791,6 @@ input[type="submit"],
 	color: #fff;
 	display: inline-block;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica', sans-serif; */
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 700;
@@ -827,7 +824,6 @@ input[type="submit"]:hover {
 label {
 	text-transform: uppercase;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica'; */
 	font-style: normal;
 	font-weight: 300;
 	font-size: 14px;
@@ -1147,7 +1143,6 @@ footer.entry-footer span::before {
 	left: 0;
 	top: 9px;
 	font-family: var(--font-sans-serif);
-	/* font-family: 'Helvetica'; */
 	font-style: normal;
 	font-weight: 300;
 	font-size: 12px;
