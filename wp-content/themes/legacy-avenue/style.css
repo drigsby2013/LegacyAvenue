@@ -1394,11 +1394,13 @@ body.author article .entry-content {
 }
 .home-columns h2,
 .meet-team h2,
+.guide-text h2,
 .meet h2 {
 	position: relative;
 }
 .home-columns h2::after,
 .meet-team h2::after,
+.guide-text h2::after,
 .meet h2::after {
     position: absolute;
     content: '';
@@ -1407,6 +1409,9 @@ body.author article .entry-content {
     background: #000000;
     top: 22px;
     right: 0;
+}
+.guide-text h2::after {
+	left: 130px;
 }
 .meet-team h2::after {
 	left: 110px;
