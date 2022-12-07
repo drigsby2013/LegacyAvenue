@@ -2055,6 +2055,14 @@ body.author article .entry-content {
 	position: relative;
 	padding: 60px 30px 30px;
 }
+.product-gallery .product .image {
+	margin-bottom: 27px;
+}
+.product-gallery .product .image img {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
 .product-gallery .product p {
 	text-align: left;
 }
