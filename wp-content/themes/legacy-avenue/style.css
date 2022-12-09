@@ -749,7 +749,7 @@ h6 {
 }
 
 p {
-	font-size: 14px;
+	font-size: 16px;
 	font-family: var(--font-sans-serif);
 	font-weight: 300;
 	line-height: 22px;
@@ -766,7 +766,7 @@ li {
 	font-family: var(--font-sans-serif);
 	font-style: normal;
 	font-weight: 300;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 22px;
 }
 @media screen and (min-width: 768px) {
@@ -791,7 +791,7 @@ input[type="submit"],
 	color: #fff;
 	display: inline-block;
 	font-family: var(--font-sans-serif);
-	font-size: 14px;
+	font-size: 16px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 16px;
@@ -826,8 +826,14 @@ label {
 	font-family: var(--font-sans-serif);
 	font-style: normal;
 	font-weight: 300;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 16px;
+}
+input:not([type="submit"]),
+input[type="email"] {
+	min-height: 40px;
+	padding: 10px;
+	font-size: 14px;
 }
 input:not([type="submit"]),
 textarea {
@@ -852,7 +858,7 @@ span[data-name="your-name"]::before {
     left: 9px;
     z-index: 2;
     line-height: 22px;
-    font-size: 14px;
+    font-size: 16px;
 }
 label:focus-within span::before,
 label:has(input:not(:placeholder-shown)) span::before {
@@ -967,7 +973,7 @@ header .site-brand ul {
 header .site-brand ul li {
 	list-style: none;
 	margin-right: 25px;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 16px;
 }
 header .site-brand ul li:last-of-type {
@@ -1042,7 +1048,7 @@ footer .footer-menu a {
 	font-family: var(--font-sans-serif);
 	font-style: normal;
 	font-weight: 300;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 16px;
 	letter-spacing: 0.05em;
 }
@@ -1149,7 +1155,7 @@ footer.entry-footer span::before {
 	font-family: var(--font-sans-serif);
 	font-style: normal;
 	font-weight: 300;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 22px;
 }
 footer.entry-footer span.posted-on::before {
@@ -1948,7 +1954,7 @@ body.author article .entry-content {
 	line-height: 22px;
 }
 .timeline li p {
-	font-size: 14px;
+	font-size: 16px;
 }
 .timeline li {
 	width: 100%;
@@ -2215,14 +2221,14 @@ body.author article .entry-content {
 	margin-bottom: 12px;
 }
 .library-item .excerpt p {
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 22px;
 }
 
 .library-item .date {
 	display: block;
 	margin: 1em 0;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 22px;
 	text-transform: uppercase;
 }
