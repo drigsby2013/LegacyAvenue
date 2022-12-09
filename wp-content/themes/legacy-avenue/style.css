@@ -1487,21 +1487,6 @@ body.author article .entry-content {
 		padding-top: 110px;
 		padding-bottom: 70px;
 	}
-	.meet::after {
-		content: '';
-		position: absolute;
-		width: 560px;
-		height: 1396px;
-		background-image: url(/wp-content/uploads/2022/12/LA-Motif.png);
-		top: -380px;
-		left: 5%;
-		background-size: contain;
-		background-position: center;
-		background-repeat: no-repeat;
-		transform: rotate(180deg);
-		opacity: 50%;
-		z-index: 0;
-	}
 	.meet::before {
 		max-height: 150px;
 		bottom: 7px;
