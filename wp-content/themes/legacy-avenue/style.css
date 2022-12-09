@@ -1592,6 +1592,7 @@ body.author article .entry-content {
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 22px;
+	letter-spacing: 0.15em;
 }
 .narrow-columns .column .text {
 	width: 80%;
@@ -1892,6 +1893,9 @@ body.author article .entry-content {
 	background: #D0947B;
 }
 @media screen and (min-width: 768px) {
+	.meet-team h2 {
+		margin: 130px auto 50px;
+	}
 	.meet-team h3::after {
 		width: 62%;
 		top: 24px;
@@ -2067,11 +2071,11 @@ body.author article .entry-content {
 }
 .product-gallery {
 	margin-bottom: 150px !important;
-	/* display: flex; */
-	/* justify-content: center; */
-	/* row-gap: 69px; */
-	/* column-gap: 28px; */
-	/* flex-wrap: wrap; */
+	 display: flex; 
+	 justify-content: center; 
+	 row-gap: 69px; 
+	 column-gap: 28px; 
+	 flex-wrap: wrap; 
 }
 .product-gallery .product {
 	text-align: center;
