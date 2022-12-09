@@ -1329,6 +1329,12 @@ body.author article .entry-content {
 		padding-top: 45px;
 		max-width: 500px;
 	}
+	.story-hero-text .hero-column:first-of-type p:first-of-type:first-child:first-letter {
+		font-size: 75px;
+		line-height: 20px;
+		font-family: var(--font-serif);
+
+	}
 	.story-hero .story-hero-text p {
 		max-width: 380px;
 	}
