@@ -785,7 +785,7 @@ li {
 a.button,
 input[type="submit"],
 .wp-block-button .wp-block-button__link {
-	background-color: #E7C593;
+	background-color: #CC7A29;
 	border: none;
 	border-radius: 5px;
 	color: #fff;
@@ -815,8 +815,25 @@ a.button:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
-	background-color: #D0947B;
+	background-color: #b26921;
 	cursor: pointer;
+}
+/*Buttons on background images should be a different color*/
+.meet-text .wp-block-button .wp-block-button__link,
+.local-guide .guide-text .wp-block-button .wp-block-button__link,
+.home-columns .column .text .wp-block-button .wp-block-button__link {
+	background: #E7C593;
+}
+.home-columns .column .text .wp-block-button .wp-block-button__link:hover,
+.home-columns .column .text .wp-block-button .wp-block-button__link:active,
+.home-columns .column .text .wp-block-button .wp-block-button__link:focus,
+.local-guide .guide-text .wp-block-button .wp-block-button__link:hover,
+.local-guide .guide-text .wp-block-button .wp-block-button__link:active,
+.local-guide .guide-text .wp-block-button .wp-block-button__link:focus,
+.meet-text .wp-block-button .wp-block-button__link:hover,
+.meet-text .wp-block-button .wp-block-button__link:active,
+.meet-text .wp-block-button .wp-block-button__link:focus {
+	background: #D0947B;
 }
 
 
@@ -1437,6 +1454,7 @@ body.author article .entry-content {
 .meet-text p:last-of-type {
 	margin-bottom: 30px;
 }
+
 .meet::before {
 	background: linear-gradient(180deg, rgba(208, 148, 123, 0) 3.35%, rgba(208, 148, 123, 0.6) 75.47%);
 	position: absolute;
@@ -1886,6 +1904,7 @@ body.author article .entry-content {
 .journey-cta {
 	text-align: center;
 	margin-bottom: 100px !important;
+	padding-top: 50px;
 }
 .story-cta p,
 .journey-cta p {
