@@ -50,6 +50,7 @@
 				<div class="flex space-between wp-block-group footer-menu">
 
 					<?php foreach($footerMenu as $group) : ?>
+					<?php if (!isset($group['title'])) { continue; } ?>
 					<div class="is-layout-constrained wp-block-group">
 						<h2><?php echo $group['title']; ?></h2>
 						<ul>

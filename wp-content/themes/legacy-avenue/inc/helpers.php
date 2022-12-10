@@ -144,3 +144,24 @@ function getCategoryUrl($cat) {
     echo $cat->slug;
 
 }
+
+
+/**
+ *  Gets the readable timezone.
+ *
+ * @param      DateTimeZone|string  $timezone  The timezone
+ *
+ * @return     <type>               The readable timezone.
+ */
+function getReadableTimezone(string $timezone = null) {
+	$timezone = $timezone ?? date_default_timezone_get();
+
+	if (str_contains($timezone, 'UTC')) {
+		return $timezone;
+	}
+
+	$timezone = new DateTimeZone($timezone);
+	$timezone_type = ((array) $timezone)['timezone_type'];
+	return $timezone->getTransitions()[$timezone_type]['abbr'];
+}
+

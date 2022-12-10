@@ -23,14 +23,8 @@ function crb_attach_theme_options() {
 		->set_icon('dashicons-clipboard')
 	    ->add_fields([
 	        Field::make( 'text', 'crb_company_legalname', __( 'Company Name' ) ),
+	        Field::make( 'text', 'crb_company_phone', __( 'Phone Number' ) ),
 	        Field::make( 'text', 'crb_operating_hours', __( 'Hours of Operation' ) ),
-	        Field::make( 'select', 'crb_timezone', __( 'Timezone' ) )
-		        ->add_options([
-		        	'PST',
-		        	'MST',
-		        	'CST',
-		        	'EST',
-		        ]),
 	        Field::make( 'text', 'crb_address_address1', __( 'Address' ) ),
 	        Field::make( 'text', 'crb_address_address2', __( 'Address' ) ),
 	        Field::make( 'text', 'crb_address_city',     __( 'City' ) ),

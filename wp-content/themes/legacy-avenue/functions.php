@@ -33,8 +33,6 @@ require __DIR__ . '/inc/posts.php';
 require __DIR__ . '/inc/widgets.php';
 
 
-
-
 // Remove Gutenberg CSS.
 add_action('wp_enqueue_scripts', function() {
     // TODO: update this with the brands.css only
