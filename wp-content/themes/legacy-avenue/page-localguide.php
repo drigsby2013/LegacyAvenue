@@ -14,9 +14,9 @@
 
 get_header();
 
-$calendarHeader            = carbon_get_post_meta( get_the_ID(), 'crb_calendar_header');
-$calendarDescription       = carbon_get_post_meta( get_the_ID(), 'crb_calendar_description');
-$calendarEmbed             = carbon_get_post_meta( get_the_ID(), 'crb_calendar_embed');
+$calendarHeader         = carbon_get_post_meta( get_the_ID(), 'crb_calendar_header');
+$calendarDescription    = carbon_get_post_meta( get_the_ID(), 'crb_calendar_description');
+$calendarEmbed          = carbon_get_post_meta( get_the_ID(), 'crb_calendar_embed');
 
 ?>
 
@@ -40,17 +40,17 @@ $calendarEmbed             = carbon_get_post_meta( get_the_ID(), 'crb_calendar_e
 
 
 @media (min-width: 75rem) {
-    .yokel-heading {
-        max-width: 19em;
-    }
+	.yokel-heading {
+		max-width: 19em;
+	}
 }
 
 .contact-for-more {
-    margin: 5em auto;
+	margin: 5em auto;
 }
 
 .contact-for-more p {
-    font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 
@@ -58,59 +58,60 @@ $calendarEmbed             = carbon_get_post_meta( get_the_ID(), 'crb_calendar_e
 
 
 <div id="primary" class="content-area">
-    <main id="main" class="site-main">
+	<main id="main" class="site-main">
 
-        <?php
-        // Start the loop.
-        while ( have_posts() ) :
-            the_post();
-        ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php
+		// Start the loop.
+		while ( have_posts() ) :
+			the_post();
+		?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-            <!-- <?php the_post_thumbnail(); ?> -->
+			<!-- <?php the_post_thumbnail(); ?> -->
 
-            <div class="entry-content">
-                <?php the_content(); ?>
-            </div><!-- .entry-content -->
+			<div class="entry-content">
+				<?php the_content(); ?>
+			</div><!-- .entry-content -->
 
-        </article><!-- #post-<?php the_ID(); ?> -->
-        <?php endwhile; ?>
-
-
-        <?php require __DIR__ . '/templates/vue-localguide.php'; ?>
+		</article><!-- #post-<?php the_ID(); ?> -->
+		<?php endwhile; ?>
 
 
-        <hr>
+		<div id="recommendations">
+			<?php require __DIR__ . '/templates/vue-localguide.php'; ?>
+		</div>
+
+		<hr>
 
 
-        <section id="happenings" class="calendar xl p-0 flex gap-2">
+		<section id="happenings" class="calendar xl p-0 flex gap-2">
 
-            <div class="yokel-heading">
-                <h2><?php echo $calendarHeader; ?></h2>
+			<div class="yokel-heading">
+				<h2><?php echo $calendarHeader; ?></h2>
 
-                <p><?php echo $calendarDescription; ?></p>
-            </div>
-
-
-            <div class="iframe-container">
-                <?php echo $calendarEmbed; ?>
-            </div>
-
-        </section>
+				<p><?php echo $calendarDescription; ?></p>
+			</div>
 
 
-        <section class="contact-for-more my-3 text-center">
-            <p>
-                <?php echo __('Have a recommendation we should know about?'); ?>
-            </p>
+			<div class="iframe-container">
+				<?php echo $calendarEmbed; ?>
+			</div>
 
-            <?php legacyavenue_contact_button(__('Tell us about it')); ?>
-
-        </section>
+		</section>
 
 
+		<section class="contact-for-more my-3 text-center">
+			<p>
+				<?php echo __('Have a recommendation we should know about?'); ?>
+			</p>
 
-    </main><!-- .site-main -->
+			<?php legacyavenue_contact_button(__('Tell us about it')); ?>
+
+		</section>
+
+
+
+	</main><!-- .site-main -->
 </div><!-- .content-area -->
 
 <?php get_footer(); ?>

@@ -14,9 +14,9 @@
 
 get_header();
 
-$calendarHeader        	= carbon_get_post_meta( get_the_ID(), 'crb_calendar_header');
-$calendarDescription   	= carbon_get_post_meta( get_the_ID(), 'crb_calendar_description');
-$calendarEmbed         	= carbon_get_post_meta( get_the_ID(), 'crb_calendar_embed');
+$calendarHeader         = carbon_get_post_meta( get_the_ID(), 'crb_calendar_header');
+$calendarDescription    = carbon_get_post_meta( get_the_ID(), 'crb_calendar_description');
+$calendarEmbed          = carbon_get_post_meta( get_the_ID(), 'crb_calendar_embed');
 
 ?>
 
@@ -77,9 +77,9 @@ $calendarEmbed         	= carbon_get_post_meta( get_the_ID(), 'crb_calendar_embe
 		<?php endwhile; ?>
 
 
-
-		<?php require __DIR__ . '/templates/vue-localguide.php'; ?>
-
+		<div id="recommended">
+			<?php require __DIR__ . '/templates/vue-localguide.php'; ?>
+		</div>
 
 		<hr>
 
