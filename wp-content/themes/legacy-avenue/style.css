@@ -1344,9 +1344,10 @@ body.author article .entry-content {
 	}
 	.story-hero-text .hero-column:first-of-type p:first-of-type:first-child:first-letter {
 		font-size: 75px;
-		line-height: 20px;
+		line-height: 60px;
 		font-family: var(--font-serif);
-
+		float: left;
+		margin-right: 5px;
 	}
 	.story-hero .story-hero-text p {
 		max-width: 380px;
