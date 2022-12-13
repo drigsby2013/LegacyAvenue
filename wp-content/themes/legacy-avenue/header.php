@@ -36,28 +36,30 @@
 					<div class="wp-block-site-logo">
 						<?php twentyfifteen_the_custom_logo(); ?>
 					</div>
-
-					<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<?php
-						// Primary navigation menu.
-						wp_nav_menu([
-							'menu_class'      	=> 'nav-menu',
-							'theme_location'  	=> 'primary',
-							'container'       	=> 'nav',
-							'container_id'    	=> 'site-navigation',
-							'container_class' 	=> 'main-navigation',
-						]);
-					?>
-					<!-- TODO: make menu mobile -->
-					<!-- NOTE: accessibilty concerns -->
-					<!-- <button>Menu</button> -->
-
-					<?php endif; ?>
-
-
-					<div class="flex align-center wp-block-buttons">
-						<div class="wp-block-button">
-							<a class="wp-block-button__link wp-element-button" href="/contact-us">Talk with us</a>
+					<div class="header-navigation flex gap-2">
+	
+						<?php if ( has_nav_menu( 'primary' ) ) : ?>
+						<?php
+							// Primary navigation menu.
+							wp_nav_menu([
+								'menu_class'      	=> 'nav-menu',
+								'theme_location'  	=> 'primary',
+								'container'       	=> 'nav',
+								'container_id'    	=> 'site-navigation',
+								'container_class' 	=> 'main-navigation',
+							]);
+						?>
+						<!-- TODO: make menu mobile -->
+						<!-- NOTE: accessibilty concerns -->
+						<!-- <button>Menu</button> -->
+	
+						<?php endif; ?>
+	
+	
+						<div class="flex align-center wp-block-buttons">
+							<div class="wp-block-button">
+								<a class="wp-block-button__link wp-element-button" href="/contact-us">Talk with us</a>
+							</div>
 						</div>
 					</div>
 

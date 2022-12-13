@@ -47,7 +47,7 @@
 				<?php if ( has_nav_menu( 'footer' ) ) : ?>
 				<?php $footerMenu = wp_get_menu_array('footer'); ?>
 
-				<div class="flex space-between wp-block-group footer-menu">
+				<div class="flex gap-2 wp-block-group footer-menu">
 
 					<?php foreach($footerMenu as $group) : ?>
 					<?php if (!isset($group['title'])) { continue; } ?>
