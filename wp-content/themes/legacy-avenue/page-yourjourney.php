@@ -66,9 +66,10 @@ get_header();
 			</div><!-- .entry-content -->
 
 
-			<?php require __DIR__ . '/templates/vue-products.php'; ?>
+			<?php //require __DIR__ . '/templates/vue-products.php'; ?>
 
 
+<!--
 			<section class="journey-cta">
 				<p>
 			  		Tell us about your goals and learn about more of what we offer over coffee or Zoom.
@@ -78,6 +79,7 @@ get_header();
 			    </a>
 			  </div>
 			</section>
+-->
 
 		</article><!-- #post-<?php the_ID(); ?> -->
 		<?php endwhile; ?>

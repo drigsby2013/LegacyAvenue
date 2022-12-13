@@ -1027,10 +1027,10 @@ footer.site-footer-container {
 footer.site-footer-container::before {
     position: absolute;
     content: '';
-    height: 200px;
+    height: 220px;
     width: 100%;
     background-image: url(/wp-content/uploads/2022/12/BottomGraphic.png);
-    top: -200px;
+    top: -220px;
     left: 0;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1929,7 +1929,7 @@ body.author article .entry-content {
 .story-cta,
 .journey-cta {
 	text-align: center;
-	margin-bottom: 100px !important;
+	margin-bottom: 80px !important;
 	padding-top: 50px;
 }
 .story-cta p,
@@ -2114,14 +2114,25 @@ body.author article .entry-content {
 		max-width: 380px;
 	}
 }
-
+.product-gallery span.product-subtitle {
+	display: block;
+	text-transform: uppercase;
+	font-family: var(--font-sans-serif);
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.15em;
+}
 .product-gallery .product .image {
 	margin-bottom: 27px;
+	height: 50px;
 }
 .product-gallery .product .image img {
-	max-width: 100%;
+	width: auto;
 	margin-left: auto;
 	margin-right: auto;
+	height: 100%;
 }
 .product-gallery .product p {
 	text-align: left;
