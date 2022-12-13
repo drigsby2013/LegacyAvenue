@@ -962,9 +962,6 @@ p:empty{
 	header .header-contents {
 		margin: 0 auto 68px;
 	}
-	header .site-brand ul {
-		flex-wrap: nowrap;
-	}
 }
 header .header-contents {
 	border-bottom: 1px solid #D0947B;
@@ -973,15 +970,15 @@ header .header-contents {
 header .site-brand {
 	width: 100%;
 	justify-content: space-between;
+	flex-wrap: nowrap;
+	align-items: center;
 }
 .custom-logo-link {
-	max-width: 150px;
 	display: block;
 }
 header .site-brand img {
-	/* width: 150px;*/
+	width: 220px;
 	height: auto;
-	width: 100%;
 }
 header .site-brand ul {
 	align-content: center;
@@ -990,6 +987,7 @@ header .site-brand ul {
 	height: 100%;
 	justify-content: space-around;
 	padding: 0;
+	margin: 0;
 }
 header .site-brand ul li {
 	list-style: none;
@@ -1033,9 +1031,14 @@ footer.site-footer-container::before {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 20%;
+	z-index: -1;
+}
+footer.site-footer-container .footer-logo img {
+	width: 100%;
+	height: auto;
 }
 footer.site-footer-container .logo-socials {
-	max-width: 175px;
+	max-width: 312px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;

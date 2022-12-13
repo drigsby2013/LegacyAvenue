@@ -18,9 +18,9 @@
 			<div class="is-nowrap is-layout-flex wp-block-group alignwide footer-group">
 				<div class="is-layout-constrained wp-block-group logo-socials">
 
-					<figure class="wp-block-image size-full is-resized">
-						<img decoding="async" loading="lazy" src="index_files/Screen-Shot-2022-11-29-at-1.16.25-AM.png" alt="" class="wp-image-28" width="150" height="50">
-					</figure>
+						<div class="footer-logo">
+							<img decoding="async" loading="lazy" src="/wp-content/uploads/2022/12/Wide_White.png" alt="Legacy Avenue" class="wp-image-28">
+						</div>
 
 					<?php if ( has_nav_menu( 'social' ) ) : ?>
 					<ul class="flex space-between wp-block-social-links has-icon-color is-style-logos-only">
