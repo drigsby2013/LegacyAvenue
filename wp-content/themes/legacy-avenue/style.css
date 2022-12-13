@@ -1046,13 +1046,15 @@ footer.site-footer-container .logo-socials {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+	padding-right: 20px;
 }
 footer.site-footer-container .footer-menu .wp-block-group {
-	width: 50%;
+	width: 40%;
+	min-width: 130px;
 }
 footer.site-footer-container .footer-menu {
 	flex-wrap: wrap;
-	justify-content: space-between;
+/*	justify-content: space-between;*/
 }
 footer.site-footer-container ul.wp-block-social-links {
 	margin-top: 40px !important;
@@ -1107,7 +1109,7 @@ footer.site-footer-container .footer-menu a:focus {
 	text-decoration: underline;
 }
 footer.site-footer-container .footer-menu .wp-block-group {
-	margin-left: 20px;
+/*	margin-left: 20px;*/
 }
 footer.site-footer-container .footer-menu .wp-block-group:first-of-type {
 	margin-left: 0;
@@ -1124,11 +1126,11 @@ footer.site-footer-container .wp-block-social-links.is-style-logos-only .wp-soci
 		justify-content: flex-start;
 	}
 	footer.site-footer-container .footer-menu .wp-block-group {
-		margin-left: 4vw;
+/*		margin-left: 4vw;*/
 		width: unset;
 	}
 	footer.site-footer-container .footer-menu {
-		flex-wrap: nowrap;
+/*		flex-wrap: nowrap;*/
 	}
 	footer.site-footer-container .footer-group {
 		width: 100%;
