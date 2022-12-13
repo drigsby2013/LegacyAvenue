@@ -702,6 +702,7 @@ hr {
 
 body {
 	background-color: #FFFAF5;
+	color: #3C3C3B;
 }
 /*Correct max width of page content*/
 .wp-site-blocks {
@@ -758,6 +759,7 @@ p {
 	font-weight: 300;
 	line-height: 22px;
 	margin-bottom: 22px;
+	letter-spacing: 0.05em;
 }
 ol,
 ul {
@@ -799,6 +801,7 @@ input[type="submit"],
 	font-style: normal;
 	font-weight: 700;
 	line-height: 16px;
+	letter-spacing: 0.15em;
 	min-height: 37px;
 	min-width: 194px;
 	text-align: center;
@@ -1003,6 +1006,7 @@ header .site-brand ul li a {
 	padding: 10px;
 	text-transform: uppercase;
 	font-weight: 300;
+	font-size: 14px;
 	letter-spacing: 0.15em;
 }
 header .site-brand ul li a:hover,
@@ -1058,16 +1062,20 @@ footer.site-footer-container ul.wp-block-social-links li {
 	padding-right: 22px;
 }
 footer.site-footer-container ul.wp-block-social-links li a {
+	color: #CC7A29;
 	font-size: 20px;
 	padding: 5px;
 }
+footer.site-footer-container>p a,
 footer.site-footer-container>p {
+	color: #CC7A29;
 	margin-top: 50px;
 	font-weight: 400;
 	font-size: 10px;
 	line-height: 14px;
 }
 footer.site-footer-container h2 {
+	color: #CC7A29;
 	font-family: var(--font-serif);
 	font-style: normal;
 	font-weight: 500;
@@ -1090,6 +1098,7 @@ footer.site-footer-container .footer-menu a {
 	letter-spacing: 0.05em;
 }
 footer.site-footer-container .footer-menu a {
+	color: #ffffff;
 	text-decoration: none;
 }
 footer.site-footer-container .footer-menu a:hover,
@@ -1856,7 +1865,6 @@ body.author article .entry-content {
 }
 .local-guide .guide-text h2,
 .local-guide .guide-text p {
-	/* color: #fff;*/
 	margin-top: 0;
 }
 .local-guide .guide-text p:last-of-type {
