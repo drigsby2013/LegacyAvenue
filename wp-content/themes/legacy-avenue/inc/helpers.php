@@ -27,7 +27,7 @@ function legacyavenue_footer_copyright() {
  * @return     string  ( description_of_the_return_value )
  */
 function legacyavenue_make_url($label, $href) {
-    return '<a href="' . $href . '"> target="_blank"' . $label . '</a>';
+    return '<a href="' . $href . '"' . ' target="_blank" >' . $label . '</a>';
 }
 
 
