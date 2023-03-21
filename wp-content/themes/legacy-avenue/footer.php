@@ -66,8 +66,10 @@
 
 			</div>
 		</div>
-
-		<p><?php legacyavenue_footer_copyright(); ?></p>
+			<p>Securities, investment advisory and financial planning services are offered through qualified registered representatives of MML Investors Services, LLC, Member SIPC (<a href="http://www.sipc.org" target="_blank">www.sipc.org</a>) 4900 N Scottsdale Rd, Suite 4000, Scottsdale, AZ 85251. 480-638-2100. Legacy Avenue, LLC is not a subsidiary or affiliate of MML Investors Services, LLC or its affiliated companies.
+			<br>CRNXXXXXX-XXXXXX</p>
+			<p><a href="https://brokercheck.finra.org/" target="_blank" class="finra-link"><strong>FINRA Broker Check</strong></a></p>
+			<p><?php legacyavenue_footer_copyright(); ?></p>
 	</footer>
 
 </div>
