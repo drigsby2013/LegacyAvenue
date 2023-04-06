@@ -1079,15 +1079,10 @@ footer.site-footer-container ul.wp-block-social-links li a {
 	font-size: 20px;
 	padding: 5px;
 }
-footer.site-footer-container>p {
-	margin-bottom: 18px;
-}
-footer.site-footer-container>p:first-of-type {
-	margin-top: 50px;
-}
 footer.site-footer-container>p a,
 footer.site-footer-container>p {
 	color: #CC7A29;
+	margin-top: 50px;
 	font-weight: 400;
 	font-size: 10px;
 	line-height: 14px;
@@ -1133,10 +1128,6 @@ footer.site-footer-container .footer-menu .wp-block-group:first-of-type {
 footer.site-footer-container .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	width: 22px;
 	height: 22px;
-}
-footer a.finra-link {
-	color: #fff !important;
-	font-weight: bold !important;
 }
 @media screen and (min-width: 768px) {
 	footer.site-footer-container .logo-socials {
@@ -1487,7 +1478,7 @@ body.author article .entry-content {
     content: '';
     height: 1px;
     width: 200px;
-    background: #ffffff;
+    background: #000000;
     top: 22px;
     right: 0;
 }
@@ -1508,7 +1499,6 @@ body.author article .entry-content {
 	margin-right: auto;
 	z-index: 1;
 	position: relative;
-	color: #ffffff;
 }
 .meet-text p:last-of-type {
 	margin-bottom: 30px;
@@ -1565,7 +1555,6 @@ body.author article .entry-content {
 	padding-bottom: 45px;
 }
 .home-columns .column .text {
-	color: #ffffff;
 	padding-top: 150px;
 	padding-bottom: 47px;
 	max-width: 510px;
@@ -1889,7 +1878,6 @@ body.author article .entry-content {
 }
 .local-guide .guide-text h2,
 .local-guide .guide-text p {
-	color: #ffffff;
 	margin-top: 0;
 }
 .local-guide .guide-text p:last-of-type {
@@ -2040,12 +2028,11 @@ body.author article .entry-content {
 	.timeline ol::after {
 		content: '';
 		position: absolute;
-		width: 900px;
-		height: 1500px;
+		width: 608px;
+		height: 1426px;
 		background-image: url(/wp-content/uploads/2022/12/LA-Motif.png);
-		top: -50px;
-		left: 50%;
-		transform: translate(-50%, 0);
+		top: -230px;
+		left: 15%;
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -2220,9 +2207,6 @@ body.author article .entry-content {
 	width: 100%;
 	height: auto;
 }
-.library-hero .text {
-	color: #ffffff;
-}
 @media screen and (min-width: 768px) {
 	.library-hero .image,
 	.guide-hero .image {
@@ -2250,19 +2234,6 @@ body.author article .entry-content {
 	.guide-hero .image {
 		width: 100%;
 	}
-}
-.library-hero .image {
-	position: relative;
-}
-.library-hero .image::after {
-	position: absolute;
-	width: 100%;
-	height: 73%;
-	content: '';
-	background: linear-gradient(180deg, rgba(208, 148, 123, 0) 2.72%, rgba(208, 148, 123, 0.8) 61.14%);
-	left: 0;
-	bottom: 0px;
-	max-height: 465px;
 }
 .library {
 	display: flex;
