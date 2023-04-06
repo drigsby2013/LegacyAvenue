@@ -1306,6 +1306,9 @@ body.author article .entry-content {
 	margin-left: auto;
 	margin-right: auto;
 }
+.home-hero .home-hero-image-large {
+	max-width: 900px !important;
+}
 .home-hero .home-hero-image-large,
 .story-hero .story-hero-image-large {
 	position: absolute;
