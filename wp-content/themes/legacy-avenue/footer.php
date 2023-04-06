@@ -66,8 +66,13 @@
 
 			</div>
 		</div>
+		<?php 
+			if (carbon_get_theme_option('crb_footer_disclaimer')) :
+		?>
+			<p><?php echo carbon_get_theme_option('crb_footer_disclaimer'); ?></p>
+	
+		<?php endif; ?>
 
-		<p><?php echo carbon_get_theme_option('crb_footer_disclaimer'); ?></p>
 		<?php 
 			$finraURL = carbon_get_theme_option('crb_finra');
 			if ($finraURL) :
