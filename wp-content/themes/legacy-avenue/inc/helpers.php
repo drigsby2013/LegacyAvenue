@@ -13,7 +13,7 @@ function legacyavenue_footer_copyright() {
         carbon_get_theme_option('crb_company_legalname') . '.',
         __('All rights reserved.'),
         __('Site creative by'),
-        legacyavenue_make_url($designedBy, $designedByUrl) . '.'
+        legacyavenue_make_url($designedBy, $designedByUrl, '_blank') . '.'
     ]);
 }
 
@@ -26,8 +26,9 @@ function legacyavenue_footer_copyright() {
  *
  * @return     string  ( description_of_the_return_value )
  */
-function legacyavenue_make_url($label, $href) {
-    return '<a href="' . $href . '">' . $label . '</a>';
+function legacyavenue_make_url($label, $href, $target='_self') {
+	$rel = strtolower($target) != "_self" ? "rel='nofollow noopener noreferrer'": "";
+    return "<a href=\"$href\" target=\"$target\" $rel>$label</a>";
 }
 
 

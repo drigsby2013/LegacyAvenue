@@ -67,6 +67,14 @@
 			</div>
 		</div>
 
+		<p><?php echo carbon_get_theme_option('crb_footer_disclaimer'); ?></p>
+		<?php 
+			$finraURL = carbon_get_theme_option('crb_finra');
+			if ($finraURL) :
+		?>
+			<p class="finra-link"><a href="<?php echo $finraURL; ?>">FINRA BROKER</a></p>		
+		<?php endif; ?>
+
 		<p><?php legacyavenue_footer_copyright(); ?></p>
 	</footer>
 

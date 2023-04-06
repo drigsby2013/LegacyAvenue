@@ -22,6 +22,8 @@ function crb_attach_theme_options() {
 	$basic_options_container = Container::make( 'theme_options', __( 'Company Info' ) )
 		->set_icon('dashicons-clipboard')
 	    ->add_fields([
+	        Field::make( 'text', 'crb_customer_login', __( 'Customer Login URL' ) ),
+	        Field::make( 'text', 'crb_customer_relationship', __( 'Customer Relationship Summary URL' ) ),
 	        Field::make( 'text', 'crb_company_legalname', __( 'Company Name' ) ),
 	        Field::make( 'text', 'crb_company_phone', __( 'Phone Number' ) ),
 	        Field::make( 'text', 'crb_operating_hours', __( 'Hours of Operation' ) ),
@@ -30,17 +32,19 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_address_city',     __( 'City' ) ),
 	        Field::make( 'text', 'crb_address_state',   __( 'State' ) ),
 	        Field::make( 'text', 'crb_address_zipcode',  __( 'Zipcode' ) ),
+	        Field::make( 'textarea', 'crb_footer_disclaimer', __( 'Footer Disclaimer' ) ),
+	        Field::make( 'text', 'crb_finra', __( 'Finra Broker URL' ) ),
 	    ]);
 
 
-	// // Add second options page under 'Basic Options'
-	// Container::make( 'theme_options', __( 'Social Links' ) )
-	//     ->set_page_parent( $basic_options_container ) // reference to a top level container
-	//     ->add_fields( array(
-	//         Field::make( 'text', 'crb_facebook_link', __( 'Facebook Link' ) ),
-	//         Field::make( 'text', 'crb_instagram_link', __( 'Instagram Link' ) ),
-	//         // Field::make( 'text', 'crb_twitter_link', __( 'Twitter Link' ) ),
-	//     ) );
+	 // Add second options page under 'Basic Options'
+	 Container::make( 'theme_options', __( 'Social Links' ) )
+	     ->set_page_parent( $basic_options_container ) // reference to a top level container
+	     ->add_fields( array(
+	         Field::make( 'text', 'crb_facebook_link', __( 'Facebook Link' ) ),
+	         Field::make( 'text', 'crb_instagram_link', __( 'Instagram Link' ) ),
+	         // Field::make( 'text', 'crb_twitter_link', __( 'Twitter Link' ) ),
+	     ) );
 
 	// // Add third options page under "Appearance"
 	// Container::make( 'theme_options', __( 'Customize Background' ) )
