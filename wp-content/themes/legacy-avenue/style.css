@@ -1478,7 +1478,7 @@ body.author article .entry-content {
     content: '';
     height: 1px;
     width: 200px;
-    background: #000000;
+    background: #ffffff;
     top: 22px;
     right: 0;
 }
@@ -1494,6 +1494,7 @@ body.author article .entry-content {
 	}
 }
 .meet-text {
+	color: #fff;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -1558,6 +1559,7 @@ body.author article .entry-content {
 	padding-top: 150px;
 	padding-bottom: 47px;
 	max-width: 510px;
+	color: #fff;
 }
 .meet-team .wide-columns {
 	margin-bottom: 75px !important;
@@ -1879,6 +1881,7 @@ body.author article .entry-content {
 .local-guide .guide-text h2,
 .local-guide .guide-text p {
 	margin-top: 0;
+	color: #fff;
 }
 .local-guide .guide-text p:last-of-type {
 	margin-bottom: 30px;
