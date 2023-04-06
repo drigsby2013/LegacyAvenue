@@ -2032,10 +2032,11 @@ body.author article .entry-content {
 		content: '';
 		position: absolute;
 		width: 608px;
-		height: 1426px;
+		height: 100%;
 		background-image: url(/wp-content/uploads/2022/12/LA-Motif.png);
-		top: -230px;
-		left: 15%;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -2417,7 +2418,13 @@ html {
 /*--------------*/
 /*General Helpers*/
 /*--------------*/
-
+.disclaimer-text p {
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 11px;
+	line-height: 22px;
+}
 @media screen and (max-width: 768px) {
 	.large-only {
 		display: none;
