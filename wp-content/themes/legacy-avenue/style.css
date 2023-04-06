@@ -1079,13 +1079,22 @@ footer.site-footer-container ul.wp-block-social-links li a {
 	font-size: 20px;
 	padding: 5px;
 }
+footer .site-footer-container>p:first-of-type {
+	margin-top: 50px;
+}
 footer.site-footer-container>p a,
 footer.site-footer-container>p {
 	color: #CC7A29;
-	margin-top: 50px;
-	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+}
+footer.site-footer-container .disclaimer {}
+footer.site-footer-container .finra-link a {
+	color: #fff;
+}
+footer.site-footer-container .copyright {
 	font-size: 10px;
-	line-height: 14px;
+	line-height: 14px;	
 }
 footer.site-footer-container h2 {
 	color: #CC7A29;

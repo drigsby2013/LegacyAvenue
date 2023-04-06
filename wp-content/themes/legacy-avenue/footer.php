@@ -69,7 +69,7 @@
 		<?php 
 			if (carbon_get_theme_option('crb_footer_disclaimer')) :
 		?>
-			<p><?php echo carbon_get_theme_option('crb_footer_disclaimer'); ?></p>
+			<p class="footer-disclaimer"><?php echo carbon_get_theme_option('crb_footer_disclaimer'); ?></p>
 	
 		<?php endif; ?>
 
@@ -77,10 +77,10 @@
 			$finraURL = carbon_get_theme_option('crb_finra');
 			if ($finraURL) :
 		?>
-			<p class="finra-link"><a href="<?php echo $finraURL; ?>">FINRA BROKER</a></p>		
+			<p class="finra-link"><a href="<?php echo $finraURL; ?>">FINRA Broker Check</a></p>		
 		<?php endif; ?>
 
-		<p><?php legacyavenue_footer_copyright(); ?></p>
+		<p class="copyright"><?php legacyavenue_footer_copyright(); ?></p>
 	</footer>
 
 </div>
