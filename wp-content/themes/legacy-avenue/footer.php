@@ -18,9 +18,9 @@
 			<div class="is-nowrap is-layout-flex wp-block-group alignwide footer-group">
 				<div class="is-layout-constrained wp-block-group logo-socials">
 
-					<figure class="wp-block-image size-full is-resized">
-						<img decoding="async" loading="lazy" src="index_files/Screen-Shot-2022-11-29-at-1.16.25-AM.png" alt="" class="wp-image-28" width="150" height="50">
-					</figure>
+						<div class="footer-logo">
+							<img decoding="async" loading="lazy" src="/wp-content/uploads/2022/12/Wide_White.png" alt="Legacy Avenue" class="wp-image-28">
+						</div>
 
 					<?php if ( has_nav_menu( 'social' ) ) : ?>
 					<ul class="flex space-between wp-block-social-links has-icon-color is-style-logos-only">
@@ -47,7 +47,7 @@
 				<?php if ( has_nav_menu( 'footer' ) ) : ?>
 				<?php $footerMenu = wp_get_menu_array('footer'); ?>
 
-				<div class="flex space-between wp-block-group footer-menu">
+				<div class="flex gap-2 wp-block-group footer-menu">
 
 					<?php foreach($footerMenu as $group) : ?>
 					<?php if (!isset($group['title'])) { continue; } ?>
@@ -66,8 +66,21 @@
 
 			</div>
 		</div>
+		<?php 
+			if (carbon_get_theme_option('crb_footer_disclaimer')) :
+		?>
+			<p class="footer-disclaimer"><?php echo carbon_get_theme_option('crb_footer_disclaimer'); ?></p>
+	
+		<?php endif; ?>
 
-		<p><?php legacyavenue_footer_copyright(); ?></p>
+		<?php 
+			$finraURL = carbon_get_theme_option('crb_finra');
+			if ($finraURL) :
+		?>
+			<p class="finra-link"><a href="<?php echo $finraURL; ?>">FINRA Broker Check</a></p>		
+		<?php endif; ?>
+
+		<p class="copyright"><?php legacyavenue_footer_copyright(); ?></p>
 	</footer>
 
 </div>

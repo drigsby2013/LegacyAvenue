@@ -22,6 +22,8 @@ function crb_attach_theme_options() {
 	$basic_options_container = Container::make( 'theme_options', __( 'Company Info' ) )
 		->set_icon('dashicons-clipboard')
 	    ->add_fields([
+	        Field::make( 'text', 'crb_customer_login', __( 'Customer Login URL' ) ),
+	        Field::make( 'text', 'crb_customer_relationship', __( 'Customer Relationship Summary URL' ) ),
 	        Field::make( 'text', 'crb_company_legalname', __( 'Company Name' ) ),
 	        Field::make( 'text', 'crb_company_phone', __( 'Phone Number' ) ),
 	        Field::make( 'text', 'crb_operating_hours', __( 'Hours of Operation' ) ),
@@ -30,6 +32,8 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_address_city',     __( 'City' ) ),
 	        Field::make( 'text', 'crb_address_state',   __( 'State' ) ),
 	        Field::make( 'text', 'crb_address_zipcode',  __( 'Zipcode' ) ),
+	        Field::make( 'textarea', 'crb_footer_disclaimer', __( 'Footer Disclaimer' ) ),
+	        Field::make( 'text', 'crb_finra', __( 'Finra Broker URL' ) ),
 	    ]);
 
 
@@ -80,5 +84,46 @@ function crb_attach_theme_options() {
 	        Field::make( 'textarea', 'crb_calendar_description', __( 'Calendar Description' ) ),
 	        Field::make( 'text', 'crb_calendar_embed', __( 'Calendar Embed' ) ),
 		]);
+   
+	// =============================================
+   	//  OUR STORY META BLOCKS
+   	// =============================================
+
+	Container::make( 'post_meta', __( 'Visible Page Title' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
+		]);
+	
+	Container::make( 'post_meta', __( 'Team Member Left' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_tl_first_name', __( 'First Name' ) ),
+	        Field::make( 'text', 'crb_tl_last_name', __( 'Last Name' ) ),
+	        Field::make( 'text', 'crb_tl_position', __( 'Position' ) ),
+	        Field::make( 'textarea', 'crb_tl_bio', __( 'Bio' ) ),
+		]);
+	
+	Container::make( 'post_meta', __( 'Team Member Right' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_tr_first_name', __( 'First Name' ) ),
+	        Field::make( 'text', 'crb_tr_last_name', __( 'Last Name' ) ),
+	        Field::make( 'text', 'crb_tr_position', __( 'Position' ) ),
+	        Field::make( 'textarea', 'crb_tr_bio', __( 'Bio' ) ),
+		]);
+
+//	Container::make( 'post_meta', __( 'Calendar Settings' ) )
+//		->where( 'post_type', '=', 'page' )
+//		->where( 'post_template', '=', 'page-localguide.php' )
+//		->add_fields([
+//	        Field::make( 'text', 'crb_calendar_header', __( 'Calendar Heading' ) ),
+//	        Field::make( 'textarea', 'crb_calendar_description', __( 'Calendar Description' ) ),
+//	        Field::make( 'text', 'crb_calendar_embed', __( 'Calendar Embed' ) ),
+//		]);
 
 }
