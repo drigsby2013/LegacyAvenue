@@ -1443,12 +1443,10 @@ body.author article .entry-content {
 }
 .contact-content div {
 	margin-bottom: 40px;
-/*	width: 100%;*/
 }
 @media screen and (min-width: 768px) {
 	.contact-content {
 		display: flex;
-		/* width: 45%;*/
 		margin-left: 10%;
 		margin-top: 0;
 		gap: 4em;
@@ -1456,12 +1454,9 @@ body.author article .entry-content {
 	.contact-hero h1 {
 		margin-top: 127px;
 	}
-
-	/*
-	.contact-content div {
-		width: 33%;
+	.wp-block-contact-form-7-contact-form-selector input[type="submit"] {
+		margin-bottom: 40px;
 	}
-	 */
 }
 
 /*Meet Section*/
