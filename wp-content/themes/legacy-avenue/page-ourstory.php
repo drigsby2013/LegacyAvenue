@@ -67,27 +67,25 @@ $tRGalleryID      = carbon_get_post_meta( get_the_ID(), 'crb_tr_gallery_id');
 						<div id="meet-the-team" class="meet-team">
 							<h2>Meet<br>The TEAM</h2>
 							<div class="wide-columns large-only">
-								<div class="column"><img src="http://localhost:10003/wp-content/uploads/2022/12/mhollerLegacyAvenue2022_14-1.jpg" alt="" width="735" height="550" class="alignnone size-full wp-image-98" /></div>
-								<div class="column"><img src="http://localhost:10003/wp-content/uploads/2022/12/mhollerLegacyAvenue2022_13-1.jpg" alt="" width="735" height="550" class="alignnone size-full wp-image-99" /></div>
+								<div class="column"><img src="/wp-content/uploads/2022/12/mhollerLegacyAvenue2022_14-1.jpg" alt="" width="735" height="550" class="alignnone size-full wp-image-98" /></div>
+								<div class="column"><img src="/wp-content/uploads/2022/12/mhollerLegacyAvenue2022_13-1.jpg" alt="" width="735" height="550" class="alignnone size-full wp-image-99" /></div>
 							</div>
 							
-							<?php
-							
-								$content = the_content();
-
-								$galleries = [];
-								preg_match_all("/\[rl_gallery.+id=[\"\']([\d]{1,8})[\"\']/i", $content, $galleries);
-							
-								print_r($content);
-								print_r($galleries);
-							
-								$galleries = isset($galleries[1]) ? $galleries[1] : null; 
-								$galleryLeftId = $galleries[0] ?? null;
-								$galleryRightId = $galleries[1] ?? null;
-							?>
 							<div class="narrow-columns">
 								<div class="column">
-									<div class="image mobile-only"><img src="http://localhost:10003/wp-content/uploads/2022/12/mhollerLegacyAvenue2022_14-1.jpg" alt="" width="735" height="550" class="alignnone size-full wp-image-98" /></div>
+									<?php
+
+										$content = get_the_content();
+
+										$galleries = [];
+										preg_match_all("/\[rl_gallery.+id=[\"\']([\d]{1,8})[\"\']/i", $content, $galleries);
+
+										$galleries = isset($galleries[1]) ? $galleries[1] : null; 
+										
+										$galleryLeftId = $galleries[0] ?? null;
+										$galleryRightId = $galleries[1] ?? null;
+									?>
+									<div class="image mobile-only"><img src="/wp-content/uploads/2022/12/mhollerLegacyAvenue2022_14-1.jpg" alt="" width="735" height="550" class="alignnone size-full wp-image-98" /></div>
 									<div class="text">
 										<h3><?php echo $tLFirstName; ?><br>
 											<?php echo $tLLastName; ?>
@@ -97,13 +95,13 @@ $tRGalleryID      = carbon_get_post_meta( get_the_ID(), 'crb_tr_gallery_id');
 									<div class="team-gallery">
 										<?php 
 											if ( $galleryLeftId && function_exists( 'rl_gallery' ) ) { 
-												rl_gallery( ['"id"=>"' . $galleryLeftId . '"'] ); 
+												rl_gallery( ["id"=>$galleryLeftId] ); 
 											}
 										?>
 									</div>
 								</div>
 								<div class="column">
-									<div class="image mobile-only"><img src="http://localhost:10003/wp-content/uploads/2022/12/mhollerLegacyAvenue2022_13-1.jpg" alt="" width="735" height="550" class="alignnone size-full wp-image-99" /></div>
+									<div class="image mobile-only"><img src="/wp-content/uploads/2022/12/mhollerLegacyAvenue2022_13-1.jpg" alt="" width="735" height="550" class="alignnone size-full wp-image-99" /></div>
 									<div class="text">
 										<h3><?php echo $tRFirstName; ?><br>
 											<?php echo $tRLastName; ?>
@@ -114,7 +112,7 @@ $tRGalleryID      = carbon_get_post_meta( get_the_ID(), 'crb_tr_gallery_id');
 									<div class="team-gallery">
 										<?php 
 											if ( $galleryRightId && function_exists( 'rl_gallery' ) ) { 
-												rl_gallery( ['"id"=>"' . $galleryRightId . '"'] ); 
+												rl_gallery( ["id"=>$galleryRightId] ); 
 											}
 										?>
 									</div>
@@ -126,7 +124,7 @@ $tRGalleryID      = carbon_get_post_meta( get_the_ID(), 'crb_tr_gallery_id');
 							<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/contact-us">Talk With Us</a></div>
 						</div>
 
-					<div style="visibility: hidden;"><?php $content; ?></div>
+					<div style="visibility: hidden;"><?php the_content(); ?></div>
 
 
 					</div>
