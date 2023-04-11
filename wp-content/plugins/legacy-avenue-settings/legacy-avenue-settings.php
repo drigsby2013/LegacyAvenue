@@ -84,5 +84,46 @@ function crb_attach_theme_options() {
 	        Field::make( 'textarea', 'crb_calendar_description', __( 'Calendar Description' ) ),
 	        Field::make( 'text', 'crb_calendar_embed', __( 'Calendar Embed' ) ),
 		]);
+   
+	// =============================================
+   	//  OUR STORY META BLOCKS
+   	// =============================================
+
+	Container::make( 'post_meta', __( 'Visible Page Title' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
+		]);
+	
+	Container::make( 'post_meta', __( 'Team Member Left' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_tl_first_name', __( 'First Name' ) ),
+	        Field::make( 'text', 'crb_tl_last_name', __( 'Last Name' ) ),
+	        Field::make( 'text', 'crb_tl_position', __( 'Position' ) ),
+	        Field::make( 'textarea', 'crb_tl_bio', __( 'Bio' ) ),
+		]);
+	
+	Container::make( 'post_meta', __( 'Team Member Right' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_tr_first_name', __( 'First Name' ) ),
+	        Field::make( 'text', 'crb_tr_last_name', __( 'Last Name' ) ),
+	        Field::make( 'text', 'crb_tr_position', __( 'Position' ) ),
+	        Field::make( 'textarea', 'crb_tr_bio', __( 'Bio' ) ),
+		]);
+
+//	Container::make( 'post_meta', __( 'Calendar Settings' ) )
+//		->where( 'post_type', '=', 'page' )
+//		->where( 'post_template', '=', 'page-localguide.php' )
+//		->add_fields([
+//	        Field::make( 'text', 'crb_calendar_header', __( 'Calendar Heading' ) ),
+//	        Field::make( 'textarea', 'crb_calendar_description', __( 'Calendar Description' ) ),
+//	        Field::make( 'text', 'crb_calendar_embed', __( 'Calendar Embed' ) ),
+//		]);
 
 }
