@@ -2471,6 +2471,12 @@ html {
 /*--------------*/
 /*General Helpers*/
 /*--------------*/
+strong {
+	font-weight: 700;
+}
+em {
+	font-style: italic;
+}
 .disclaimer-text p {
 	font-family: 'Helvetica';
 	font-style: normal;
