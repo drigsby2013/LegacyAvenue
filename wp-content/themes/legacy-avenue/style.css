@@ -971,6 +971,37 @@ body.search  {
 p:empty{
   display: none;
 }
+/* Super Nav (two links above header button) */
+.super-nav {
+	position: absolute;
+	right: 0;
+	top: 14px;
+}
+.super-nav ul {}
+.super-nav li {
+	display: inline-block;
+}
+.super-nav li:not(:first-of-type) a {
+	font-weight: 300;
+	border-left: 1px solid #D0947B;
+	padding-left: 7px;
+}
+.super-nav a {
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 14px;
+	letter-spacing: 0.05em;
+	text-decoration: none;
+	color: #D0947B;
+	padding: 0px 5px;
+}
+.super-nav a:hover,
+.super-nav a:active,
+.super-nav a:focus {
+	text-decoration: underline;
+}
 
 @media screen and (min-width: 768px) {
 	header .header-contents {
