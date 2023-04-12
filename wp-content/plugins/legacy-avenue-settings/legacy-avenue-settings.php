@@ -97,24 +97,53 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
 		]);
 	
+	Container::make( 'post_meta', __( 'Hero Section' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
+			Field::make( 'rich_text', 'crb_hero_col_one', __( 'First Column' ) ),
+			Field::make( 'rich_text', 'crb_hero_col_two', __( 'Second Column' ) ),
+		]);	
+	
+	Container::make( 'post_meta', __( 'Two Column Header' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_2colhd_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_2colhd_second_line', __( 'Second Line' ) ),
+		]);
+	
 	Container::make( 'post_meta', __( 'Team Member Left' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-ourstory.php' )
 		->add_fields([
+			Field::make( 'image', 'crb_tl_photo', __( 'Image' ) )->set_value_type( 'url' ),
 	        Field::make( 'text', 'crb_tl_first_name', __( 'First Name' ) ),
 	        Field::make( 'text', 'crb_tl_last_name', __( 'Last Name' ) ),
 	        Field::make( 'text', 'crb_tl_position', __( 'Position' ) ),
-	        Field::make( 'textarea', 'crb_tl_bio', __( 'Bio' ) ),
+			Field::make( 'rich_text', 'crb_tl_bio', __( 'Bio' ) ),
+//	        Field::make( 'textarea', 'crb_tl_bio', __( 'Bio' ) ),
 		]);
 	
 	Container::make( 'post_meta', __( 'Team Member Right' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-ourstory.php' )
 		->add_fields([
+			Field::make( 'image', 'crb_tr_photo', __( 'Image' ) )->set_value_type( 'url' ),
 	        Field::make( 'text', 'crb_tr_first_name', __( 'First Name' ) ),
 	        Field::make( 'text', 'crb_tr_last_name', __( 'Last Name' ) ),
 	        Field::make( 'text', 'crb_tr_position', __( 'Position' ) ),
-	        Field::make( 'textarea', 'crb_tr_bio', __( 'Bio' ) ),
+	        Field::make( 'rich_text', 'crb_tr_bio', __( 'Bio' ) ),
+		]);
+	
+	Container::make( 'post_meta', __( 'Bottom CTA' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-ourstory.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_cta_text', __( 'Paragraph Text' ) ),
+	        Field::make( 'text', 'crb_cta_button', __( 'Button Text' ) ),
+	        Field::make( 'text', 'crb_cta_link', __( 'Button URL' ) ),
 		]);
 
 //	Container::make( 'post_meta', __( 'Calendar Settings' ) )
