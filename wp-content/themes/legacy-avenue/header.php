@@ -32,17 +32,23 @@
 	<header class="flex">
 		<div class="is-layout-constrained wp-block-group gapless-group header-contents">
 			<div class="flex space-between site-header" style="padding-top:var(--wp--custom--gap--vertical);padding-bottom:var(--wp--custom--gap--vertical); position: relative;">
-				<div class="super-nav">
 				<?php 
 					$loginLink  	   = carbon_get_theme_option('crb_customer_login');
 					$relationshipLink  = carbon_get_theme_option('crb_customer_relationship');
-	
+					$displaySuperNav   = ($loginLink || $relationshipLink != '') ? true : false;
+					if ($displaySuperNav == true) {
 				?>
-					<ul>
-						<li><a href="<?php echo $loginLink; ?>" target="_blank">Client Login</a></li>
-						<li><a href="<?php echo $relationshipLink; ?>" target="_blank">Customer Relationship Summary</a></li>
-					</ul>
-				</div>
+					<div class="super-nav">
+						<ul>
+							<?php if ($loginLink != '') {?>
+								<li><a href="<?php echo $loginLink; ?>" target="_blank">Client Login</a></li>
+							<?php }; ?>
+							<?php if ($relationshipLink != '') {?>
+								<li><a href="<?php echo $relationshipLink; ?>" target="_blank">Customer Relationship Summary</a></li>
+							<?php }; ?>
+						</ul>
+					</div>
+				<?php }; ?>
 				<div class="flex space-between align-center wp-block-group site-brand">
 					<div class="wp-block-site-logo">
 						<?php twentyfifteen_the_custom_logo(); ?>
