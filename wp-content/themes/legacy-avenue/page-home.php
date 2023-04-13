@@ -43,7 +43,6 @@ $twoColImageWithTextFirstBody          = apply_filters( 'the_content', carbon_ge
 $twoColImageWithTextFirstButtonText    = carbon_get_post_meta( get_the_ID(), 'two_col_first_button_text');
 $twoColImageWithTextFirstButtonLink    = carbon_get_post_meta( get_the_ID(), 'two_col_first_button_link');
 $twoColImageWithTextFirstButtonDisplay = ($twoColImageWithTextFirstButtonText && $twoColImageWithTextFirstButtonLink != '') ? true : false;
-
 //Second Column
 $twoColImageWithTextSecondImage 	    = carbon_get_post_meta( get_the_ID(), 'crb_two_col_second_photo');
 $twoColImageWithTextSecondFirstLine     = carbon_get_post_meta( get_the_ID(), 'crb_two_col_second_first_line');
@@ -89,7 +88,7 @@ $imageWithTextLButtonDisplay = ($imageWithTextLButtonText && $imageWithTextLButt
 						</div>
 						<div class="home-hero-image-large large-only"><img src="<?php echo $heroImage; ?>" alt="" width="990" height="500" /></div>
 					</div>
-					<div class="meet" style="background-image: url('/wp-content/uploads/2022/12/MeetJesus-1.jpg');">
+					<div class="meet" style="background-image: url('<?php echo $imageWithTextRImage; ?>');">
 						<div class="meet-text">
 							<h2><?php echo $imageWithTextRFirstLine; ?><br/><?php echo $imageWithTextRSecondLine; ?></h2>
 							<?php echo $imageWithTextRBody; ?>
