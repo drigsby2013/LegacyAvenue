@@ -2269,6 +2269,7 @@ body.author article .entry-content {
 .product-header-wrapper .image img {
 	width: 100%;
 	height: auto;
+	max-width: 740px;
 }
 .product-header .text p {
 	max-width: 520px;
