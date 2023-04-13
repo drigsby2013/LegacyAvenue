@@ -740,7 +740,6 @@ h4 a,
 h5 a,
 h6 a {
 	font-size: 44px;
-	font-family: var(--font-sans-serif);
 }
 h1 {
 	font-size: 32px;
@@ -754,6 +753,7 @@ h1 {
 .page-template-default h4,
 .page-template-default h5,
 .page-template-default h6 {
+	font-family: var(--font-sans-serif);
 	font-style: normal;
 	font-weight: 700;
 }
@@ -1097,25 +1097,47 @@ header .site-brand .nav-menu .menu-item a:active {
 }
 
 /* subnav menu */
+header .site-brand .nav-menu .menu-item.menu-item-has-children a {
+	padding-right: 0;
+}
 
 header .site-brand nav .dropdown-toggle {
 	text-align: center;
 	width: 2em;
-}
-header .site-brand nav .dropdown-toggle::before {
-	content: '+';
-}
-header .site-brand nav .dropdown-toggle.toggle-on::before {
-	content: '-';
+	border: none;
+	background-color: transparent;
+	background-image: url('/wp-content/uploads/2023/04/LegacyArrow.png');
+	background-size: 12px;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-family: var(--font-sans-serif);
+	padding: 10px;
+	font-size: 14px;
+	position: relative;
+	font-weight: 300;
+	transition: 0.2s;
 }
 
+header .site-brand nav .dropdown-toggle::before {
+	content: '';
+}
+
+header .site-brand nav .dropdown-toggle:hover { 
+	cursor: pointer;
+	transform: scale(1.2);
+}
+
+header .site-brand nav .dropdown-toggle.toggle-on {
+	transform: rotate(180deg);
+}
 
 header .site-brand nav .sub-menu:not(.toggled-on) {
 	left: -1000em;
 }
 
 header .site-brand nav .sub-menu {
-	background-color: #f90;
+	border-top: 4px solid #D0947B;
+	background-color: #E7C593;
 	height: auto;
 	margin: 0;
 	padding: 0;
@@ -1125,6 +1147,15 @@ header .site-brand nav .sub-menu {
 	min-width: 16em;
 	width: auto;
 	z-index: 11111;
+}
+header .site-brand nav .sub-menu::after {
+	position: absolute;
+    height: 1px;
+    width: 100%;
+    content: '';
+    background-color: #D0947B;
+    top: 2px;
+	left: 0;
 }
 
 header .site-brand nav .sub-menu .menu-item {
@@ -1600,6 +1631,7 @@ body.author article .entry-content {
 }
 .meet-team h2::after {
 	left: 110px;
+	background: #000;
 }
 @media screen and (min-width: 768px) {
 	.home-columns h2::after {
