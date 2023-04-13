@@ -1105,7 +1105,23 @@ header .site-brand .nav-menu .menu-item a:active {
 header .site-brand .nav-menu .menu-item.menu-item-has-children a {
 	padding-right: 0;
 }
-
+div#mg-wprm-wrap ul li span.wprmenu_icon {
+	top: 0px;
+	right: 30px;
+}
+div#mg-wprm-wrap ul li span.wprmenu_icon::before {
+	background-color: transparent;
+	background-image: url('/wp-content/uploads/2023/04/LegacyArrow.png');
+	background-size: 15px;
+	background-position: center;
+	background-repeat: no-repeat;
+	content: '';
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 16px;
+	width: 16px;
+}
 header .site-brand nav .dropdown-toggle {
 	text-align: center;
 	width: 2em;
