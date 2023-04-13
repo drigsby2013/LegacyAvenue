@@ -22,8 +22,10 @@ function crb_attach_theme_options() {
 	$basic_options_container = Container::make( 'theme_options', __( 'Company Info' ) )
 		->set_icon('dashicons-clipboard')
 	    ->add_fields([
+			Field::make( 'separator', 'crb_super_nav', __( 'Super-Nav Links' ) ),
 	        Field::make( 'text', 'crb_customer_login', __( 'Customer Login URL' ) ),
 	        Field::make( 'text', 'crb_customer_relationship', __( 'Customer Relationship Summary URL' ) ),
+			Field::make( 'separator', 'crb_business', __( 'Business Info' ) ),
 	        Field::make( 'text', 'crb_company_legalname', __( 'Company Name' ) ),
 	        Field::make( 'text', 'crb_company_phone', __( 'Phone Number' ) ),
 	        Field::make( 'text', 'crb_operating_hours', __( 'Hours of Operation' ) ),
@@ -32,6 +34,7 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_address_city',     __( 'City' ) ),
 	        Field::make( 'text', 'crb_address_state',   __( 'State' ) ),
 	        Field::make( 'text', 'crb_address_zipcode',  __( 'Zipcode' ) ),
+			Field::make( 'separator', 'crb_footer_content', __( 'Footer Info' ) ),
 	        Field::make( 'textarea', 'crb_footer_disclaimer', __( 'Footer Disclaimer' ) ),
 	        Field::make( 'text', 'crb_finra', __( 'Finra Broker URL' ) ),
 	    ]);
@@ -99,12 +102,14 @@ function crb_attach_theme_options() {
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-home.php' )
 		->add_fields([
+			Field::make( 'separator', 'crb_home_left_col', __( 'Left Column' ) ),
 			Field::make( 'image', 'crb_two_col_first_photo', __( 'Image' ) )->set_value_type( 'url' ),
 	        Field::make( 'text', 'crb_two_col_first_first_line', __( 'Heading First Line' ) ),
 	        Field::make( 'text', 'crb_two_col_first_second_line', __( 'Heading Second Line' ) ),
 			Field::make( 'rich_text', 'two_col_first_body', __( 'Text' ) ),
 	        Field::make( 'text', 'two_col_first_button_text', __( 'Button Text' ) ),
 			Field::make( 'text', 'two_col_first_button_link', __( 'Button Link' ) ),
+			Field::make( 'separator', 'crb_home_right_col', __( 'Right Column' ) ),
 			Field::make( 'image', 'crb_two_col_second_photo', __( 'Image' ) )->set_value_type( 'url' ),
 	        Field::make( 'text', 'crb_two_col_second_first_line', __( 'Heading First Line' ) ),
 	        Field::make( 'text', 'crb_two_col_second_second_line', __( 'Heading Second Line' ) ),
@@ -236,14 +241,17 @@ function crb_attach_theme_options() {
 
 		]);	
 	
-	Container::make( 'post_meta', __( 'Timeline Items' ) )
+	Container::make( 'post_meta', __( 'Timeline' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-yourjourney.php' )
 		->add_fields([
-	        Field::make( 'text', 'crb_timeline_item_numeral_1', __( 'XL Text (Numbers)' ) ),
-	        Field::make( 'text', 'crb_timeline_item_title_1', __( 'Item Title' ) ),
-	        Field::make( 'text', 'crb_timeline_item_body_1', __( 'Item Body' ) ),
-			//...
+			Field::make( 'complex', 'crb_timeline_item', __( 'Timeline Items' ) )
+				->set_max(6)
+				->add_fields( array(
+					Field::make( 'text', 'crb_timeline_item_numeral', __( 'XL Text (Numbers)' ) ),
+					Field::make( 'text', 'crb_timeline_item_title', __( 'Item Title' ) ),
+					Field::make( 'text', 'crb_timeline_item_body', __( 'Item Body' ) ),
+				) ),
 	        Field::make( 'text', 'crb_timeline_disclaimer', __( 'Timeine Disclaimer' ) ),
 
 		]);	
@@ -280,13 +288,16 @@ function crb_attach_theme_options() {
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-yourjourney.php' )
 		->add_fields([
-	        Field::make( 'text', 'crb_og_1_first_line', __( 'Title - First Line' ) ),
-	        Field::make( 'text', 'crb_og_1_second_line', __( 'Title - Second Line' ) ),
-			Field::make( 'image', 'crb_og_1_image', __( 'Image' ) )->set_value_type( 'url' ),
-	        Field::make( 'text', 'crb_og_1_body', __( 'Item Body' ) ),
-	        Field::make( 'text', 'crb_og_1_button_text', __( 'Button Text' ) ),
-	        Field::make( 'text', 'crb_og_1_link', __( 'Button Link' ) ),
-			//...
+			Field::make( 'complex', 'crb_offer_grid', __( 'Offers' ) )
+				->set_max(6)
+				->add_fields( array(
+					Field::make( 'text', 'crb_og_first_line', __( 'Title - First Line' ) ),
+					Field::make( 'text', 'crb_og_second_line', __( 'Title - Second Line' ) ),
+					Field::make( 'image', 'crb_og_image', __( 'Image' ) )->set_value_type( 'url' ),
+					Field::make( 'text', 'crb_og_body', __( 'Item Body' ) ),
+					Field::make( 'text', 'crb_og_button_text', __( 'Button Text' ) ),
+					Field::make( 'text', 'crb_og_link', __( 'Button Link' ) ),
+				) ),
 
 		]);	
 		
@@ -357,14 +368,5 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
 	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
 		]);
-	
-//	Container::make( 'post_meta', __( 'Calendar Settings' ) )
-//		->where( 'post_type', '=', 'page' )
-//		->where( 'post_template', '=', 'page-localguide.php' )
-//		->add_fields([
-//	        Field::make( 'text', 'crb_calendar_header', __( 'Calendar Heading' ) ),
-//	        Field::make( 'textarea', 'crb_calendar_description', __( 'Calendar Description' ) ),
-//	        Field::make( 'text', 'crb_calendar_embed', __( 'Calendar Embed' ) ),
-//		]);
 
 }
