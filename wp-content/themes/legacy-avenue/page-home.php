@@ -22,7 +22,7 @@ $titleSecondLine  = carbon_get_post_meta( get_the_ID(), 'crb_second_line');
 $heroImage 		  = carbon_get_post_meta( get_the_ID(), 'crb_hero_image');
 $heroBody 	 	  = apply_filters( 'the_content', carbon_get_the_post_meta( 'crb_hero_body' ) );
 $heroButtonText	  = carbon_get_post_meta( get_the_ID(), 'crb_hero_button_text');
-$heroButtonLink	  = carbon_get_post_meta( get_the_ID(), 'crb_hero_button_text');
+$heroButtonLink	  = carbon_get_post_meta( get_the_ID(), 'crb_hero_button_link');
 $heroButtonDisplay = ($heroButtonText && $heroButtonLink != '') ? true : false;
 
 //Image with Text on Right
