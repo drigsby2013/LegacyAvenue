@@ -210,9 +210,97 @@ function crb_attach_theme_options() {
 		->add_fields([
 	        Field::make( 'text', 'crb_cta_text', __( 'Paragraph Text' ) ),
 	        Field::make( 'text', 'crb_cta_button', __( 'Button Text' ) ),
-	        Field::make( 'text', 'crb_cta_link', __( 'Button URL' ) ),
+	        Field::make( 'text', 'crb_cta_link', __( 'Button Link' ) ),
 		]);
+   
+	// =============================================
+   	//  YOUR JOURNEY META BLOCKS
+   	// =============================================
 
+	Container::make( 'post_meta', __( 'Visible Page Title' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
+		]);
+	
+	Container::make( 'post_meta', __( 'Hero Section' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
+			Field::make( 'rich_text', 'crb_hero_body', __( 'First Column' ) ),
+	        Field::make( 'text', 'crb_hero_button', __( 'Button Text' ) ),
+	        Field::make( 'text', 'crb_hero_link', __( 'Button Link' ) ),
+
+		]);	
+	
+	Container::make( 'post_meta', __( 'Timeline Items' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_timeline_item_numeral_1', __( 'XL Text (Numbers)' ) ),
+	        Field::make( 'text', 'crb_timeline_item_title_1', __( 'Item Title' ) ),
+	        Field::make( 'text', 'crb_timeline_item_body_1', __( 'Item Body' ) ),
+			//...
+	        Field::make( 'text', 'crb_timeline_disclaimer', __( 'Timeine Disclaimer' ) ),
+
+		]);	
+		
+	Container::make( 'post_meta', __( 'Timeline CTA' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_timeline_cta_body', __( 'Paragraph Text' ) ),
+	        Field::make( 'text', 'crb_timeline_cta_button_text', __( 'Button Text' ) ),
+	        Field::make( 'text', 'crb_timeline_cta_link', __( 'Button Link' ) ),
+		]);
+		
+	Container::make( 'post_meta', __( 'Second Image Heading' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_second_heading_first_line', __( 'Title - First Line' ) ),
+	        Field::make( 'text', 'crb_second_heading_second_line', __( 'Title - Second Line' ) ),
+			Field::make( 'image', 'crb_second_heading_hero_image', __( 'Heading Image' ) )->set_value_type( 'url' ),
+			Field::make( 'rich_text', 'crb_second_heading_body', __( 'Paragraph Text' ) ),
+
+		]);	
+	
+	Container::make( 'post_meta', __( 'Quote' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_quote_text', __( 'Quote' ) ),
+	        Field::make( 'text', 'crb_quote_author', __( 'Author' ) ),
+		]);	
+	
+		Container::make( 'post_meta', __( 'Offerings Grid' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_og_1_first_line', __( 'Title - First Line' ) ),
+	        Field::make( 'text', 'crb_og_1_second_line', __( 'Title - Second Line' ) ),
+			Field::make( 'image', 'crb_og_1_image', __( 'Image' ) )->set_value_type( 'url' ),
+	        Field::make( 'text', 'crb_og_1_body', __( 'Item Body' ) ),
+	        Field::make( 'text', 'crb_og_1_button_text', __( 'Button Text' ) ),
+	        Field::make( 'text', 'crb_og_1_link', __( 'Button Link' ) ),
+			//...
+
+		]);	
+		
+		Container::make( 'post_meta', __( 'Bottom CTA' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_bottom_cta_body', __( 'Paragraph Text' ) ),
+	        Field::make( 'text', 'crb_bottom_cta_button_text', __( 'Button Text' ) ),
+	        Field::make( 'text', 'crb_bottom_cta_link', __( 'Button Link' ) ),
+		]);
+	
+	
+	
 //	Container::make( 'post_meta', __( 'Calendar Settings' ) )
 //		->where( 'post_type', '=', 'page' )
 //		->where( 'post_template', '=', 'page-localguide.php' )
