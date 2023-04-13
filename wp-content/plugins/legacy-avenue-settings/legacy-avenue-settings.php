@@ -276,7 +276,7 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_quote_author', __( 'Author' ) ),
 		]);	
 	
-		Container::make( 'post_meta', __( 'Offerings Grid' ) )
+	Container::make( 'post_meta', __( 'Offerings Grid' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-yourjourney.php' )
 		->add_fields([
@@ -290,7 +290,7 @@ function crb_attach_theme_options() {
 
 		]);	
 		
-		Container::make( 'post_meta', __( 'Bottom CTA' ) )
+	Container::make( 'post_meta', __( 'Bottom CTA' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-yourjourney.php' )
 		->add_fields([
@@ -338,13 +338,26 @@ function crb_attach_theme_options() {
 		]);	
 				
 	Container::make( 'post_meta', __( 'Bottom CTA' ) )
-	->where( 'post_type', '=', 'page' )
-	->where( 'post_template', '=', 'page-localguide.php' )
-	->add_fields([
-		Field::make( 'text', 'crb_bottom_cta_body', __( 'Paragraph Text' ) ),
-		Field::make( 'text', 'crb_bottom_cta_button_text', __( 'Button Text' ) ),
-		Field::make( 'text', 'crb_bottom_cta_link', __( 'Button Link' ) ),
-	]);
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-localguide.php' )
+		->add_fields([
+			Field::make( 'text', 'crb_bottom_cta_body', __( 'Paragraph Text' ) ),
+			Field::make( 'text', 'crb_bottom_cta_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'crb_bottom_cta_link', __( 'Button Link' ) ),
+		]);
+	
+	// =============================================
+   	//  CONTACT META BLOCKS
+   	// =============================================
+
+	Container::make( 'post_meta', __( 'Visible Page Title' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-contact.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
+		]);
+	
 //	Container::make( 'post_meta', __( 'Calendar Settings' ) )
 //		->where( 'post_type', '=', 'page' )
 //		->where( 'post_template', '=', 'page-localguide.php' )

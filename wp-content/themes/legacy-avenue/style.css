@@ -965,7 +965,7 @@ footer>p,
 .library-hero .text,
 .guide-hero .text,
 h2.guide-recommends,
-.contact-content,
+.desktop-contact-content,
 .normal-width-section,
 body.error404 main,
 body.search main {
@@ -1584,9 +1584,12 @@ body.author article .entry-content {
 }
 
 /* Contact Page */
-.contact-content {
+.desktop-contact-content {
 	width: 80%;
 	margin: 72px auto 50px;
+}
+.mobile-contact-content {
+	margin: 50px auto 80px;
 }
 .contact-content p {
 	margin-bottom: 0;
