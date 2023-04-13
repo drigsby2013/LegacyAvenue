@@ -740,11 +740,39 @@ h4 a,
 h5 a,
 h6 a {
 	font-size: 44px;
+	font-family: var(--font-sans-serif);
 }
 h1 {
 	font-size: 32px;
 	margin-bottom: 41px;
 }
+.page-template-default h1 {
+	text-align: center;
+}
+.page-template-default h2,
+.page-template-default h3,
+.page-template-default h4,
+.page-template-default h5,
+.page-template-default h6 {
+	font-style: normal;
+	font-weight: 700;
+}
+.page-template-default h2 {
+	font-size: 22px;
+}
+.page-template-default h3 {
+	font-size: 20px;
+}
+.page-template-default h4 {
+	font-size: 18px;
+}
+.page-template-default h5 {
+	font-size: 16px;
+}
+.page-template-default h6 {
+	font-size: 16px;
+}
+
 h2,
 h3,
 h4,
@@ -911,6 +939,7 @@ body.single-post main,
 
 /* 1200px max width | Class = normal-width-section */
 
+body.page-template-default .site-main,
 body.category main,
 body.author main,
 body.single-post main .entry-header,
@@ -987,7 +1016,7 @@ p:empty{
 	padding-left: 7px;
 }
 .super-nav a {
-	font-family: 'Helvetica';
+	font-family: var(--font-sans-serif);
 	font-style: normal;
 	font-weight: 700;
 	font-size: 12px;
