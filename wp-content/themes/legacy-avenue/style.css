@@ -1181,6 +1181,7 @@ header .site-brand nav .sub-menu::after {
 
 header .site-brand nav .sub-menu .menu-item {
 	margin: 0;
+	display: block;
 }
 
 
