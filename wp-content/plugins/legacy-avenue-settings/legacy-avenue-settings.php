@@ -230,7 +230,7 @@ function crb_attach_theme_options() {
 		->where( 'post_template', '=', 'page-yourjourney.php' )
 		->add_fields([
 			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
-			Field::make( 'rich_text', 'crb_hero_body', __( 'First Column' ) ),
+			Field::make( 'rich_text', 'crb_hero_body', __( 'Hero Body' ) ),
 	        Field::make( 'text', 'crb_hero_button', __( 'Button Text' ) ),
 	        Field::make( 'text', 'crb_hero_link', __( 'Button Link' ) ),
 

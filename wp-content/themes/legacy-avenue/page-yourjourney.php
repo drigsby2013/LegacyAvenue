@@ -89,7 +89,7 @@ $displayBottomCTA = ($bottomCTABody && $bottomCTAButtonText && $bottomCTALink !=
 								</div>
 							</div>
 						</div>
-						<div class="timeline">
+						<div class="timeline" id="process-timeline">
 							<ol>
 								<li>
 									<div class="item-content">

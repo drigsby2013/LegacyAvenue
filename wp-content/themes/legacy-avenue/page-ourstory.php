@@ -62,7 +62,7 @@ $displayCTA 	 = ($bottomCTAText && $bottomCTAButton && $bottomCTALink != '') ? t
 			?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-content">
-						<div class="story-hero">
+						<div class="story-hero" id="story">
 							<div class="story-hero-image-mobile mobile-only"><img src="<?php echo $heroImage; ?>" alt="" class="alignnone" /></div>
 							<div class="story-hero-text">
 								<h1><?php echo $titleFirstLine; ?><br><?php echo $titleSecondLine; ?></h1>
