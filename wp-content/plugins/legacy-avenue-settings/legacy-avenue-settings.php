@@ -60,9 +60,79 @@ function crb_attach_theme_options() {
 	//         Field::make( 'text', 'crb_city_and_post', 'City and post code' ),
 	//         Field::make( 'text', 'crb_street', 'Street Name' ),
 	//     ]);
+   
+	// =============================================
+   	//  HOME PAGE META BLOCKS
+   	// =============================================
 
-
-
+	Container::make( 'post_meta', __( 'Visible Page Title' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-home.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
+		]);
+	
+	Container::make( 'post_meta', __( 'Hero Section' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-home.php' )
+		->add_fields([
+			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
+			Field::make( 'rich_text', 'crb_hero_body', __( 'Hero Text' ) ),
+	        Field::make( 'text', 'crb_hero_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'crb_hero_button_link', __( 'Button Link' ) ),
+		]);	
+		
+	Container::make( 'post_meta', __( 'Image with Text Overlay - Text Right' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-home.php' )
+		->add_fields([
+			Field::make( 'image', 'crb_image_with_text_right_photo', __( 'Image' ) )->set_value_type( 'url' ),
+	        Field::make( 'text', 'crb_image_with_text_right_first_line', __( 'Heading First Line' ) ),
+	        Field::make( 'text', 'crb_image_with_text_right_second_line', __( 'Heading Second Line' ) ),
+			Field::make( 'rich_text', 'crb_image_with_text_right_body', __( 'Text' ) ),
+	        Field::make( 'text', 'crb_image_with_text_right_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'crb_image_with_text_right_button_link', __( 'Button Link' ) ),
+		]);
+			
+	Container::make( 'post_meta', __( 'Two Column Images with Text Overlay' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-home.php' )
+		->add_fields([
+			Field::make( 'image', 'crb_two_col_first_photo', __( 'Image' ) )->set_value_type( 'url' ),
+	        Field::make( 'text', 'crb_two_col_first_first_line', __( 'Heading First Line' ) ),
+	        Field::make( 'text', 'crb_two_col_first_second_line', __( 'Heading Second Line' ) ),
+			Field::make( 'rich_text', 'two_col_first_body', __( 'Text' ) ),
+	        Field::make( 'text', 'two_col_first_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'two_col_first_button_link', __( 'Button Link' ) ),
+			Field::make( 'image', 'crb_two_col_second_photo', __( 'Image' ) )->set_value_type( 'url' ),
+	        Field::make( 'text', 'crb_two_col_second_first_line', __( 'Heading First Line' ) ),
+	        Field::make( 'text', 'crb_two_col_second_second_line', __( 'Heading Second Line' ) ),
+			Field::make( 'rich_text', 'two_col_second_body', __( 'Text' ) ),
+	        Field::make( 'text', 'two_col_second_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'two_col_second_button_link', __( 'Button Link' ) ),
+		]);
+	
+	Container::make( 'post_meta', __( 'Quote' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-home.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_quote_text', __( 'Quote' ) ),
+	        Field::make( 'text', 'crb_quote_author', __( 'Author' ) ),
+		]);	
+	
+	Container::make( 'post_meta', __( 'Image with Text Overlay - Text Left' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-home.php' )
+		->add_fields([
+			Field::make( 'image', 'crb_image_with_text_left_photo', __( 'Image' ) )->set_value_type( 'url' ),
+	        Field::make( 'text', 'crb_image_with_text_left_first_line', __( 'Heading First Line' ) ),
+	        Field::make( 'text', 'crb_image_with_text_left_second_line', __( 'Heading Second Line' ) ),
+			Field::make( 'rich_text', 'crb_image_with_text_left_body', __( 'Text' ) ),
+	        Field::make( 'text', 'crb_image_with_text_left_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'crb_image_with_text_left_button_link', __( 'Button Link' ) ),
+		]);
+	
    	// =============================================
    	//  LOCAL GUIDE META BLOCKS
    	// =============================================
@@ -72,8 +142,6 @@ function crb_attach_theme_options() {
 		->where( 'post_template', '=', 'page-localguide.php' )
 		->add_fields([
 	        Field::make( 'text', 'crb_recommendations_header', __( 'Recommendations Heading' ) ),
-	        // Field::make( 'textarea', 'crb_calendar_description', __( 'Calendar Description' ) ),
-	        // Field::make( 'text', 'crb_calendar_embed', __( 'Calendar Embed' ) ),
 		]);
 
 	Container::make( 'post_meta', __( 'Calendar Settings' ) )
@@ -123,7 +191,6 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_tl_last_name', __( 'Last Name' ) ),
 	        Field::make( 'text', 'crb_tl_position', __( 'Position' ) ),
 			Field::make( 'rich_text', 'crb_tl_bio', __( 'Bio' ) ),
-//	        Field::make( 'textarea', 'crb_tl_bio', __( 'Bio' ) ),
 		]);
 	
 	Container::make( 'post_meta', __( 'Team Member Right' ) )
