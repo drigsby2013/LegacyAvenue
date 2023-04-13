@@ -14,10 +14,23 @@
 
 get_header();
 
+
+//Hero Section
+$titleFirstLine   = carbon_get_post_meta( get_the_ID(), 'crb_first_line') ? : '';
+$titleSecondLine  = carbon_get_post_meta( get_the_ID(), 'crb_second_line');
+$heroImage 		  = carbon_get_post_meta( get_the_ID(), 'crb_hero_image');
+$heroBody 	 	  = apply_filters( 'the_content', carbon_get_the_post_meta( 'crb_hero_body' ) );
+
+//Calendar Section
 $calendarHeader         = carbon_get_post_meta( get_the_ID(), 'crb_calendar_header');
 $calendarDescription    = carbon_get_post_meta( get_the_ID(), 'crb_calendar_description');
 $calendarEmbed          = carbon_get_post_meta( get_the_ID(), 'crb_calendar_embed');
 
+//Bottom CTA
+$bottomCTABody    = carbon_get_post_meta( get_the_ID(), 'crb_bottom_cta_body');
+$bottomCTAButtonText  = carbon_get_post_meta( get_the_ID(), 'crb_bottom_cta_button_text');
+$bottomCTALink    = carbon_get_post_meta( get_the_ID(), 'crb_bottom_cta_link');
+$displayBottomCTA = ($bottomCTABody && $bottomCTAButtonText && $bottomCTALink != '') ? true : false;
 ?>
 
 <style>
@@ -66,11 +79,15 @@ $calendarEmbed          = carbon_get_post_meta( get_the_ID(), 'crb_calendar_embe
 			the_post();
 		?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-			<!-- <?php the_post_thumbnail(); ?> -->
-
 			<div class="entry-content">
-				<?php the_content(); ?>
+				<div class="guide-hero">
+					<div class="image"><img src="<?php echo $heroImage; ?>" alt="" width="1200" height="500" class="alignnone size-full wp-image-122" /></div>
+					<div class="text">
+						<h1><?php echo $titleFirstLine; ?><br><?php echo $titleSecondLine; ?></h1>
+						<?php echo $heroBody; ?>
+					</div>
+				</div>
+				<?php //the_content(); ?>
 			</div><!-- .entry-content -->
 
 		</article><!-- #post-<?php the_ID(); ?> -->
@@ -101,11 +118,8 @@ $calendarEmbed          = carbon_get_post_meta( get_the_ID(), 'crb_calendar_embe
 
 
 		<section class="contact-for-more my-3 text-center">
-			<p>
-				<?php echo __('Have a recommendation we should know about?'); ?>
-			</p>
-
-			<?php legacyavenue_contact_button(__('Tell us about it')); ?>
+			<p><?php echo $bottomCTABody; ?></p>
+			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $bottomCTALink; ?>"><?php echo $bottomCTAButtonText; ?></a></div>
 
 		</section>
 

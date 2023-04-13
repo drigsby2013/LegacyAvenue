@@ -298,9 +298,53 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_bottom_cta_button_text', __( 'Button Text' ) ),
 	        Field::make( 'text', 'crb_bottom_cta_link', __( 'Button Link' ) ),
 		]);
-	
-	
-	
+	   
+	// =============================================
+   	//  LIBRARY META BLOCKS
+   	// =============================================
+
+	Container::make( 'post_meta', __( 'Hero Section' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-library.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
+			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
+			Field::make( 'rich_text', 'crb_hero_body', __( 'Hero Body' ) ),
+
+		]);	
+		
+	Container::make( 'post_meta', __( 'Quote' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-library.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_quote_text', __( 'Quote' ) ),
+	        Field::make( 'text', 'crb_quote_author', __( 'Author' ) ),
+		]);	
+		   
+	// =============================================
+   	//  LOCAL GUIDE META BLOCKS
+   	// =============================================
+
+	Container::make( 'post_meta', __( 'Hero Section' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-localguide.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
+			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
+			Field::make( 'rich_text', 'crb_hero_body', __( 'Hero Body' ) ),
+
+		]);	
+				
+	Container::make( 'post_meta', __( 'Bottom CTA' ) )
+	->where( 'post_type', '=', 'page' )
+	->where( 'post_template', '=', 'page-localguide.php' )
+	->add_fields([
+		Field::make( 'text', 'crb_bottom_cta_body', __( 'Paragraph Text' ) ),
+		Field::make( 'text', 'crb_bottom_cta_button_text', __( 'Button Text' ) ),
+		Field::make( 'text', 'crb_bottom_cta_link', __( 'Button Link' ) ),
+	]);
 //	Container::make( 'post_meta', __( 'Calendar Settings' ) )
 //		->where( 'post_type', '=', 'page' )
 //		->where( 'post_template', '=', 'page-localguide.php' )

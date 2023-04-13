@@ -12,7 +12,19 @@
  * @since Twenty Fifteen 1.0
  */
 
-get_header(); ?>
+get_header(); 
+
+//Hero Section
+$titleFirstLine   = carbon_get_post_meta( get_the_ID(), 'crb_first_line') ? : '';
+$titleSecondLine  = carbon_get_post_meta( get_the_ID(), 'crb_second_line');
+$heroImage 		  = carbon_get_post_meta( get_the_ID(), 'crb_hero_image');
+$heroBody 	 	  = apply_filters( 'the_content', carbon_get_the_post_meta( 'crb_hero_body' ) );
+
+//Quote
+$quoteText    = carbon_get_post_meta( get_the_ID(), 'crb_quote_text');
+$quoteAuthor  = carbon_get_post_meta( get_the_ID(), 'crb_quote_author');
+$quoteDisplay = ($quoteText && $quoteAuthor != '') ? true : false;
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -25,18 +37,27 @@ get_header(); ?>
 				// Include the page content template.
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php
-					// Post thumbnail.
-					twentyfifteen_post_thumbnail();
-				?>
-
-			<!--
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header>
-			 -->
 				<div class="entry-content">
-					<?php the_content(); ?>
+					<div class="library-hero">
+						<div class="image"><img src="<?php echo $heroImage; ?>" alt="" width="1200" height="500" /></div>
+						<div class="text">
+							<h1><?php echo $titleFirstLine; ?><br><?php echo $titleSecondLine; ?></h1>
+							<?php echo $heroBody; ?>
+						</div>
+					</div>
+					<?php if ($quoteDisplay != false) { ?>
+					<div class="library-quote">
+						<div class="quote">
+							<p><?php echo $quoteText; ?></p>
+						</div>
+						<div class="author">
+							<p>- <?php echo $quoteAuthor; ?></p>
+						</div>
+					</div>
+					<?php }; ?>
+					
+					<?php //the_content(); ?>
+					
 					<?php
 						wp_link_pages(
 							array(
