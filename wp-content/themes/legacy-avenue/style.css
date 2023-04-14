@@ -2277,6 +2277,8 @@ body.author article .entry-content {
 .affiliate {
 	text-align: center;
 	max-width: 260px;
+	margin: auto;
+	padding: 25px 0px;
 }
 .affiliate img {
 	max-width: 260px;
@@ -2294,6 +2296,9 @@ body.author article .entry-content {
 	.affiliate-info {
 		display: flex;
 		justify-content: space-between;
+	}
+	.affiliate {
+		padding: 0px;
 	}
 }
 .product-header-wrapper {
