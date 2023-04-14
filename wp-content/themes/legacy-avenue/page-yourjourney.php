@@ -79,26 +79,28 @@ $displayBottomCTA = ($bottomCTABody && $bottomCTAButtonText && $bottomCTALink !=
 								</div>
 							</div>
 						</div>
-						<div class="timeline" id="process-timeline">
-							<ol>
-								<?php foreach ($timelineArray as $item) {
-									$number = $item['crb_timeline_item_numeral'];
-									$title = $item['crb_timeline_item_title'];
-									$body = $item['crb_timeline_item_body'];
-									?>
-									<li>
-										<div class="item-content">
-											<h2><?php echo $number; ?></h2>
-											<h3><?php echo $title; ?></h3>
-											<?php echo $body; ?>
-										</div>
-									</li>
-								<?php }; ?>
-							</ol>
-							<div class="disclaimer-text">
-								<p><?php echo $timelineDisclaimer; ?></p>
+						<?php if(!empty($timelineArray)) {?>
+							<div class="timeline" id="process-timeline">
+								<ol>
+									<?php foreach ($timelineArray as $item) {
+										$number = $item['crb_timeline_item_numeral'];
+										$title = $item['crb_timeline_item_title'];
+										$body = $item['crb_timeline_item_body'];
+										?>
+										<li>
+											<div class="item-content">
+												<h2><?php echo $number; ?></h2>
+												<h3><?php echo $title; ?></h3>
+												<?php echo $body; ?>
+											</div>
+										</li>
+									<?php }; ?>
+								</ol>
+								<div class="disclaimer-text">
+									<p><?php echo $timelineDisclaimer; ?></p>
+								</div>
 							</div>
-						</div>
+						<?php }; ?>
 						<div class="journey-cta journey-cta-lines">
 							<p><?php echo $timelineCTABody; ?></p>
 							<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $timelineCTALink; ?>"><?php echo $timelineCTAButtonText; ?></a></div>
@@ -120,30 +122,32 @@ $displayBottomCTA = ($bottomCTABody && $bottomCTAButtonText && $bottomCTALink !=
 								<p><?php echo $quoteAuthor; ?></p>
 							</div>
 						</div>
-						<section id="offerings" class="product-gallery grid md-cols-2 lg-cols-3 gap-4">
-							<?php foreach ($offerArray as $item) {
-								$image = $item['crb_og_image'];
-								$title = $item['crb_og_first_line'];
-								$subtitle = $item['crb_og_second_line'];
-								$body = $item['crb_og_body'];
-								$buttonText = $item['crb_og_button_text'];
-								$buttonLink = $item['crb_og_link'];
-							?>
-							<div class="product">
-								<?php if ($image != "") { ?>
-									<div class="image"><img src="<?php echo $image; ?>" alt="" /></div>
-								<?php };?>
-								<div class="title">
-									<h2><?php echo $title; ?><span class="product-subtitle"><?php echo $subtitle; ?></span></h2> </div>
-								<div class="text">
-									<p><?php echo $body; ?></p>
+						<?php if(!empty($offerArray)) {?>
+							<section id="offerings" class="product-gallery grid md-cols-2 lg-cols-3 gap-4">
+								<?php foreach ($offerArray as $item) {
+									$image = $item['crb_og_image'];
+									$title = $item['crb_og_first_line'];
+									$subtitle = $item['crb_og_second_line'];
+									$body = $item['crb_og_body'];
+									$buttonText = $item['crb_og_button_text'];
+									$buttonLink = $item['crb_og_link'];
+								?>
+								<div class="product">
+									<?php if ($image != "") { ?>
+										<div class="image"><img src="<?php echo $image; ?>" alt="" /></div>
+									<?php };?>
+									<div class="title">
+										<h2><?php echo $title; ?><span class="product-subtitle"><?php echo $subtitle; ?></span></h2> </div>
+									<div class="text">
+										<p><?php echo $body; ?></p>
+									</div>
+									<?php if ($buttonText && $buttonLink != "") { ?>
+										<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $buttonLink; ?>"><?php echo $buttonText; ?></a></div>
+									<?php };?>
 								</div>
-								<?php if ($buttonText && $buttonLink != "") { ?>
-									<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $buttonLink; ?>"><?php echo $buttonText; ?></a></div>
-								<?php };?>
-							</div>
-							<?php }; ?>
-						</section>
+								<?php }; ?>
+							</section>
+						<?php }; ?>
 						<div class="journey-cta"> 
 							<p><?php echo $bottomCTABody; ?></p>
 							<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $bottomCTALink; ?>"><?php echo $bottomCTAButtonText; ?></a></div>
