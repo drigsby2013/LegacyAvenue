@@ -9,37 +9,59 @@
 	var $body, $window, $sidebar, resizeTimer,
 		secondary, button;
 
+	const buttonOpenClass = 'toggle-on'
+	const subnavOpenClass = 'toggled-on'
+
+	window.expandedMenuId = null
+
 	function initMainNavigation( container ) {
 		// Add dropdown toggle that display child menu items.
-		container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+		container.find( '.menu-item-has-children > a' )
+			.after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
-		// Toggle buttons and submenu items with active children menu items.
-		container.find( '.current-menu-ancestor > button' ).addClass( 'toggle-on' );
-		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+		// // Toggle buttons and submenu items with active children menu items.
+		// container.find( '.current-menu-ancestor > button' ).addClass( buttonOpenClass );
+		// container.find( '.current-menu-ancestor > .sub-menu' ).addClass( subnavOpenClass );
 
-		container.find( '.dropdown-toggle' ).on( 'click', function( e ) {
-			var _this = $( this );
+		const $dropdownButtons = container.find( '.dropdown-toggle' )
+
+		$dropdownButtons.on( 'click', function( e ) {
 			e.preventDefault();
-			_this.toggleClass( 'toggle-on' );
-			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+
+			console.log({e})
+			const _this = $(e.target)
+
+			// reset each subnav before expanding the one that was clicked
+			$dropdownButtons.each(function (i, el) {
+				const  _el = $(el)
+				if (_el.parent().attr('id') === _this.parent().attr('id')) { return }
+				_el.removeClass( buttonOpenClass );
+				_el.siblings( '.children, .sub-menu' ).removeClass( subnavOpenClass );
+				_el.attr( 'aria-expanded', 'false' );
+				_el.html( screenReaderText.collapse );
+			})
+
+			// const _this = $( e.target );
+			_this.toggleClass( buttonOpenClass );
+			_this.next( '.children, .sub-menu' ).toggleClass( subnavOpenClass );
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 		} );
 	}
 	initMainNavigation( $( '.main-navigation' ) );
 
-	// Re-initialize the main navigation when it is updated, persisting any existing submenu expanded states.
-	$( document ).on( 'customize-preview-menu-refreshed', function( e, params ) {
-		if ( 'primary' === params.wpNavMenuArgs.theme_location ) {
-			initMainNavigation( params.newContainer );
+	// // Re-initialize the main navigation when it is updated, persisting any existing submenu expanded states.
+	// $( document ).on( 'customize-preview-menu-refreshed', function( e, params ) {
+	// 	if ( 'primary' === params.wpNavMenuArgs.theme_location ) {
+	// 		initMainNavigation( params.newContainer );
 
-			// Re-sync expanded states from oldContainer.
-			params.oldContainer.find( '.dropdown-toggle.toggle-on' ).each(function() {
-				var containerId = $( this ).parent().prop( 'id' );
-				$( params.newContainer ).find( '#' + containerId + ' > .dropdown-toggle' ).triggerHandler( 'click' );
-			});
-		}
-	});
+	// 		// Re-sync expanded states from oldContainer.
+	// 		params.oldContainer.find( '.dropdown-toggle.toggle-on' ).each(function() {
+	// 			var containerId = $( this ).parent().prop( 'id' );
+	// 			$( params.newContainer ).find( '#' + containerId + ' > .dropdown-toggle' ).triggerHandler( 'click' );
+	// 		});
+	// 	}
+	// });
 
 	secondary = $( '#secondary' );
 	button = $( '.site-branding' ).find( '.secondary-toggle' );
@@ -60,11 +82,11 @@
 			return;
 		}
 
-		button.on( 'click.twentyfifteen', function() {
-			secondary.toggleClass( 'toggled-on' );
+		button.on( 'click.legacyavenue', function() {
+			secondary.toggleClass( subnavOpenClass );
 			secondary.trigger( 'resize' );
-			$( this ).toggleClass( 'toggled-on' );
-			if ( $( this, secondary ).hasClass( 'toggled-on' ) ) {
+			$( this ).toggleClass( subnavOpenClass );
+			if ( $( this, secondary ).hasClass( subnavOpenClass ) ) {
 				$( this ).attr( 'aria-expanded', 'true' );
 				secondary.attr( 'aria-expanded', 'true' );
 			} else {
@@ -117,14 +139,14 @@
 		$sidebar       = $( '#sidebar' ).first();
 
 		$window
-			.on( 'scroll.twentyfifteen', resizeAndScroll )
-			.on( 'load.twentyfifteen', onResizeARIA )
-			.on( 'resize.twentyfifteen', function() {
+			.on( 'scroll.legacyavenue', resizeAndScroll )
+			.on( 'load.legacyavenue', onResizeARIA )
+			.on( 'resize.legacyavenue', function() {
 				clearTimeout( resizeTimer );
 				resizeTimer = setTimeout( resizeAndScroll, 500 );
 				onResizeARIA();
 			} );
-		$sidebar.on( 'click.twentyfifteen keydown.twentyfifteen', 'button', resizeAndScroll );
+		$sidebar.on( 'click.legacyavenue keydown.legacyavenue', 'button', resizeAndScroll );
 
 		for ( var i = 0; i < 6; i++ ) {
 			setTimeout( resizeAndScroll, 100 * i );

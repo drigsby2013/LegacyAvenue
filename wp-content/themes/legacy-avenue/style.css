@@ -1139,6 +1139,7 @@ header .site-brand nav .dropdown-toggle {
 	position: relative;
 	font-weight: 300;
 	transition: 0.2s;
+	top: -0.4em;
 }
 
 header .site-brand nav .dropdown-toggle::before {
@@ -1150,6 +1151,7 @@ header .site-brand nav .dropdown-toggle:hover {
 	transform: scale(1.2);
 }
 
+.wprmenu_parent_item_li.wprmenu_no_border_bottom .wprmenu_icon,
 header .site-brand nav .dropdown-toggle.toggle-on {
 	transform: rotate(180deg);
 }

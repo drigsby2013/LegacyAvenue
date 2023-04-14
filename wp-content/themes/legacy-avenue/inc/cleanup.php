@@ -14,6 +14,7 @@ add_action('wp_enqueue_scripts', function() {
     wp_dequeue_style('wp-block-library-theme'); // Inline CSS
     wp_dequeue_style('global-styles'); // Inline CSS
     wp_dequeue_style('twentyfifteen-block-style'); // Inline CSS
+	wp_dequeue_script('twentyfifteen-script');
 }, 20);
 
 // Remove blank SVGs

@@ -35,11 +35,26 @@ require __DIR__ . '/inc/widgets.php';
 
 // Remove Gutenberg CSS.
 add_action('wp_enqueue_scripts', function() {
-    // TODO: update this with the brands.css only
-    wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
-    // wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css');
-    // wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css');
+	// TODO: update this with the brands.css only
+	wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+	// wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css');
+	// wp_enqueue_style('fontawesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css');
+
+	// Remove twentyfifteen funtions.js file
+	// wp_dequeue_script('twentyfifteen-script');
+	// wp_enqueue_script('legacyavenue-script', get_stylesheet_directory_uri() . '/js/functions.js', $deps = array( 'jquery' ), $ver = '20230401', $in_footer = false );
+
+	wp_enqueue_script( 'legacyavenue-script', get_stylesheet_directory_uri() . '/js/functions.js', array( 'jquery' ), '20230404', true );
+	wp_localize_script(
+		'legacyavenue-script',
+		'screenReaderText',
+		array(
+			'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen-child' ) . '</span>',
+			'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen-child' ) . '</span>',
+		)
+	);
 }, 20);
+
 
 
 // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
