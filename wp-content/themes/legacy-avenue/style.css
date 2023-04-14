@@ -1245,8 +1245,11 @@ footer.site-footer-container ul.wp-block-social-links li a {
 footer .site-footer-container>p:first-of-type {
 	margin-top: 50px;
 }
-footer.site-footer-container>p a,
-footer.site-footer-container>p {
+
+.site-footer-container > p a,
+.site-footer-container > p,
+.footer-disclaimer p a,
+.footer-disclaimer p {
 	color: #CC7A29;
 	font-size: 12px;
 	line-height: 16px;

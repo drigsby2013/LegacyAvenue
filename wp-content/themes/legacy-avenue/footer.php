@@ -66,10 +66,17 @@
 
 			</div>
 		</div>
+
 		<?php 
 			if (carbon_get_theme_option('crb_footer_disclaimer')) :
 		?>
-			<p class="footer-disclaimer"><?php echo carbon_get_theme_option('crb_footer_disclaimer'); ?></p>
+			<div class="footer-disclaimer">
+
+				<?php
+					$footerDisclaimer = apply_filters( 'the_content', carbon_get_theme_option( 'crb_footer_disclaimer' ) );
+					echo $footerDisclaimer;
+				?>
+			</div>
 	
 		<?php endif; ?>
 

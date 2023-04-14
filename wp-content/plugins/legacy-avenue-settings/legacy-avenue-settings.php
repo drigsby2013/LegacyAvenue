@@ -35,7 +35,7 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_address_state',   __( 'State' ) ),
 	        Field::make( 'text', 'crb_address_zipcode',  __( 'Zipcode' ) ),
 			Field::make( 'separator', 'crb_footer_content', __( 'Footer Info' ) ),
-	        Field::make( 'textarea', 'crb_footer_disclaimer', __( 'Footer Disclaimer' ) ),
+	        Field::make( 'rich_text', 'crb_footer_disclaimer', __( 'Footer Disclaimer' ) ),
 	        Field::make( 'text', 'crb_finra', __( 'Finra Broker URL' ) ),
 	    ]);
 
