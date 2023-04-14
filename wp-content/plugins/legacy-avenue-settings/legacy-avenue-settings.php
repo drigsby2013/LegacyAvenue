@@ -254,7 +254,7 @@ function crb_attach_theme_options() {
 				) ),
 	        Field::make( 'text', 'crb_timeline_disclaimer', __( 'Timeine Disclaimer' ) ),
 
-		]);	
+		]);		
 		
 	Container::make( 'post_meta', __( 'Timeline CTA' ) )
 		->where( 'post_type', '=', 'page' )
@@ -264,6 +264,23 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_timeline_cta_button_text', __( 'Button Text' ) ),
 	        Field::make( 'text', 'crb_timeline_cta_link', __( 'Button Link' ) ),
 		]);
+	
+	Container::make( 'post_meta', __( 'Recommended Specialists' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-yourjourney.php' )
+		->add_fields([
+	        Field::make( 'text', 'crb_specialists_first_line', __( 'First Line' ) ),
+	        Field::make( 'text', 'crb_specialists_second_line', __( 'Second Line' ) ),
+	        Field::make( 'rich_text', 'crb_specialists_body', __( 'Body' ) ),
+			Field::make( 'complex', 'crb_specialists', __( 'Specialists' ) )
+				->set_max(4)
+				->add_fields( array(
+					Field::make( 'image', 'crb_affiliate_image', __( 'Image' ) )->set_value_type( 'url' ),
+					Field::make( 'text', 'crb_affiliate_body', __( 'Body' ) ),
+					Field::make( 'text', 'crb_affiliate_button_text', __( 'Button Text' ) ),
+					Field::make( 'text', 'crb_affiliate_button_link', __( 'Button Link' ) ),
+				) ),
+		]);	
 		
 	Container::make( 'post_meta', __( 'Second Image Heading' ) )
 		->where( 'post_type', '=', 'page' )

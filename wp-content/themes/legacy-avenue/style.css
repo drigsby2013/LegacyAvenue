@@ -951,6 +951,8 @@ footer>div,
 footer>p,
 .story-cta,
 .journey-cta,
+.specialists .text,
+.specialists .affiliate-info,
 .product-header,
 .product-gallery,
 .home-quote,
@@ -2253,6 +2255,40 @@ body.author article .entry-content {
 		border-right: 1px solid #000;
 		text-align: right;
 		padding-right: 20px;
+	}
+}
+
+.specialists {
+	background-color: #F3E0C4;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.specialists .text p {
+	padding-bottom: 30px;
+}
+.specialists .text p {
+	max-width: 522px;
+}
+.affiliate {
+	text-align: center;
+	max-width: 260px;
+}
+.affiliate img {
+	max-width: 260px;
+}
+@media screen and (min-width: 768px) {
+	.specialists {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	.specialists .text {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 75px;
+	}
+	.affiliate-info {
+		display: flex;
+		justify-content: space-between;
 	}
 }
 .product-header-wrapper {

@@ -26,14 +26,20 @@ $heroButtonLink	  = carbon_get_post_meta( get_the_ID(), 'crb_hero_button_link');
 $heroButtonDisplay = ($heroButtonText && $heroButtonLink != '') ? true : false;
 
 //Timeline Items
-$timelineArray = carbon_get_post_meta( get_the_ID(), 'crb_timeline_item');
+$timelineArray      = carbon_get_post_meta( get_the_ID(), 'crb_timeline_item');
 $timelineDisclaimer = carbon_get_post_meta( get_the_ID(), 'crb_timeline_disclaimer');
 
 //CTA
-$timelineCTABody   = carbon_get_post_meta( get_the_ID(), 'crb_timeline_cta_body');
+$timelineCTABody   	   = carbon_get_post_meta( get_the_ID(), 'crb_timeline_cta_body');
 $timelineCTAButtonText = carbon_get_post_meta( get_the_ID(), 'crb_timeline_cta_button_text');
-$timelineCTALink   = carbon_get_post_meta( get_the_ID(), 'crb_timeline_cta_link');
-$displayCTA 	   = ($timelineCTABody && $timelineCTAButtonText && $timelineCTALink != '') ? true : false;
+$timelineCTALink       = carbon_get_post_meta( get_the_ID(), 'crb_timeline_cta_link');
+$displayCTA 	       = ($timelineCTABody && $timelineCTAButtonText && $timelineCTALink != '') ? true : false;
+
+//Recommended Specialists
+$specialistsTitleFirstLine   = carbon_get_post_meta( get_the_ID(), 'crb_specialists_first_line') ? : '';
+$specialistsTitleSecondLine  = carbon_get_post_meta( get_the_ID(), 'crb_specialists_second_line');
+$specialistsBody			 = apply_filters( 'the_content', carbon_get_the_post_meta( 'crb_specialists_body' ) );
+$specialistsArray 			 = carbon_get_post_meta( get_the_ID(), 'crb_specialists');
 
 //Second Image Heading
 $secondImageHeadingTitleFirstLine   = carbon_get_post_meta( get_the_ID(), 'crb_second_heading_first_line') ? : '';
@@ -105,6 +111,29 @@ $displayBottomCTA = ($bottomCTABody && $bottomCTAButtonText && $bottomCTALink !=
 							<p><?php echo $timelineCTABody; ?></p>
 							<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $timelineCTALink; ?>"><?php echo $timelineCTAButtonText; ?></a></div>
 						</div>
+						<?php if(!empty($specialistsArray)) {?>
+							<div class="specialists">
+								<div class="text">
+									<h2><?php echo $specialistsTitleFirstLine; ?><br><?php echo $specialistsTitleSecondLine; ?></h2>
+									<?php echo $specialistsBody; ?>
+								</div>
+								<div class="affiliate-info">
+									<?php foreach ($specialistsArray as $item) {
+										$image = $item['crb_affiliate_image'];
+										$body = $item['crb_affiliate_body'];
+										$buttonText = $item['crb_affiliate_button_text'];
+										$buttonLink = $item['crb_affiliate_button_link'];
+									?>
+										<div class="affiliate">
+											<img src="<?php echo $image; ?>" alt="">
+											<p><?php echo $body; ?></p>
+											<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $buttonLink; ?>"><?php echo $buttonText; ?></a></div>
+										</div>
+									<?php }; ?>
+								</div>
+							</div>
+						<?php }; ?>
+						
 						<div class="product-header-wrapper">
 							<div class="image"><img src="<?php echo $secondImageHeadingImage; ?>" alt="" width="740" height="500" /></div>
 							<div class="product-header">
@@ -114,14 +143,16 @@ $displayBottomCTA = ($bottomCTABody && $bottomCTAButtonText && $bottomCTALink !=
 								</div>
 							</div>
 						</div>
-						<div class="journey-quote">
-							<div class="quote">
-								<p><?php echo $quoteText; ?></p>
+						<?php if($quoteText && $quoteAuthor != "") {?>
+							<div class="journey-quote">
+								<div class="quote">
+									<p><?php echo $quoteText; ?></p>
+								</div>
+								<div class="author">
+									<p><?php echo $quoteAuthor; ?></p>
+								</div>
 							</div>
-							<div class="author">
-								<p><?php echo $quoteAuthor; ?></p>
-							</div>
-						</div>
+						<?php }; ?>
 						<?php if(!empty($offerArray)) {?>
 							<section id="offerings" class="product-gallery grid md-cols-2 lg-cols-3 gap-4">
 								<?php foreach ($offerArray as $item) {
