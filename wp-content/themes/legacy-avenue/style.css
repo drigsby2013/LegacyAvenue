@@ -1936,7 +1936,7 @@ body.author article .entry-content {
 	margin-top: 50px !important;
 	margin-bottom: 55px !important;
 	padding-bottom: 45px !important;
-	padding-top: 20px;
+	padding: 45px 0px;
 	border-top: 1px solid #D0947B;
 	border-bottom: 3px solid #D0947B;
 }
@@ -1947,10 +1947,6 @@ body.author article .entry-content {
 	height: 1px;
 	background: #D0947B;
 	bottom: -10px;
-}
-.library-quote {
-	padding-bottom: 45px !important;
-	border-bottom: 3px solid #D0947B;
 }
 .library-quote::before {
 	content: '';
@@ -2294,7 +2290,7 @@ body.author article .entry-content {
 	.specialists .text {
 		display: flex;
 		justify-content: space-between;
-		padding-bottom: 75px;
+		padding-bottom: 40px;
 	}
 	.affiliate-info {
 		display: flex;
@@ -2510,7 +2506,6 @@ body.author article .entry-content {
 }
 .library-item .image img {
 	height: auto;
-	max-height: 150px;
 	width: 100%;
 }
 .library-item .title h2 {
