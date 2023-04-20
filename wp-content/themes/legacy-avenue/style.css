@@ -1570,7 +1570,7 @@ body.author article .entry-content {
 	}
 	.home-hero .home-hero-textbox::before {
 		position: absolute;
-		background-color: rgba(255,250,244,0.5);
+		background-color: rgba(255,250,244,0.6);
 		height: 110%;
 		width: 110%;
 		content: '';
