@@ -20,6 +20,7 @@ $titleSecondLine  = carbon_get_post_meta( get_the_ID(), 'crb_second_line');
 
 //Hero Section
 $heroImage 		  = carbon_get_post_meta( get_the_ID(), 'crb_hero_image');
+$heroOverlay 	  = carbon_get_post_meta( get_the_ID(), 'crb_text_overlay') ? 'home-hero-textbox' : '';
 $heroBody 	 	  = apply_filters( 'the_content', carbon_get_the_post_meta( 'crb_hero_body' ) );
 $heroButtonText	  = carbon_get_post_meta( get_the_ID(), 'crb_hero_button_text');
 $heroButtonLink	  = carbon_get_post_meta( get_the_ID(), 'crb_hero_button_link');
@@ -80,11 +81,13 @@ $imageWithTextLButtonDisplay = ($imageWithTextLButtonText && $imageWithTextLButt
 					<div class="home-hero">
 						<div class="home-hero-image-mobile mobile-only"><img src="<?php echo $heroImage; ?>" alt=""/></div>
 						<div class="home-hero-text">
-							<h1><?php echo $titleFirstLine; ?><br><?php echo $titleSecondLine; ?></h1>
-							<?php echo $heroBody; ?>
-							<?php if ($heroButtonDisplay == true) {?>
-								<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $heroButtonLink; ?>"><?php echo $heroButtonText; ?></a></div>
-							<?php }; ?>
+							<div class="<?php echo $heroOverlay; ?>">
+								<h1><?php echo $titleFirstLine; ?><br><?php echo $titleSecondLine; ?></h1>
+								<?php echo $heroBody; ?>
+								<?php if ($heroButtonDisplay == true) {?>
+									<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $heroButtonLink; ?>"><?php echo $heroButtonText; ?></a></div>
+								<?php }; ?>
+							</div>
 						</div>
 						<div class="home-hero-image-large large-only"><img src="<?php echo $heroImage; ?>" alt="" width="990" height="500" /></div>
 					</div>

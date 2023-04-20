@@ -1564,6 +1564,22 @@ body.author article .entry-content {
 		float: left;
 		margin-right: 5px;
 	}
+	.home-hero .home-hero-textbox {
+		max-width: 400px;
+		position: relative;
+	}
+	.home-hero .home-hero-textbox::before {
+		position: absolute;
+		background-color: rgba(255,250,244,0.5);
+		height: 110%;
+		width: 110%;
+		content: '';
+		left: 0;
+		top: 0;
+		transform: translate(-5%, -5%);
+		z-index: -1;
+		filter: blur(15px);
+	}
 	.home-hero .home-hero-text p {
 		max-width: 330px;
 	}

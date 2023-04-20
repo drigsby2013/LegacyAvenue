@@ -81,6 +81,7 @@ function crb_attach_theme_options() {
 		->where( 'post_template', '=', 'page-home.php' )
 		->add_fields([
 			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
+			Field::make( 'checkbox', 'crb_text_overlay', 'Add semi-transparent background to hero text? (Use if the image is dark)' )->set_option_value( 'yes' ),
 			Field::make( 'rich_text', 'crb_hero_body', __( 'Hero Text' ) ),
 	        Field::make( 'text', 'crb_hero_button_text', __( 'Button Text' ) ),
 			Field::make( 'text', 'crb_hero_button_link', __( 'Button Link' ) ),
