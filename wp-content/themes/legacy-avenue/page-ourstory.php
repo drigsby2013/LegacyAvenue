@@ -70,12 +70,12 @@ $displayCTA 	 = ($bottomCTAText && $bottomCTAButton && $bottomCTALink != '') ? t
 									<div class="hero-column">
 										<?php echo $heroColOne; ?>
 									</div>
-									<?php if ($displayColTwo == true) {?>
-										<div class="hero-column">
-											<?php echo $heroColTwo; ?>
-										</div>
-									<?php }; ?>
 								</div>
+								<?php if ($displayColTwo == true) {?>
+									<div class="hero-lower-text">
+										<?php echo $heroColTwo; ?>
+									</div>
+								<?php }; ?>
 							</div>
 							<div class="story-hero-image-large large-only"><img src="<?php echo $heroImage; ?>" alt="" class="alignnone" /></div>
 						</div>

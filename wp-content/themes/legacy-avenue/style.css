@@ -1531,8 +1531,7 @@ body.author article .entry-content {
 	bottom: -10px;
 }
 @media screen and (min-width: 768px) {
-	.home-hero .home-hero-text,
-	.story-hero .story-hero-text {
+	.home-hero .home-hero-text{
 		padding-bottom: 130px;
 		margin-bottom: 0;
 	}
@@ -1548,15 +1547,22 @@ body.author article .entry-content {
 		padding-top: 45px;
 		max-width: 500px;
 	}
+	.story-hero .story-hero-text {
+		padding-bottom: 90px;
+		margin-bottom: 0;
+	}
+	.story-hero .columns .hero-column {
+		width: 50%;
+		display: inline-block;
+		max-width: 380px;
+		margin-right: 50px;
+	}
 	.story-hero-text .hero-column:first-of-type p:first-of-type:first-child:first-letter {
 		font-size: 75px;
 		line-height: 60px;
 		font-family: var(--font-serif);
 		float: left;
 		margin-right: 5px;
-	}
-	.story-hero .story-hero-text p {
-		max-width: 380px;
 	}
 	.home-hero .home-hero-text p {
 		max-width: 330px;
@@ -1578,12 +1584,6 @@ body.author article .entry-content {
 	.journey-hero .columns .hero-column p {
 		max-width: 580px;
 		margin-top: 45px;
-	}
-	.story-hero .columns .hero-column {
-		width: 50%;
-		display: inline-block;
-		max-width: 380px;
-		margin-right: 50px;
 	}
 	.contact-hero .columns .hero-column:not(.large-only) {
 		margin-right: 10%;
