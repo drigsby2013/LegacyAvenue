@@ -1097,6 +1097,9 @@ header .site-brand .nav-menu .menu-item a {
 	font-size: 14px;
 	letter-spacing: 0.15em;
 }
+header .site-brand .nav-menu .menu-item .menu-item a {
+	text-transform: capitalize;
+}
 header .site-brand .nav-menu .menu-item a:hover,
 header .site-brand .nav-menu .menu-item a:focus,
 header .site-brand .nav-menu .menu-item a:active {
