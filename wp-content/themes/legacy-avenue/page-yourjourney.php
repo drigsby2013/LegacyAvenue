@@ -127,7 +127,7 @@ $displayBottomCTA = ($bottomCTABody && $bottomCTAButtonText && $bottomCTALink !=
 										<div class="affiliate">
 											<img src="<?php echo $image; ?>" alt="">
 											<p><?php echo $body; ?></p>
-											<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $buttonLink; ?>"><?php echo $buttonText; ?></a></div>
+											<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $buttonLink; ?>" target="_blank"><?php echo $buttonText; ?></a></div>
 										</div>
 									<?php }; ?>
 								</div>
