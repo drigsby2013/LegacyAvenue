@@ -32,7 +32,7 @@
 			const _this = $(e.target)
 
 			// reset each subnav before expanding the one that was clicked
-			$dropdownButtons.each(function (i, el) {
+		$dropdownButtons.each(function (i, el) {
 				const  _el = $(el)
 				if (_el.parent().attr('id') === _this.parent().attr('id')) { return }
 				_el.removeClass( buttonOpenClass );
@@ -48,7 +48,7 @@
 			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 		} );
 	}
-	initMainNavigation( $( '.main-navigation' ) );
+	// initMainNavigation( $( '.main-navigation' ) );
 
 	// // Re-initialize the main navigation when it is updated, persisting any existing submenu expanded states.
 	// $( document ).on( 'customize-preview-menu-refreshed', function( e, params ) {
@@ -73,27 +73,27 @@
 			return;
 		}
 
-		// Hide button if there are no widgets and the menus are missing or empty.
-		menu    = secondary.find( '.nav-menu' );
-		widgets = secondary.find( '#widget-area' );
-		social  = secondary.find( '#social-navigation' );
-		if ( ! widgets.length && ! social.length && ( ! menu.length || ! menu.children().length ) ) {
-			button.hide();
-			return;
-		}
+		// // Hide button if there are no widgets and the menus are missing or empty.
+		// menu    = secondary.find( '.nav-menu' );
+		// widgets = secondary.find( '#widget-area' );
+		// social  = secondary.find( '#social-navigation' );
+		// if ( ! widgets.length && ! social.length && ( ! menu.length || ! menu.children().length ) ) {
+		// 	button.hide();
+		// 	return;
+		// }
 
-		button.on( 'click.legacyavenue', function() {
-			secondary.toggleClass( subnavOpenClass );
-			secondary.trigger( 'resize' );
-			$( this ).toggleClass( subnavOpenClass );
-			if ( $( this, secondary ).hasClass( subnavOpenClass ) ) {
-				$( this ).attr( 'aria-expanded', 'true' );
-				secondary.attr( 'aria-expanded', 'true' );
-			} else {
-				$( this ).attr( 'aria-expanded', 'false' );
-				secondary.attr( 'aria-expanded', 'false' );
-			}
-		} );
+		// button.on( 'click.legacyavenue', function() {
+		// 	secondary.toggleClass( subnavOpenClass );
+		// 	secondary.trigger( 'resize' );
+		// 	$( this ).toggleClass( subnavOpenClass );
+		// 	if ( $( this, secondary ).hasClass( subnavOpenClass ) ) {
+		// 		$( this ).attr( 'aria-expanded', 'true' );
+		// 		secondary.attr( 'aria-expanded', 'true' );
+		// 	} else {
+		// 		$( this ).attr( 'aria-expanded', 'false' );
+		// 		secondary.attr( 'aria-expanded', 'false' );
+		// 	}
+		// } );
 	} )();
 
 	/**

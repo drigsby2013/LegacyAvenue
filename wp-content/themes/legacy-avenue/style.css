@@ -1193,6 +1193,13 @@ header .site-brand nav .sub-menu .menu-item {
 	display: block;
 }
 
+/* make top link open subnav on hover */
+.site-brand nav .nav-menu > .menu-item:hover .sub-menu {
+	left: 0;
+}
+
+
+
 
 /*-------------*/
 /*Footer Styles*/
