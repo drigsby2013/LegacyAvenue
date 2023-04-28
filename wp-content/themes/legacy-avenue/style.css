@@ -2630,6 +2630,9 @@ body.author article .entry-content {
 #mg-wprm-wrap ul li {
 	text-align: center;
 }
+#wprmenu_bar div.hamburger {
+	margin-top: 0;
+}
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
