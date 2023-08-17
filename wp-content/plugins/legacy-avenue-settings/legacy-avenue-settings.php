@@ -18,14 +18,14 @@ function crb_attach_theme_options() {
    	// =============================================
    	//  ReCAPTCHA SETTINGS
    	// =============================================
-
-	$basic_options_container = Container::make( 'theme_options', __( 'ReCaptcha Info' ) )
-		->set_icon('dashicons-admin-network')
-	    ->add_fields([
-			Field::make( 'separator', 'crb_recaptcha', __( 'ReCaptcha' ) ),
-	        Field::make( 'text', 'crb_recaptcha_head', __( 'Code to place in the <head>.' ) ),
-	        Field::make( 'textarea', 'crb_recaptcha_body', __( 'Code to place in the <body>.' ) ),
-		]);
+//
+//	$basic_options_container = Container::make( 'theme_options', __( 'ReCaptcha Info' ) )
+//		->set_icon('dashicons-admin-network')
+//	    ->add_fields([
+//			Field::make( 'separator', 'crb_recaptcha', __( 'ReCaptcha' ) ),
+//	        Field::make( 'text', 'crb_recaptcha_head', __( 'Code to place in the <head>.' ) ),
+//	        Field::make( 'textarea', 'crb_recaptcha_body', __( 'Code to place in the <body>.' ) ),
+//		]);
 	
    	// =============================================
    	//  COMPANY SETTINGS
