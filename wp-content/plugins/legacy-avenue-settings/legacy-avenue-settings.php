@@ -14,9 +14,21 @@ use Carbon_Fields\Field;
 
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
-
+	
    	// =============================================
-   	//  COMPANY SETTINGS PAGE
+   	//  ReCAPTCHA SETTINGS
+   	// =============================================
+
+	$basic_options_container = Container::make( 'theme_options', __( 'ReCaptcha Info' ) )
+		->set_icon('dashicons-admin-network')
+	    ->add_fields([
+			Field::make( 'separator', 'crb_recaptcha', __( 'ReCaptcha' ) ),
+	        Field::make( 'text', 'crb_recaptcha_head', __( 'Code to place in the <head>.' ) ),
+	        Field::make( 'textarea', 'crb_recaptcha_body', __( 'Code to place in the <body>.' ) ),
+		]);
+	
+   	// =============================================
+   	//  COMPANY SETTINGS
    	// =============================================
 
 	$basic_options_container = Container::make( 'theme_options', __( 'Company Info' ) )
@@ -38,31 +50,6 @@ function crb_attach_theme_options() {
 	        Field::make( 'rich_text', 'crb_footer_disclaimer', __( 'Footer Disclaimer' ) ),
 	        Field::make( 'text', 'crb_finra', __( 'Finra Broker URL' ) ),
 	    ]);
-
-
-	// // Add second options page under 'Basic Options'
-	// Container::make( 'theme_options', __( 'Social Links' ) )
-	//     ->set_page_parent( $basic_options_container ) // reference to a top level container
-	//     ->add_fields( array(
-	//         Field::make( 'text', 'crb_facebook_link', __( 'Facebook Link' ) ),
-	//         Field::make( 'text', 'crb_instagram_link', __( 'Instagram Link' ) ),
-	//         // Field::make( 'text', 'crb_twitter_link', __( 'Twitter Link' ) ),
-	//     ) );
-
-	// // Add third options page under "Appearance"
-	// Container::make( 'theme_options', __( 'Customize Background' ) )
-	//     ->set_page_parent( 'themes.php' ) // identificator of the "Appearance" admin section
-	//     ->add_fields( array(
-	//         Field::make( 'color', 'crb_background_color', __( 'Background Color' ) ),
-	//         Field::make( 'image', 'crb_background_image', __( 'Background Image' ) ),
-	//     ) );
-
-
-	// Container::make( 'user_meta', 'Address' )
-	//     ->add_fields([
-	//         Field::make( 'text', 'crb_city_and_post', 'City and post code' ),
-	//         Field::make( 'text', 'crb_street', 'Street Name' ),
-	//     ]);
    
 	// =============================================
    	//  HOME PAGE META BLOCKS
