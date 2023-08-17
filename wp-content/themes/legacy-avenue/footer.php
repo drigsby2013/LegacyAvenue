@@ -88,6 +88,12 @@
 		<?php endif; ?>
 
 		<p class="copyright"><?php legacyavenue_footer_copyright(); ?></p>
+			
+		<!-- Get the custom code info from the theme settings -->
+		<?php 
+			$customFooter = carbon_get_theme_option('crb_custom_html_footer'); 
+			echo $customFooter;
+		?>
 	</footer>
 
 </div>

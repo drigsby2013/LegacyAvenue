@@ -18,14 +18,25 @@ function crb_attach_theme_options() {
    	// =============================================
    	//  ReCAPTCHA SETTINGS
    	// =============================================
-//
-//	$basic_options_container = Container::make( 'theme_options', __( 'ReCaptcha Info' ) )
-//		->set_icon('dashicons-admin-network')
-//	    ->add_fields([
-//			Field::make( 'separator', 'crb_recaptcha', __( 'ReCaptcha' ) ),
-//	        Field::make( 'text', 'crb_recaptcha_head', __( 'Code to place in the <head>.' ) ),
-//	        Field::make( 'textarea', 'crb_recaptcha_body', __( 'Code to place in the <body>.' ) ),
-//		]);
+	//
+	//	$basic_options_container = Container::make( 'theme_options', __( 'ReCaptcha Info' ) )
+	//		->set_icon('dashicons-admin-network')
+	//	    ->add_fields([
+	//			Field::make( 'separator', 'crb_recaptcha', __( 'ReCaptcha' ) ),
+	//	        Field::make( 'text', 'crb_recaptcha_head', __( 'Code to place in the <head>.' ) ),
+	//	        Field::make( 'textarea', 'crb_recaptcha_body', __( 'Code to place in the <body>.' ) ),
+	//		]);	
+   	// =============================================
+   	//  Custom HTML
+   	// =============================================
+
+	$basic_options_container = Container::make( 'theme_options', __( 'Custom HTML' ) )
+		->set_icon('dashicons-html')
+	    ->add_fields([
+			Field::make( 'separator', 'crb_custom_html', __( 'Custom code' ) ),
+	        Field::make( 'textarea', 'crb_custom_html_head', __( 'Code to place in the <head>.' ) ),
+	        Field::make( 'textarea', 'crb_custom_html_footer', __( 'Code to place in the <footer>.' ) ),
+		]);
 	
    	// =============================================
    	//  COMPANY SETTINGS

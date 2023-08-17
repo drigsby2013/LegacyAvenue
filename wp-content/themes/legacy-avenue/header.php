@@ -16,13 +16,19 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<!--[if lt IE 9]>
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js?ver=3.7.0"></script>
+		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js?ver=3.7.0"></script>
 	<![endif]-->
+	
+	<!-- Get the custom code info from the theme settings -->
+	<?php 
+		$customHead = carbon_get_theme_option('crb_custom_html_head'); 
+		echo $customHead;
+	?>
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
-	<script src="https://www.google.com/recaptcha/enterprise.js?render=6LeFlq4nAAAAALZBZihpQWD0JwbRxpwR_M5uE-8e"></script>
 </head>
 
 <body <?php body_class(); ?>>
