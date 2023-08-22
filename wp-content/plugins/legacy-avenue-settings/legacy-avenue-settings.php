@@ -73,16 +73,18 @@ function crb_attach_theme_options() {
 	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
 	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
 		]);
-	
+		
 	Container::make( 'post_meta', __( 'Hero Section' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-home.php' )
 		->add_fields([
-			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
-			Field::make( 'checkbox', 'crb_text_overlay', 'Add semi-transparent background to hero text? (Use if the image is dark)' )->set_option_value( 'yes' ),
-			Field::make( 'rich_text', 'crb_hero_body', __( 'Hero Text' ) ),
+			Field::make( 'image', 'crb_hero_image_d', __( 'Hero Image - Desktop' ) )->set_value_type( 'url' ),
+			Field::make( 'image', 'crb_hero_image_m', __( 'Hero Image - Mobile' ) )->set_value_type( 'url' ),
 	        Field::make( 'text', 'crb_hero_button_text', __( 'Button Text' ) ),
 			Field::make( 'text', 'crb_hero_button_link', __( 'Button Link' ) ),
+			Field::make( 'rich_text', 'crb_hero_body_1', __( 'Column 1' ) ),
+			Field::make( 'rich_text', 'crb_hero_body_2', __( 'Column 2' ) ),
+			Field::make( 'checkbox', 'crb_border', 'Add bottom border to hero section?' )->set_option_value( 'yes' ),
 		]);	
 		
 	Container::make( 'post_meta', __( 'Image with Text Overlay - Text Right' ) )
@@ -167,15 +169,20 @@ function crb_attach_theme_options() {
 		->add_fields([
 	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
 	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
-		]);
-	
+
+		]);	
+		
 	Container::make( 'post_meta', __( 'Hero Section' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-ourstory.php' )
 		->add_fields([
-			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
-			Field::make( 'rich_text', 'crb_hero_col_one', __( 'First Column' ) ),
-			Field::make( 'rich_text', 'crb_hero_col_two', __( 'Second Column' ) ),
+			Field::make( 'image', 'crb_hero_image_d', __( 'Hero Image - Desktop' ) )->set_value_type( 'url' ),
+			Field::make( 'image', 'crb_hero_image_m', __( 'Hero Image - Mobile' ) )->set_value_type( 'url' ),
+	        Field::make( 'text', 'crb_hero_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'crb_hero_button_link', __( 'Button Link' ) ),
+			Field::make( 'rich_text', 'crb_hero_body_1', __( 'Column 1' ) ),
+			Field::make( 'rich_text', 'crb_hero_body_2', __( 'Column 2' ) ),
+			Field::make( 'checkbox', 'crb_border', 'Add bottom border to hero section?' )->set_option_value( 'yes' ),
 		]);	
 	
 	Container::make( 'post_meta', __( 'Two Column Header' ) )
@@ -330,15 +337,26 @@ function crb_attach_theme_options() {
    	//  LIBRARY META BLOCKS
    	// =============================================
 
-	Container::make( 'post_meta', __( 'Hero Section' ) )
+	Container::make( 'post_meta', __( 'Visible Page Title' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-library.php' )
 		->add_fields([
 	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
 	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
-			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
-			Field::make( 'rich_text', 'crb_hero_body', __( 'Hero Body' ) ),
 
+		]);	
+		
+	Container::make( 'post_meta', __( 'Hero Section' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-library.php' )
+		->add_fields([
+			Field::make( 'image', 'crb_hero_image_d', __( 'Hero Image - Desktop' ) )->set_value_type( 'url' ),
+			Field::make( 'image', 'crb_hero_image_m', __( 'Hero Image - Mobile' ) )->set_value_type( 'url' ),
+	        Field::make( 'text', 'crb_hero_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'crb_hero_button_link', __( 'Button Link' ) ),
+			Field::make( 'rich_text', 'crb_hero_body_1', __( 'Column 1' ) ),
+			Field::make( 'rich_text', 'crb_hero_body_2', __( 'Column 2' ) ),
+			Field::make( 'checkbox', 'crb_border', 'Add bottom border to hero section?' )->set_option_value( 'yes' ),
 		]);	
 		
 	Container::make( 'post_meta', __( 'Quote' ) )
@@ -353,15 +371,26 @@ function crb_attach_theme_options() {
    	//  LOCAL GUIDE META BLOCKS
    	// =============================================
 
-	Container::make( 'post_meta', __( 'Hero Section' ) )
+	Container::make( 'post_meta', __( 'Visible Page Title' ) )
 		->where( 'post_type', '=', 'page' )
 		->where( 'post_template', '=', 'page-localguide.php' )
 		->add_fields([
 	        Field::make( 'text', 'crb_first_line', __( 'First Line' ) ),
 	        Field::make( 'text', 'crb_second_line', __( 'Second Line' ) ),
-			Field::make( 'image', 'crb_hero_image', __( 'Hero Image' ) )->set_value_type( 'url' ),
-			Field::make( 'rich_text', 'crb_hero_body', __( 'Hero Body' ) ),
 
+		]);	
+		
+	Container::make( 'post_meta', __( 'Hero Section' ) )
+		->where( 'post_type', '=', 'page' )
+		->where( 'post_template', '=', 'page-localguide.php' )
+		->add_fields([
+			Field::make( 'image', 'crb_hero_image_d', __( 'Hero Image - Desktop' ) )->set_value_type( 'url' ),
+			Field::make( 'image', 'crb_hero_image_m', __( 'Hero Image - Mobile' ) )->set_value_type( 'url' ),
+	        Field::make( 'text', 'crb_hero_button_text', __( 'Button Text' ) ),
+			Field::make( 'text', 'crb_hero_button_link', __( 'Button Link' ) ),
+			Field::make( 'rich_text', 'crb_hero_body_1', __( 'Column 1' ) ),
+			Field::make( 'rich_text', 'crb_hero_body_2', __( 'Column 2' ) ),
+			Field::make( 'checkbox', 'crb_border', 'Add bottom border to hero section?' )->set_option_value( 'yes' ),
 		]);	
 				
 	Container::make( 'post_meta', __( 'Bottom CTA' ) )
