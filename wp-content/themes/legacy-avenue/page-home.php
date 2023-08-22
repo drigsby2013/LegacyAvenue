@@ -44,6 +44,7 @@ $imageWithTextRButtonDisplay = ($imageWithTextRButtonText && $imageWithTextRButt
 //--Two Column Images with Text--//
 //First Column
 $twoColImageWithTextFirstImage 	       = carbon_get_post_meta( get_the_ID(), 'crb_two_col_first_photo');
+$twoColImageWithTextFirstImageMobile   = carbon_get_post_meta( get_the_ID(), 'crb_two_col_first_photo_m');
 $twoColImageWithTextFirstFirstLine     = carbon_get_post_meta( get_the_ID(), 'crb_two_col_first_first_line');
 $twoColImageWithTextFirstSecondLine    = carbon_get_post_meta( get_the_ID(), 'crb_two_col_first_second_line');
 $twoColImageWithTextFirstBody          = apply_filters( 'the_content', carbon_get_the_post_meta( 'two_col_first_body' ) );
@@ -52,6 +53,7 @@ $twoColImageWithTextFirstButtonLink    = carbon_get_post_meta( get_the_ID(), 'tw
 $twoColImageWithTextFirstButtonDisplay = ($twoColImageWithTextFirstButtonText && $twoColImageWithTextFirstButtonLink != '') ? true : false;
 //Second Column
 $twoColImageWithTextSecondImage 	    = carbon_get_post_meta( get_the_ID(), 'crb_two_col_second_photo');
+$twoColImageWithTextSecondImageMobile   = carbon_get_post_meta( get_the_ID(), 'crb_two_col_second_photo_m');
 $twoColImageWithTextSecondFirstLine     = carbon_get_post_meta( get_the_ID(), 'crb_two_col_second_first_line');
 $twoColImageWithTextSecondSecondLine    = carbon_get_post_meta( get_the_ID(), 'crb_two_col_second_second_line');
 $twoColImageWithTextSecondBody          = apply_filters( 'the_content', carbon_get_the_post_meta( 'two_col_second_body' ) );
@@ -108,6 +110,7 @@ $imageWithTextLButtonDisplay = ($imageWithTextLButtonText && $imageWithTextLButt
 						</div>
 					</div>
 					<div class="meet" style="background-image: url('<?php echo $imageWithTextRImage; ?>');">
+						<div class="basic-hero-image mobile-only"><img src="<?php echo $imageWithTextRImage; ?>" alt=""/></div>
 						<div class="meet-text">
 							<h2><?php echo $imageWithTextRFirstLine; ?><br/><?php echo $imageWithTextRSecondLine; ?></h2>
 							<?php echo $imageWithTextRBody; ?>
@@ -118,6 +121,7 @@ $imageWithTextLButtonDisplay = ($imageWithTextLButtonText && $imageWithTextLButt
 					</div>
 					<div class="home-columns">
 						<div class="column" style="background-image: url('<?php echo $twoColImageWithTextFirstImage; ?>'); background-position: 90% 0%;">
+							<div class="basic-hero-image mobile-only"><img src="<?php echo $twoColImageWithTextFirstImageMobile; ?>" alt=""/></div>
 							<div class="text">
 								<h2><?php echo $twoColImageWithTextFirstFirstLine; ?><br/><?php echo $twoColImageWithTextFirstSecondLine; ?></h2>
 								<?php echo $twoColImageWithTextFirstBody; ?>
@@ -127,6 +131,7 @@ $imageWithTextLButtonDisplay = ($imageWithTextLButtonText && $imageWithTextLButt
 							</div>
 						</div>
 						<div class="column" style="background-image: url('<?php echo $twoColImageWithTextSecondImage; ?>'); background-position: 53% 0%;">
+							<div class="basic-hero-image mobile-only"><img src="<?php echo $twoColImageWithTextSecondImageMobile; ?>" alt=""/></div>
 							<div class="text">
 								<h2><?php echo $twoColImageWithTextSecondFirstLine; ?><br/><?php echo $twoColImageWithTextSecondSecondLine; ?></h2>
 								<?php echo $twoColImageWithTextSecondBody; ?>

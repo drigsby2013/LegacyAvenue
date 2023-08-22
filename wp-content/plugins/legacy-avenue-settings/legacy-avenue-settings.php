@@ -105,6 +105,7 @@ function crb_attach_theme_options() {
 		->add_fields([
 			Field::make( 'separator', 'crb_home_left_col', __( 'Left Column' ) ),
 			Field::make( 'image', 'crb_two_col_first_photo', __( 'Image' ) )->set_value_type( 'url' ),
+			Field::make( 'image', 'crb_two_col_first_photo_m', __( 'Image for Mobile' ) )->set_value_type( 'url' ),
 	        Field::make( 'text', 'crb_two_col_first_first_line', __( 'Heading First Line' ) ),
 	        Field::make( 'text', 'crb_two_col_first_second_line', __( 'Heading Second Line' ) ),
 			Field::make( 'rich_text', 'two_col_first_body', __( 'Text' ) ),
@@ -112,6 +113,7 @@ function crb_attach_theme_options() {
 			Field::make( 'text', 'two_col_first_button_link', __( 'Button Link' ) ),
 			Field::make( 'separator', 'crb_home_right_col', __( 'Right Column' ) ),
 			Field::make( 'image', 'crb_two_col_second_photo', __( 'Image' ) )->set_value_type( 'url' ),
+			Field::make( 'image', 'crb_two_col_second_photo_m', __( 'Image for Mobile' ) )->set_value_type( 'url' ),
 	        Field::make( 'text', 'crb_two_col_second_first_line', __( 'Heading First Line' ) ),
 	        Field::make( 'text', 'crb_two_col_second_second_line', __( 'Heading Second Line' ) ),
 			Field::make( 'rich_text', 'two_col_second_body', __( 'Text' ) ),

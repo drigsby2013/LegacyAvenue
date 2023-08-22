@@ -1829,13 +1829,8 @@ body.author article .entry-content {
 	margin-bottom: 90px !important;
 }
 .home-columns .column {
-	padding-top: 160px;
+	padding-top: 60px;
 	padding-bottom: 45px;
-}
-.home-columns .column .text {
-	padding-top: 150px;
-	padding-bottom: 47px;
-	max-width: 510px;
 }
 .meet-team .wide-columns {
 	margin-bottom: 75px !important;
@@ -1865,19 +1860,6 @@ body.author article .entry-content {
 .column .text .wp-block-button {
 	margin-top: 6px;
 }
-
-/*
-.home-columns .column::before {
-	position: absolute;
-	width: 100%;
-	height: 68%;
-	content: '';
-	background: linear-gradient(180deg, rgba(208, 148, 123, 0) 2.72%, rgba(208, 148, 123, 0.7) 61.14%);
-	left: 0;
-	bottom: 0px;
-	max-height: 375px;
-}
-*/
 .narrow-columns {
 	max-width: none !important;
 }
@@ -1905,6 +1887,28 @@ body.author article .entry-content {
 .narrow-columns .column img {
 	width: 100%;
 }
+@media screen and (max-width: 767px) {
+	.meet {
+		background-image: none !important;
+		min-height: auto;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.home-columns .column {
+		background-image: none !important;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.meet-team h2::after,
+	.meet-team h3::after,
+	.guide-text h2::after,
+	.meet h2::after,
+	.home-columns h2::after {
+		right: 0 !important;
+		left: auto !important;
+		width: 100px !important;
+	}
+}
 @media screen and (min-width: 768px) {
 	.home-columns {
 		margin-bottom: 100px !important;
@@ -1919,6 +1923,12 @@ body.author article .entry-content {
 	.wide-columns {
 		display: flex;
 		justify-content: space-between;
+	}
+	
+	.home-columns .column .text {
+		padding-top: 150px;
+		padding-bottom: 47px;
+		max-width: 510px;
 	}
 	.narrow-columns {
 		max-width: 1200px !important;
