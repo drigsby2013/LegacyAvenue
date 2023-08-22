@@ -2411,7 +2411,7 @@ body.author article .entry-content {
 @media screen and (min-width: 768px) {
 	.specialists {
 		padding-top: 100px;
-		padding-bottom: 100px;
+		padding-bottom: 80px;
 	}
 	.specialists .text {
 		display: flex;
@@ -2421,9 +2421,10 @@ body.author article .entry-content {
 	.affiliate-info {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 	.affiliate {
-		padding: 0px;
+		padding: 0px 0px 20px 0px;
 	}
 }
 .product-header-wrapper {
