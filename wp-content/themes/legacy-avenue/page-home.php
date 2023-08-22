@@ -19,12 +19,18 @@ $titleFirstLine   = carbon_get_post_meta( get_the_ID(), 'crb_first_line') ? : ''
 $titleSecondLine  = carbon_get_post_meta( get_the_ID(), 'crb_second_line');
 
 //Hero Section
-$heroImage 		  = carbon_get_post_meta( get_the_ID(), 'crb_hero_image');
-$heroOverlay 	  = carbon_get_post_meta( get_the_ID(), 'crb_text_overlay') ? 'home-hero-textbox' : '';
-$heroBody 	 	  = apply_filters( 'the_content', carbon_get_the_post_meta( 'crb_hero_body' ) );
+$desktopHeroImage 		  = carbon_get_post_meta( get_the_ID(), 'crb_hero_image_d');
+$mobileHeroImage 		  = carbon_get_post_meta( get_the_ID(), 'crb_hero_image_m');
+$mobileHeroURL 		 	  = $mobileHeroImage ? $mobileHeroImage : $desktopHeroImage;
+$heroBody1 	 	  = apply_filters( 'the_content', carbon_get_the_post_meta( 'crb_hero_body_1' ) );
+$heroBody2	 	  = apply_filters( 'the_content', carbon_get_the_post_meta( 'crb_hero_body_2' ) );
+$heroTwoColumn = ($heroBody1 && $heroBody2 != '') ? true : false;
+$heroSingleColumn = $heroTwoColumn ? '' : 'single';
 $heroButtonText	  = carbon_get_post_meta( get_the_ID(), 'crb_hero_button_text');
 $heroButtonLink	  = carbon_get_post_meta( get_the_ID(), 'crb_hero_button_link');
 $heroButtonDisplay = ($heroButtonText && $heroButtonLink != '') ? true : false;
+$heroBorder 	  = carbon_get_post_meta( get_the_ID(), 'crb_border') ? 'add-border' : '';
+
 
 //Image with Text on Right
 $imageWithTextRImage 	     = carbon_get_post_meta( get_the_ID(), 'crb_image_with_text_right_photo');
@@ -76,20 +82,30 @@ $imageWithTextLButtonDisplay = ($imageWithTextLButtonText && $imageWithTextLButt
 		?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="entry-content">
-				
-				
-					<div class="home-hero">
-						<div class="home-hero-image-mobile mobile-only"><img src="<?php echo $heroImage; ?>" alt=""/></div>
-						<div class="home-hero-text">
-							<div class="<?php echo $heroOverlay; ?>">
-								<h1><?php echo $titleFirstLine; ?><br><?php echo $titleSecondLine; ?></h1>
-								<?php echo $heroBody; ?>
-								<?php if ($heroButtonDisplay == true) {?>
-									<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $heroButtonLink; ?>"><?php echo $heroButtonText; ?></a></div>
-								<?php }; ?>
+					<div class="basic-hero-image mobile-only"><img src="<?php echo $mobileHeroURL; ?>" alt=""/></div>
+					<div class="basic-hero">
+						<div class="basic-heading-text">
+							<div class="basic-hero-image large-only"><img src="<?php echo $desktopHeroImage; ?>" alt="" width="990" height="500" /></div>
+							<div class="basic-hero-heading">
+									<h1><?php echo $titleFirstLine; ?><br><?php echo $titleSecondLine; ?></h1>
+									<?php if ($heroButtonDisplay == true) {?>
+										<div class="wp-block-button large-only"><a class="wp-block-button__link wp-element-button" href="<?php echo $heroButtonLink; ?>"><?php echo $heroButtonText; ?></a></div>
+									<?php }; ?>
 							</div>
 						</div>
-						<div class="home-hero-image-large large-only"><img src="<?php echo $heroImage; ?>" alt="" width="990" height="500" /></div>
+						<div class="basic-hero-body <?php echo $heroBorder; ?>">
+							<div class="bh-column <?php echo $heroSingleColumn; ?>">
+								<?php echo $heroBody1; ?>
+							</div>
+							<?php if ($heroTwoColumn == true) {?>
+								<div class="bh-column">
+									<?php echo $heroBody2; ?>
+								</div>
+							<?php }; ?>
+							<?php if ($heroButtonDisplay == true) {?>
+								<div class="wp-block-button mobile-only"><a class="wp-block-button__link wp-element-button" href="<?php echo $heroButtonLink; ?>"><?php echo $heroButtonText; ?></a></div>
+							<?php }; ?>
+						</div>
 					</div>
 					<div class="meet" style="background-image: url('<?php echo $imageWithTextRImage; ?>');">
 						<div class="meet-text">
@@ -130,6 +146,7 @@ $imageWithTextLButtonDisplay = ($imageWithTextLButtonText && $imageWithTextLButt
 							</div>
 						</div>
 					<?php }; ?>
+					<div class="text-image-mobile-only"><img src="<?php echo $imageWithTextLImage; ?>" alt=""/></div>
 					<div class="local-guide" style="background-image: url('<?php echo $imageWithTextLImage; ?>'); background-position: 50% 0%;">
 						<div class="guide-text">
 							<h2><?php echo $imageWithTextLFirstLine; ?><br/><?php echo $imageWithTextLSecondLine; ?></h2>
